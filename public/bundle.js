@@ -60653,12 +60653,12 @@
 	                    _react2.default.createElement(
 	                        'h1',
 	                        null,
-	                        'Order Confirmation'
+	                        'You\'re all set!'
 	                    ),
 	                    _react2.default.createElement(
 	                        'div',
-	                        { className: 'userProgress' },
-	                        _react2.default.createElement('div', { id: 'fiveOfFive' })
+	                        { className: 'confirmation-success' },
+	                        _react2.default.createElement('i', { className: 'fa fa-check-circle fa-5x', 'aria-hidden': 'true' })
 	                    )
 	                ),
 	                _react2.default.createElement(_OrderReadyTime2.default, {
@@ -60757,20 +60757,13 @@
 	                _react2.default.createElement(
 	                    'h2',
 	                    null,
-	                    'Your order will be ready in...'
+	                    'Head to the shop, and your order will be ready in...'
 	                ),
 	                _react2.default.createElement(
 	                    'div',
 	                    { className: 'order-ready-time' },
 	                    this.props.duration
-	                ),
-	                _react2.default.createElement(
-	                    'p',
-	                    null,
-	                    'by'
-	                ),
-	                methodOfTransIcon,
-	                _react2.default.createElement('div', { className: 'order-ready-time-divider' })
+	                )
 	            );
 	        } else {
 	            pickupTime = _react2.default.createElement(
@@ -60831,7 +60824,7 @@
 
 
 	// module
-	exports.push([module.id, ".order-ready-time {\n  font-size: 36px;\n  text-align: center; }\n\n.order-ready-time-container {\n  padding-top: 1em;\n  border-bottom: 1px solid #E4E4E4; }\n\n.order-ready-time-container h2 {\n  margin-top: 0;\n  text-align: center;\n  font-size: 1.2em; }\n\n.order-ready-time-container p {\n  text-align: center;\n  font-size: 1em;\n  margin: 0em 0em 0.8em 0em; }\n\n.method-of-trans-icon {\n  text-align: center;\n  margin-bottom: 1.75em; }\n\n.order-ready-time-divider {\n  width: 100%;\n  margin: 0 auto;\n  padding-top: 1em; }\n", ""]);
+	exports.push([module.id, ".order-ready-time {\n  font-size: 36px;\n  text-align: center; }\n\n.order-ready-time-container {\n  padding-top: 2em;\n  padding-bottom: 2em;\n  border-bottom: 1px solid #E4E4E4; }\n\n.order-ready-time-container h2 {\n  margin-top: 0;\n  text-align: center;\n  font-size: 1.2em;\n  width: 70%;\n  margin: 0 auto; }\n\n.order-ready-time-container p {\n  text-align: center;\n  font-size: 1em;\n  margin: 0em 0em 0.8em 0em; }\n\n.method-of-trans-icon {\n  text-align: center;\n  margin-bottom: 1.75em; }\n\n.order-ready-time-divider {\n  width: 100%;\n  margin: 0 auto;\n  padding-top: 1em; }\n", ""]);
 
 	// exports
 
@@ -61088,7 +61081,7 @@
 
 
 	// module
-	exports.push([module.id, ".confirmation-view-container {\n  width: 90%;\n  border: 1px solid #E4E4E4;\n  border-radius: 3px;\n  background: #fff;\n  margin-top: 4em;\n  margin: 4em auto 4em auto;\n  box-shadow: #999999 0px 1px; }\n\n.back-to-dashboard {\n  width: 13em;\n  margin: 2em auto 3em auto;\n  display: block; }\n  .back-to-dashboard .fa-home {\n    padding-left: .4em; }\n\n.userProgress {\n  position: relative;\n  width: 100%;\n  height: 30px;\n  background-color: #fff;\n  border-radius: 5px;\n  margin: 0 auto; }\n\n#fiveOfFive {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  background: #3FB083;\n  border-radius: 5px 5px 5px 5px; }\n\n@media only screen and (min-width: 600px) {\n  .confirmation-view-container {\n    width: 28em;\n    margin: 4em auto 2.5em auto; }\n    .confirmation-view-container .userProgress {\n      width: 25em; } }\n\n@media only screen and (min-width: 960px) {\n  .confirmation-view-container {\n    margin-top: 0em;\n    margin: 4em auto 2.5em auto; } }\n", ""]);
+	exports.push([module.id, ".confirmation-view-container {\n  width: 90%;\n  border: 1px solid #E4E4E4;\n  border-radius: 3px;\n  background: #fff;\n  margin-top: 4em;\n  margin: 6em auto 4em auto;\n  box-shadow: #999999 0px 1px; }\n  .confirmation-view-container .title-cover {\n    text-align: center;\n    margin-bottom: 0em;\n    padding: 2em 2em 1em 2em; }\n    .confirmation-view-container .title-cover .confirmation-success {\n      border: none;\n      vertical-align: middle; }\n      .confirmation-view-container .title-cover .confirmation-success .fa-check-circle {\n        color: #3FB083; }\n\n.back-to-dashboard {\n  width: 13em;\n  margin: 2em auto 3em auto;\n  display: block; }\n  .back-to-dashboard .fa-home {\n    padding-left: .4em; }\n\n@media only screen and (min-width: 500px) {\n  .confirmation-view-container .title-cover h1 {\n    display: inline-block; }\n  .confirmation-view-container .title-cover .confirmation-success {\n    display: inline-block;\n    margin-left: 1em; }\n    .confirmation-view-container .title-cover .confirmation-success .fa-check-circle {\n      color: #3FB083;\n      font-size: 6em; } }\n\n@media only screen and (min-width: 600px) {\n  .confirmation-view-container {\n    width: 28em;\n    margin: 6em auto 2.5em auto; } }\n\n@media only screen and (min-width: 960px) {\n  .confirmation-view-container {\n    margin-top: 0em;\n    margin: 4em auto 2.5em auto; } }\n", ""]);
 
 	// exports
 

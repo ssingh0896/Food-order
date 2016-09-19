@@ -30,10 +30,9 @@ var ConfirmationView = React.createClass({
             <div>
                 <div className="confirmation-view-container">
                     <div className="title-cover">
-                        <h1>Order Confirmation</h1>
-                        <div className="userProgress">
-                            <div id="fiveOfFive">
-                            </div>
+                        <h1>You're all set!</h1>
+                        <div className="confirmation-success">
+                            <i className="fa fa-check-circle fa-5x" aria-hidden="true"></i>
                         </div>
                     </div>
 

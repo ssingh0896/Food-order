@@ -29,11 +29,13 @@ var OrderReadyTime = React.createClass({
         var pickupTime;
         if (this.props.pickupTime === 'true') {
             pickupTime = <div className="order-ready-time-container">
-                <h2>Your order will be ready in...</h2>
-            <div className="order-ready-time">{this.props.duration}</div>
-                <p>by</p>
-            {methodOfTransIcon}
-            <div className="order-ready-time-divider"></div>
+                <h2>Head to the shop,
+                and your order will be ready in...</h2>
+                <div className="order-ready-time">{this.props.duration}</div>
+                {/*
+                    <p>How you're getting there: {methodOfTransIcon}</p>
+                <div className="order-ready-time-divider"></div>
+                */}
             </div>
         } else {
             pickupTime = <div className="order-ready-time-container">

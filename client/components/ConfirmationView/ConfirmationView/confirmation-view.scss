@@ -4,8 +4,26 @@
     border-radius: 3px;
     background: #fff;
     margin-top: 4em;
-    margin: 4em auto 4em auto;
+    margin: 6em auto 4em auto;
     box-shadow: #999999 0px 1px;
+
+    .title-cover {
+        text-align: center;
+        margin-bottom: 0em;
+        padding: 2em 2em 1em 2em;
+
+        h1 {
+        }
+
+        .confirmation-success {
+            border: none;
+            vertical-align: middle;
+
+            .fa-check-circle {
+                color: #3FB083;
+            }
+        }
+    }
 }
 
 .back-to-dashboard {
@@ -18,31 +36,32 @@
     }
 }
 
-.userProgress {
-    position: relative;
-    width: 100%;
-    height: 30px;
-    background-color: #fff;
-    border-radius: 5px;
-    margin: 0 auto;
-}
+@media only screen and (min-width: 500px) {
+    .confirmation-view-container {
 
-#fiveOfFive {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #3FB083;
-    border-radius: 5px 5px 5px 5px;
+        .title-cover {
+
+            h1 {
+                display: inline-block;
+            }
+
+            .confirmation-success {
+                display: inline-block;
+                margin-left: 1em;
+
+                .fa-check-circle {
+                    color: #3FB083;
+                    font-size: 6em;
+                }
+            }
+        }
+    }
 }
 
 @media only screen and (min-width: 600px) {
     .confirmation-view-container {
         width: 28em;
-        margin: 4em auto 2.5em auto;
-
-        .userProgress {
-            width: 25em;
-        }
+        margin: 6em auto 2.5em auto;
     }
 }
 
