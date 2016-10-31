@@ -3,7 +3,7 @@ import sass from './orders-container.scss'
 import BAOrder from '../BAOrder/BAOrder'
 
 var OrdersContainer = React.createClass({
-    render: function(){
+    render: function() {
         return (
             <div className="ba-orders-container">
                 <BAOrder />

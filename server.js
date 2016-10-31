@@ -7,25 +7,23 @@ var getPrevsAndFavs = require('./routers/getPrevsAndFavs');
 var orders = require('./routers/orders');
 
 
-mongoose.connection.on('error', function(err) {
-    console.error('Could not connect.  Error:', err);
-});
+/* ------------------Mongoose--------------------- */
 
 var MongoURI = process.env.NODE_ENV === 'production' ? process.env.MONGODB_URI : 'mongodb://amituuush:Gomocha123!@ds139327.mlab.com:39327/gomocha'
 
 mongoose.Promise = global.Promise;
 mongoose.connect(MongoURI);
 
-
-console.log(process.env.MONGODB_URI);
-
-
 mongoose.connection.once('open', function() {
     console.log('connection established!');
 });
 
+mongoose.connection.on('error', function(err) {
+    console.error('Could not connect.  Error:', err);
+});
 
-/* ----------------------------------------- */
+
+/* -----------------Express------------------------ */
 
 function requestHandler(request, response) {
     response.sendFile(__dirname + '/public/index.html');
