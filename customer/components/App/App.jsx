@@ -243,10 +243,6 @@ var App = React.createClass({
             })
     },
 
-    _handlePostOrder: function() {
-
-    },
-
     _handlePreviousOrders: function() {
         console.log('handling previous orders');
         request.get('/api/users/' + String(this.state.username) + '/orders/previous')
@@ -265,11 +261,6 @@ var App = React.createClass({
                })
            });
     },
-
-    // get previous and favorite pages working and send GET requests
-
-    // create new front end routes for previous and favorites
-    // dynamic routing
 
     // --------------OTHER APP METHODS--------------
 

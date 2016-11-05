@@ -1,56 +1,39 @@
 import React from 'react'
 import sass from './ba-order.scss'
 
-class BAOrder extends React.Component {
-    render() {
+var BAOrder = React.createClass({
+
+    propTypes: {
+        order: React.PropTypes.shape({
+            date: React.PropTypes.string,
+            favorited: React.PropTypes.bool,
+            items: React.PropTypes.arrayOf(React.PropTypes.shape({
+                itemName: React.PropTypes.string,
+                milkType: React.PropTypes.string,
+                price: React.PropTypes.number,
+                quantity: React.PropTypes.string,
+                size: React.PropTypes.string,
+
+            })),
+            specialInstructions: React.PropTypes.string,
+            time: React.PropTypes.string,
+            timeSelectedForPickup: React.PropTypes.string,
+            timeUntilArrival: React.PropTypes.string,
+            username: React.PropTypes.string
+        }),
+    },
+
+    render: function() {
         return (
             <div>
                 <div className="ba-order">
                     <div className="ba-order-left">
-                        <h2>Amit R.</h2>
+                        <h2>{this.props.order.username}</h2>
+                        <span>{this.props.order.time}--{this.props.order.date}</span>
                         <p>1 - 16oz. Mocha Latte</p>
                     </div>
                     <div className="ba-order-right">
-                        <p>Time until arrival: <span className="ba-order-time">3 min</span></p>
-                        <button>
-                            Complete
-                            <i className="fa fa-check-circle fa-2x" aria-hidden="true"></i>
-                        </button>
-                    </div>
-                </div>
-                <div className="ba-order">
-                    <div className="ba-order-left">
-                        <h2>Dillon E.</h2>
-                        <p>2 - 20oz. Caramel Frap</p>
-                    </div>
-                    <div className="ba-order-right">
-                        <p>Time until arrival: <span className="ba-order-time">7 min</span></p>
-                        <button>
-                            Complete
-                            <i className="fa fa-check-circle fa-2x" aria-hidden="true"></i>
-                        </button>
-                    </div>
-                </div>
-                <div className="ba-order">
-                    <div className="ba-order-left">
-                        <h2>Jake B.</h2>
-                        <p>1 - 16oz. Green Tea</p>
-                    </div>
-                    <div className="ba-order-right">
-                        <p>Time until arrival: <span className="ba-order-time">9 min</span></p>
-                        <button>
-                            Complete
-                            <i className="fa fa-check-circle fa-2x" aria-hidden="true"></i>
-                        </button>
-                    </div>
-                </div>
-                <div className="ba-order">
-                    <div className="ba-order-left">
-                        <h2>Preston O.</h2>
-                        <p>1 - 24oz. Americano</p>
-                    </div>
-                    <div className="ba-order-right">
-                        <p>Time until arrival: <span className="ba-order-time">12 min</span></p>
+                        <p>Time until arrival: <span className="ba-order-time">{this.props.order.timeUntilArrival ? this.props.order.timeUntilArrival : this.props.order.timeSelectedForPickup}</span></p>
                         <button>
                             Complete
                             <i className="fa fa-check-circle fa-2x" aria-hidden="true"></i>
@@ -60,7 +43,6 @@ class BAOrder extends React.Component {
             </div>
         )
     }
-}
-
+})
 
 module.exports = BAOrder;

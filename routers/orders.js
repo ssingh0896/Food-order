@@ -11,21 +11,22 @@ app.get('/orders', jsonParser, function(req,res) {
         if (err) {
             res.json(err)
         }
-        console.log(listOfOrders);
         res.json(listOfOrders);
+        res.status(200);
     })
 })
 
 app.post('/orders', jsonParser, function(req, res) {
     create(req.body, function(err, order) {
         res.json(order);
+        res.status(201);
     });
 })
 
-app.post('/orders/remove', jsonParser, function(req, res) {
+app.delete('/orders', jsonParser, function(req, res) {
     Orders.remove({}, function(err) {
         console.log('collection removed');
-        res.status(201);
+        res.status(200);
     });
 })
 

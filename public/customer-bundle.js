@@ -25419,8 +25419,6 @@
 	        });
 	    },
 
-	    _handlePostOrder: function _handlePostOrder() {},
-
 	    _handlePreviousOrders: function _handlePreviousOrders() {
 	        var _this2 = this;
 
@@ -25441,11 +25439,6 @@
 	            });
 	        });
 	    },
-
-	    // get previous and favorite pages working and send GET requests
-
-	    // create new front end routes for previous and favorites
-	    // dynamic routing
 
 	    // --------------OTHER APP METHODS--------------
 
