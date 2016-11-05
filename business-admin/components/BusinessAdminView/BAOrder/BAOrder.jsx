@@ -29,7 +29,7 @@ var BAOrder = React.createClass({
                 <div className="ba-order">
                     <div className="ba-order-left">
                         <h2>{this.props.order.username}</h2>
-                        <span>{this.props.order.time}--{this.props.order.date}</span>
+                        <span>{this.props.order.time} - {this.props.order.date}</span>
                         <p>1 - 16oz. Mocha Latte</p>
                     </div>
                     <div className="ba-order-right">

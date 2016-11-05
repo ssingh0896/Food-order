@@ -13,9 +13,9 @@
     "mongoose": "^4.4.14",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
-    "react-redux": "^4.4.1",
+    "react-redux": "^4.4.5",
     "react-router": "^2.0.1",
-    "redux": "^3.3.1",
+    "redux": "^3.6.0",
     "superagent": "^1.8.3"
   },
   "devDependencies": {
@@ -28,6 +28,7 @@
     "json-loader": "^0.5.4",
     "node-sass": "^3.4.2",
     "nodemon": "^1.9.1",
+    "redux-devtools": "^3.3.1",
     "sass-loader": "^3.2.0",
     "style-loader": "^0.13.0",
     "webpack": "^1.12.14"

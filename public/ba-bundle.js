@@ -25399,7 +25399,7 @@
 	                        'span',
 	                        null,
 	                        this.props.order.time,
-	                        '--',
+	                        ' - ',
 	                        this.props.order.date
 	                    ),
 	                    _react2.default.createElement(
