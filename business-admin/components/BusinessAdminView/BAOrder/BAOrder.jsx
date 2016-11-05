@@ -20,7 +20,7 @@ class BAOrder extends React.Component {
                 </div>
                 <div className="ba-order">
                     <div className="ba-order-left">
-                        <h2>Robby Y.</h2>
+                        <h2>Dillon E.</h2>
                         <p>2 - 20oz. Caramel Frap</p>
                     </div>
                     <div className="ba-order-right">

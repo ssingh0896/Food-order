@@ -7,7 +7,11 @@ var orderSchema = mongoose.Schema({
     specialInstructions: String,
     selectedShop: String,
     selectedShop_id: String,
-    favorited: Boolean
+    favorited: Boolean,
+    date: String,
+    time: String,
+    timeUntilArrival: String,
+    timeSelectedForPickup: String
 });
 
 var Orders = mongoose.model('Order', orderSchema);

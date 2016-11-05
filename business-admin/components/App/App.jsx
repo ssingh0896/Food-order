@@ -1,12 +1,14 @@
 import React from 'react'
-
+import BusinessAdminView from '../BusinessAdminView/BusinessAdminView/BusinessAdminView'
 
 var App = React.createClass({
 
     render: function() {
 
         return (
-            <div>hey there business admin</div>
+            <div>
+                <BusinessAdminView />
+            </div>
         )
     }
 })

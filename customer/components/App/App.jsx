@@ -8,6 +8,7 @@ import _ from 'lodash'
 import api from '../../api'
 import request from 'superagent'
 import cookie from 'js-cookie'
+import moment from 'moment'
 
 var App = React.createClass({
 
@@ -47,7 +48,7 @@ var App = React.createClass({
             },
             previousOrders: [],
             favoriteOrders: [],
-            menuShow: false
+            menuShow: false,
         }
     },
 
@@ -82,10 +83,6 @@ var App = React.createClass({
         cookie.remove('username');
         location.reload();
     },
-
-    // handleUsername should call a function that sets the cookie of the username, and then call a function that sets username on state. this will pull the username from the cookie and set it on state (this function will be called in componentWillMount, so when component loads, you'll check to see if cookie is there, and if it is you'll set it on state and automatically be logged in)
-
-    // previous and favorite orders will need to filter for the username, so you need to add the username to the order you're posting, and add it to the order schema. So each order should have a username as well. previous and favorite will need to load on componentWillMount on their associated views.
 
     // --------------USER LOCATION AND GOOGLE MAPS API CALL--------------
 
@@ -161,13 +158,6 @@ var App = React.createClass({
             )
         })
     },
-    //
-    // _handleGetShopsDistance: function(response) {
-    //
-    //     this.setState({
-    //         shops: shops
-    //     })
-    // },
 
     // API CALL IN RESPONSE TO USER SELECTING SHOP
 
@@ -229,7 +219,10 @@ var App = React.createClass({
 
     // --------------SERVER API REQUESTS--------------
 
-    _handlePostOrder: function() {
+    _handleOrderSubmit: function() {
+        var date = moment().format('l');
+        var time = moment().format('LT');
+
         request.post('/api/orders')
             .set('Content-Type', 'application/json')
             .send({
@@ -238,12 +231,20 @@ var App = React.createClass({
                 specialInstructions: this.state.specialInstructions,
                 selectedShop: this.state.selectedShop.name,
                 selectedShop_id: this.state.selectedShop.place_id,
-                favorited: this.state.favorite
+                favorited: this.state.favorite,
+                date: date,
+                time: time,
+                timeUntilArrival: this.state.duration,
+                timeSelectedForPickup: this.state.pickupTime
             })
             .end(function(err, res){
                 console.log(err);
                 console.log(res);
             })
+    },
+
+    _handlePostOrder: function() {
+
     },
 
     _handlePreviousOrders: function() {
@@ -538,7 +539,7 @@ var App = React.createClass({
                              handleCCExpYear: this._handleCCExpYear,
                              expYear: this.state.paymentInfo.expYear,
                              handleCCCVV: this._handleCCCVV,
-                             handlePostOrder: this._handlePostOrder,
+                             handleOrderSubmit: this._handleOrderSubmit,
                              handlePreviousOrders: this._handlePreviousOrders,
                              handleFavoriteOrders: this._handleFavoriteOrders,
                              previousOrders: this.state.previousOrders,

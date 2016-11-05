@@ -12,7 +12,7 @@ var OrderSummaryView = React.createClass({
         items: React.PropTypes.array,
         handleDeleteItemFromOrder: React.PropTypes.func,
         specialInstructions: React.PropTypes.string,
-        handlePostOrder: React.PropTypes.func
+        handleOrderSubmit: React.PropTypes.func
     },
 
     render: function() {
@@ -36,9 +36,10 @@ var OrderSummaryView = React.createClass({
 
                 <SpecialInstructionsOS
                     specialInstructions={this.props.specialInstructions} />
+
                 <Link to="/confirmation" className="order-summary-link">
                     <button
-                        onClick={this.props.handlePostOrder}
+                        onClick={this.props.handleOrderSubmit}
                         className="next-button order-summary-button">
                             Submit Order
                             <i className="fa fa-check fa-lg" aria-hidden="true"></i>
