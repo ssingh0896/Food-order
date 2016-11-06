@@ -6,8 +6,8 @@ import store from '../store'
 import App from './App'
 
 const Root = () => {
-  return <Provider store={store()}>
-            <Router history={browserHistory} routes={routes()} />
+  return <Provider store={store}>
+            <Router history={browserHistory} routes={routes} />
          </Provider>
 }
 
