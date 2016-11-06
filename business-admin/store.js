@@ -1,6 +1,5 @@
 import { applyMiddleware, compose, createStore } from 'redux'
 import app from './reducers'
-// const app = require('./reducers/index').default;
 
 // Add dev tools in development
 const addDevTools = (

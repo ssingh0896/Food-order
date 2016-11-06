@@ -7,6 +7,6 @@ import BusinessAdminView from './components/BusinessAdminView/BusinessAdminView/
 var Routes = <Route path="/admin" component={App}>
                 <IndexRoute component={BusinessAdminView} />
                 {/* <Route path="select-shop" component={SelectShopView} /> */}
-            </Route>
+             </Route>
 
 module.exports = Routes;

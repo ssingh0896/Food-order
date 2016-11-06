@@ -54,17 +54,29 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
+	var _reactRedux = __webpack_require__(238);
+
+	var _reactRouter = __webpack_require__(164);
+
+	var _routes = __webpack_require__(163);
+
+	var _routes2 = _interopRequireDefault(_routes);
+
+	var _store = __webpack_require__(261);
+
+	var _store2 = _interopRequireDefault(_store);
+
 	var _style = __webpack_require__(1);
 
 	var _style2 = _interopRequireDefault(_style);
 
-	var _Root = __webpack_require__(237);
-
-	var _Root2 = _interopRequireDefault(_Root);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	_reactDom2.default.render(_react2.default.createElement(_Root2.default, null), document.getElementById('root'));
+	_reactDom2.default.render(_react2.default.createElement(
+	    _reactRedux.Provider,
+	    { store: _store2.default },
+	    _react2.default.createElement(_reactRouter.Router, { history: _reactRouter.browserHistory, routes: _routes2.default })
+	), document.getElementById('root'));
 
 /***/ },
 /* 1 */
@@ -26931,44 +26943,7 @@
 
 
 /***/ },
-/* 237 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _react = __webpack_require__(5);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactRedux = __webpack_require__(238);
-
-	var _reactRouter = __webpack_require__(164);
-
-	var _routes = __webpack_require__(163);
-
-	var _routes2 = _interopRequireDefault(_routes);
-
-	var _store = __webpack_require__(261);
-
-	var _store2 = _interopRequireDefault(_store);
-
-	var _App = __webpack_require__(263);
-
-	var _App2 = _interopRequireDefault(_App);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var Root = function Root() {
-	  return _react2.default.createElement(
-	    _reactRedux.Provider,
-	    { store: _store2.default },
-	    _react2.default.createElement(_reactRouter.Router, { history: _reactRouter.browserHistory, routes: _routes2.default })
-	  );
-	};
-
-	module.exports = Root;
-
-/***/ },
+/* 237 */,
 /* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -28571,8 +28546,6 @@
 	var _reducers2 = _interopRequireDefault(_reducers);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	// const app = require('./reducers/index').default;
 
 	// Add dev tools in development
 	var addDevTools = process.env.NODE_ENV !== 'production' && (typeof window === 'undefined' ? 'undefined' : _typeof(window)) === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
