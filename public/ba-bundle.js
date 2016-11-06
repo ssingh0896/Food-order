@@ -26894,10 +26894,6 @@
 
 	'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
 	var _react = __webpack_require__(5);
 
 	var _react2 = _interopRequireDefault(_react);
@@ -26928,7 +26924,7 @@
 	  );
 	};
 
-	exports.default = Root;
+	module.exports = Root;
 
 /***/ },
 /* 238 */
@@ -28524,24 +28520,28 @@
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
 	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
 
 	var _redux = __webpack_require__(245);
 
 	var _reducers = __webpack_require__(262);
 
+	var _reducers2 = _interopRequireDefault(_reducers);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	// const app = require('./reducers/index').default;
+
 	// Add dev tools in development
 	var addDevTools = process.env.NODE_ENV !== 'production' && (typeof window === 'undefined' ? 'undefined' : _typeof(window)) === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
 	var composeEnhancers = addDevTools ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({}) : _redux.compose;
 
-	exports.default = function () {
-	  return (0, _redux.createStore)(_reducers.app, {}, composeEnhancers((0, _redux.applyMiddleware)()) // Add middlewares here
+	var store = function store() {
+	  return (0, _redux.createStore)(_reducers2.default, {}, composeEnhancers((0, _redux.applyMiddleware)()) // Add middlewares here
 	  );
 	};
+
+	module.exports = store;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
 
 /***/ },
@@ -28550,20 +28550,15 @@
 
 	'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	exports.appReducer = undefined;
-
 	var _redux = __webpack_require__(245);
 
 	var _orderReducer = __webpack_require__(264);
 
-	var appReducer = exports.appReducer = (0, _redux.combineReducers)({
+	var appReducer = (0, _redux.combineReducers)({
 	    orders: _orderReducer.orderReducer
 	});
 
-	exports.default = appReducer;
+	module.exports = appReducer;
 
 /***/ },
 /* 263 */
