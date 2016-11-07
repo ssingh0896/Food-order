@@ -4,10 +4,6 @@ import BAOrder from '../BAOrder/BAOrder'
 
 var OrdersContainer = React.createClass({
 
-    propTypes: {
-        orders: React.PropTypes.array
-    },
-
     render: function() {
 
         var orders = this.props.orders.map(

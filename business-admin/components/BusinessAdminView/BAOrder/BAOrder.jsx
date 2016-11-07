@@ -2,26 +2,26 @@ import React from 'react'
 import sass from './ba-order.scss'
 
 var BAOrder = React.createClass({
-
-    propTypes: {
-        order: React.PropTypes.shape({
-            date: React.PropTypes.string,
-            favorited: React.PropTypes.bool,
-            items: React.PropTypes.arrayOf(React.PropTypes.shape({
-                itemName: React.PropTypes.string,
-                milkType: React.PropTypes.string,
-                price: React.PropTypes.number,
-                quantity: React.PropTypes.string,
-                size: React.PropTypes.string,
-
-            })),
-            specialInstructions: React.PropTypes.string,
-            time: React.PropTypes.string,
-            timeSelectedForPickup: React.PropTypes.string,
-            timeUntilArrival: React.PropTypes.string,
-            username: React.PropTypes.string
-        }),
-    },
+    // 
+    // propTypes: {
+    //     order: React.PropTypes.shape({
+    //         date: React.PropTypes.string,
+    //         favorited: React.PropTypes.bool,
+    //         items: React.PropTypes.arrayOf(React.PropTypes.shape({
+    //             itemName: React.PropTypes.string,
+    //             milkType: React.PropTypes.string,
+    //             price: React.PropTypes.number,
+    //             quantity: React.PropTypes.string,
+    //             size: React.PropTypes.string,
+    //
+    //         })),
+    //         specialInstructions: React.PropTypes.string,
+    //         time: React.PropTypes.string,
+    //         timeSelectedForPickup: React.PropTypes.string,
+    //         timeUntilArrival: React.PropTypes.string,
+    //         username: React.PropTypes.string
+    //     }),
+    // },
 
     render: function() {
         return (

@@ -1,21 +1,15 @@
 import { applyMiddleware, compose, createStore } from 'redux'
-import app from './reducers'
+import rootReducer from './reducers'
+import createLogger from 'redux-logger'
+import ReduxPromise from 'redux-promise'
 
-// Add dev tools in development
-const addDevTools = (
-  process.env.NODE_ENV !== 'production' &&
-  typeof window === 'object' &&
-  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__)
-const composeEnhancers = addDevTools ?
-  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({})
-: compose;
+const logger = createLogger();
 
-const store = () => {
-  return createStore(
-    app,
-    {},
-    composeEnhancers(applyMiddleware()) // Add middlewares here
+const store = createStore(rootReducer,
+  compose(
+    applyMiddleware(ReduxPromise, logger),
+    window.devToolsExtension ? window.devToolsExtension() : f => f
   )
-}
+);
 
 module.exports = store;

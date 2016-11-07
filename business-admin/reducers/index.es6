@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 import { orderReducer } from './orderReducer';
 
-const appReducer = combineReducers({
+const rootReducer = combineReducers({
     orders: orderReducer
-})
+});
 
-module.exports = appReducer;
+module.exports = rootReducer;
