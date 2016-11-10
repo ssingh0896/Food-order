@@ -18,6 +18,7 @@ function fetchOrdersError(err) {
 }
 
 export function fetchOrders() {
+    console.log('fetch orders called');
   return function(dispatch) {
     axios.get('/api/orders')
       .then((response) => {

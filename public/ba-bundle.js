@@ -25163,6 +25163,7 @@
 
 	    componentWillMount: function componentWillMount() {
 	        this.props.fetchOrders();
+	        setInterval(this.props.fetchOrders, 5000);
 	    },
 
 	    render: function render() {
@@ -28060,6 +28061,7 @@
 	}
 
 	function fetchOrders() {
+	    console.log('fetch orders called');
 	    return function (dispatch) {
 	        _axios2.default.get('/api/orders').then(function (response) {
 	            dispatch(fetchOrdersSuccess(response));

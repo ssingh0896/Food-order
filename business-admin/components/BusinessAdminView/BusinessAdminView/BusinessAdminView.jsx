@@ -16,6 +16,7 @@ var BusinessAdminView = React.createClass({
 
     componentWillMount: function() {
         this.props.fetchOrders();
+        setInterval(this.props.fetchOrders, 5000)
     },
 
     render: function() {
