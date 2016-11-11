@@ -5,6 +5,7 @@ var MongoClient = require('mongodb').MongoClient;
 var mongoose = require('mongoose');
 var getPrevsAndFavs = require('./routers/getPrevsAndFavs');
 var orders = require('./routers/orders');
+var ordersOrdersId = require('./routers/ordersOrdersId');
 
 
 /* ------------------Mongoose--------------------- */
@@ -37,6 +38,7 @@ app.use(express.static(__dirname + '/public'));
 
 app.use('/api', getPrevsAndFavs);
 app.use('/api', orders);
+app.use('/api', ordersOrdersId);
 
 app.get('/admin', BARequestHandler)
 app.get('/', customerRequestHandler);
