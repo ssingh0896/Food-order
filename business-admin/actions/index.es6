@@ -2,31 +2,34 @@ import axios from 'axios'
 
 export const FETCH_ORDERS_SUCCESS = 'FETCH_ORDERS_SUCCESS';
 export const FETCH_ORDERS_ERROR = 'FETCH_ORDERS_ERROR';
+export const COMPLETE_ORDER = 'COMPLETE_ORDER';
 
-function fetchOrdersSuccess(response) {
-    return {
-        type: FETCH_ORDERS_SUCCESS,
-        orders: response
-    };
-}
-
-function fetchOrdersError(err) {
-    return {
-        type: FETCH_ORDERS_ERROR,
-        payload: err
-    }
-}
-
-export function fetchOrders() {
-    console.log('fetch orders called');
+export const fetchOrders = () => {
   return function(dispatch) {
     axios.get('/api/orders')
-      .then((response) => {
-        dispatch(fetchOrdersSuccess(response))
+      .then((res) => {
+        dispatch({
+            type: FETCH_ORDERS_SUCCESS,
+            orders: res
+        })
       })
       .catch((err) => {
-          console.log(err);
-        dispatch(fetchOrdersError(err))
+        dispatch({
+            type: FETCH_ORDERS_ERROR,
+            payload: err
+        })
       })
   }
-}
+};
+
+export const completeOrder = (orderId) => {
+    return function(dispatch) {
+        axios.put('/api/orders/' + orderId)
+            .then((res) => {
+                dispatch({
+                    type: COMPLETE_ORDER,
+                    order: res
+                })
+            })
+    }
+};

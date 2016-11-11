@@ -26432,7 +26432,9 @@
 
 
 	    propTypes: {
-	        orders: _react2.default.PropTypes.oneOfType([_react2.default.PropTypes.object, _react2.default.PropTypes.array])
+	        orders: _react2.default.PropTypes.oneOfType([_react2.default.PropTypes.object, _react2.default.PropTypes.array]),
+	        fetchOrders: _react2.default.PropTypes.func,
+	        completeOrders: _react2.default.PropTypes.func
 	    },
 
 	    componentWillMount: function componentWillMount() {
@@ -26453,7 +26455,8 @@
 	                    'Today\'s Orders'
 	                ),
 	                _react2.default.createElement(_OrdersContainer2.default, {
-	                    orders: this.props.orders })
+	                    orders: this.props.orders,
+	                    completeOrder: this.props.completeOrder })
 	            )
 	        );
 	    }
@@ -26469,7 +26472,7 @@
 	// anything returned from this function will end up as props on the BusinessAdminView container
 	function mapDispatchToProps(dispatch) {
 	    // bindActionCreators and dispatch: takes whatever is returned from fetchOrders and makes sure it gets pushed to all the reducers
-	    return (0, _redux.bindActionCreators)({ fetchOrders: _index.fetchOrders }, dispatch);
+	    return (0, _redux.bindActionCreators)({ fetchOrders: _index.fetchOrders, completeOrder: _index.completeOrder }, dispatch);
 	}
 
 	// promote BusinessAdminView from component to container. It needs to know about this new dispatch method, fetchOrders. Make it available as a prop
@@ -26850,7 +26853,8 @@
 
 
 	    propTypes: {
-	        orders: _react2.default.PropTypes.oneOfType([_react2.default.PropTypes.object, _react2.default.PropTypes.array])
+	        orders: _react2.default.PropTypes.oneOfType([_react2.default.PropTypes.object, _react2.default.PropTypes.array]),
+	        completeOrder: _react2.default.PropTypes.func
 	    },
 
 	    render: function render() {
@@ -26865,7 +26869,8 @@
 	            var orders = this.props.orders.map(function (order) {
 	                return _react2.default.createElement(_BAOrder2.default, {
 	                    key: order._id,
-	                    order: order });
+	                    order: order,
+	                    completeOrder: this.props.completeOrder });
 	            }, this);
 
 	            return _react2.default.createElement(
@@ -26938,26 +26943,34 @@
 	var BAOrder = _react2.default.createClass({
 	    displayName: 'BAOrder',
 
-	    //
-	    // propTypes: {
-	    //     order: React.PropTypes.shape({
-	    //         date: React.PropTypes.string,
-	    //         favorited: React.PropTypes.bool,
-	    //         items: React.PropTypes.arrayOf(React.PropTypes.shape({
-	    //             itemName: React.PropTypes.string,
-	    //             milkType: React.PropTypes.string,
-	    //             price: React.PropTypes.number,
-	    //             quantity: React.PropTypes.string,
-	    //             size: React.PropTypes.string,
-	    //
-	    //         })),
-	    //         specialInstructions: React.PropTypes.string,
-	    //         time: React.PropTypes.string,
-	    //         timeSelectedForPickup: React.PropTypes.string,
-	    //         timeUntilArrival: React.PropTypes.string,
-	    //         username: React.PropTypes.string
-	    //     }),
-	    // },
+
+	    propTypes: {
+	        order: _react2.default.PropTypes.shape({
+	            _id: _react2.default.PropTypes.string,
+	            date: _react2.default.PropTypes.string,
+	            favorited: _react2.default.PropTypes.bool,
+	            items: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.shape({
+	                itemName: _react2.default.PropTypes.string,
+	                milkType: _react2.default.PropTypes.string,
+	                price: _react2.default.PropTypes.number,
+	                quantity: _react2.default.PropTypes.string,
+	                size: _react2.default.PropTypes.string
+
+	            })),
+	            specialInstructions: _react2.default.PropTypes.string,
+	            time: _react2.default.PropTypes.string,
+	            timeSelectedForPickup: _react2.default.PropTypes.string,
+	            timeUntilArrival: _react2.default.PropTypes.string,
+	            username: _react2.default.PropTypes.string,
+	            completed: _react2.default.PropTypes.bool
+	        }),
+	        completeOrder: _react2.default.PropTypes.func
+	    },
+
+	    _handleCompleteOrder: function _handleCompleteOrder() {
+	        this.props.completeOrder(this.props.order._id);
+	        console.log('completing an item!');
+	    },
 
 	    render: function render() {
 	        return _react2.default.createElement(
@@ -27002,7 +27015,7 @@
 	                    ),
 	                    _react2.default.createElement(
 	                        'button',
-	                        null,
+	                        { onClick: this._handleCompleteOrder },
 	                        'Complete',
 	                        _react2.default.createElement('i', { className: 'fa fa-check-circle fa-2x', 'aria-hidden': 'true' })
 	                    )
@@ -27063,8 +27076,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.FETCH_ORDERS_ERROR = exports.FETCH_ORDERS_SUCCESS = undefined;
-	exports.fetchOrders = fetchOrders;
+	exports.completeOrder = exports.fetchOrders = exports.COMPLETE_ORDER = exports.FETCH_ORDERS_ERROR = exports.FETCH_ORDERS_SUCCESS = undefined;
 
 	var _axios = __webpack_require__(253);
 
@@ -27074,32 +27086,34 @@
 
 	var FETCH_ORDERS_SUCCESS = exports.FETCH_ORDERS_SUCCESS = 'FETCH_ORDERS_SUCCESS';
 	var FETCH_ORDERS_ERROR = exports.FETCH_ORDERS_ERROR = 'FETCH_ORDERS_ERROR';
+	var COMPLETE_ORDER = exports.COMPLETE_ORDER = 'COMPLETE_ORDER';
 
-	function fetchOrdersSuccess(response) {
-	    return {
-	        type: FETCH_ORDERS_SUCCESS,
-	        orders: response
-	    };
-	}
-
-	function fetchOrdersError(err) {
-	    return {
-	        type: FETCH_ORDERS_ERROR,
-	        payload: err
-	    };
-	}
-
-	function fetchOrders() {
-	    console.log('fetch orders called');
+	var fetchOrders = exports.fetchOrders = function fetchOrders() {
 	    return function (dispatch) {
-	        _axios2.default.get('/api/orders').then(function (response) {
-	            dispatch(fetchOrdersSuccess(response));
+	        _axios2.default.get('/api/orders').then(function (res) {
+	            dispatch({
+	                type: FETCH_ORDERS_SUCCESS,
+	                orders: res
+	            });
 	        }).catch(function (err) {
-	            console.log(err);
-	            dispatch(fetchOrdersError(err));
+	            dispatch({
+	                type: FETCH_ORDERS_ERROR,
+	                payload: err
+	            });
 	        });
 	    };
-	}
+	};
+
+	var completeOrder = exports.completeOrder = function completeOrder(orderId) {
+	    return function (dispatch) {
+	        _axios2.default.put('/api/orders/' + orderId).then(function (res) {
+	            dispatch({
+	                type: COMPLETE_ORDER,
+	                order: res
+	            });
+	        });
+	    };
+	};
 
 /***/ },
 /* 253 */
@@ -28648,6 +28662,8 @@
 	        case _index.FETCH_ORDERS_SUCCESS:
 	            return action.orders.data;
 	        case _index.FETCH_ORDERS_ERROR:
+	            return state;
+	        case _index.COMPLETE_ORDER:
 	            return state;
 	        default:
 	            return state;

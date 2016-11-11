@@ -8,7 +8,8 @@ var OrdersContainer = React.createClass({
         orders: React.PropTypes.oneOfType([
             React.PropTypes.object,
             React.PropTypes.array
-        ])
+        ]),
+        completeOrder: React.PropTypes.func
     },
 
     render: function() {
@@ -22,7 +23,8 @@ var OrdersContainer = React.createClass({
                 function(order) {
                     return <BAOrder
                                 key={order._id}
-                                order={order} />
+                                order={order}
+                                completeOrder={this.props.completeOrder} />
             }, this);
 
             return (

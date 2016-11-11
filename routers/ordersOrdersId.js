@@ -11,6 +11,7 @@ app.put('/orders/:order_id', jsonParser, function(req, res) {
         } else {
             res.json(order);
             console.log(order);
+            res.status(200);
         }
     })
 })

@@ -2,7 +2,7 @@ import React from 'react'
 import sass from './business-admin-view.scss'
 import OrdersContainer from '../OrdersContainer/OrdersContainer'
 import { connect } from 'react-redux'
-import { fetchOrders } from '../../../actions/index'
+import { fetchOrders, completeOrder } from '../../../actions/index'
 import { bindActionCreators } from 'redux'
 
 var BusinessAdminView = React.createClass({
@@ -11,7 +11,9 @@ var BusinessAdminView = React.createClass({
         orders: React.PropTypes.oneOfType([
             React.PropTypes.object,
             React.PropTypes.array
-        ])
+        ]),
+        fetchOrders: React.PropTypes.func,
+        completeOrders: React.PropTypes.func
     },
 
     componentWillMount: function() {
@@ -25,7 +27,8 @@ var BusinessAdminView = React.createClass({
                     <div className='ba-view-wrap'>
                         <h1>Today's Orders</h1>
                         <OrdersContainer
-                        orders={this.props.orders} />
+                        orders={this.props.orders}
+                        completeOrder={this.props.completeOrder} />
                     </div>
                 </div>
             )
@@ -42,7 +45,7 @@ function mapStateToProps(state) {
 // anything returned from this function will end up as props on the BusinessAdminView container
 function mapDispatchToProps(dispatch) {
     // bindActionCreators and dispatch: takes whatever is returned from fetchOrders and makes sure it gets pushed to all the reducers
-    return bindActionCreators({ fetchOrders }, dispatch)
+    return bindActionCreators({ fetchOrders, completeOrder }, dispatch)
 }
 
 // promote BusinessAdminView from component to container. It needs to know about this new dispatch method, fetchOrders. Make it available as a prop
