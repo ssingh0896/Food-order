@@ -26,6 +26,7 @@ app.post('/orders', jsonParser, function(req, res) {
 app.delete('/orders', jsonParser, function(req, res) {
     Orders.remove({}, function(err) {
         console.log('collection removed');
+        res.json('collection removed')
         res.status(200);
     });
 })

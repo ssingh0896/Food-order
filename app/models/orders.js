@@ -11,7 +11,8 @@ var orderSchema = mongoose.Schema({
     date: String,
     time: String,
     timeUntilArrival: String,
-    timeSelectedForPickup: String
+    timeSelectedForPickup: String,
+    completed: Boolean
 });
 
 var Orders = mongoose.model('Order', orderSchema);

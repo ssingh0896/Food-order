@@ -20,15 +20,15 @@ var BusinessAdminView = React.createClass({
     },
 
     render: function() {
-        return (
-            <div className="ba-view-container">
-                <div className='ba-view-wrap'>
-                    <h1>Today's Orders</h1>
-                    <OrdersContainer
-                    orders={this.props.orders} />
+            return (
+                <div className="ba-view-container">
+                    <div className='ba-view-wrap'>
+                        <h1>Today's Orders</h1>
+                        <OrdersContainer
+                        orders={this.props.orders} />
+                    </div>
                 </div>
-            </div>
-        )
+            )
     }
 })
 

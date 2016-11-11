@@ -235,7 +235,8 @@ var App = React.createClass({
                 date: date,
                 time: time,
                 timeUntilArrival: this.state.duration,
-                timeSelectedForPickup: this.state.pickupTime
+                timeSelectedForPickup: this.state.pickupTime,
+                completed: false
             })
             .end(function(err, res){
                 console.log(err);

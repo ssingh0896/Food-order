@@ -6,7 +6,6 @@ var read = function(filter, callback) {
             console.error("Could not read snippet");
             return;
         }
-        console.log("Read list of orders:", listOfOrders);
         callback(null, listOfOrders);
     });
 };
