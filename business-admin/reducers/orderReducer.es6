@@ -7,7 +7,13 @@ const orderReducer = (state=null, action) => {
     case FETCH_ORDERS_ERROR:
         return state;
     case COMPLETE_ORDER:
-        return state;
+        return state.map(function(order) {
+            if (order._id === action.orderId) {
+                order.complete = true;
+                return order;
+            }
+            return order;
+        })
     default:
         return state;
   }

@@ -13,6 +13,7 @@ ReactDOM.render(
     document.getElementById('root')
 )
 
+// build orderReducer for COMPLETE_ORDER
 
 // list orders by time until arrival
 // be able to check off order as complete

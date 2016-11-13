@@ -28,7 +28,7 @@ export const completeOrder = (orderId) => {
             .then((res) => {
                 dispatch({
                     type: COMPLETE_ORDER,
-                    order: res
+                    orderId: orderId
                 })
             })
     }

@@ -78,6 +78,8 @@
 	    _react2.default.createElement(_reactRouter.Router, { history: _reactRouter.browserHistory, routes: _routes2.default })
 	), document.getElementById('root'));
 
+	// build orderReducer for COMPLETE_ORDER
+
 	// list orders by time until arrival
 	// be able to check off order as complete
 	// render out order details, create dropdown menu thing for larger orders
@@ -27109,7 +27111,7 @@
 	        _axios2.default.put('/api/orders/' + orderId).then(function (res) {
 	            dispatch({
 	                type: COMPLETE_ORDER,
-	                order: res
+	                orderId: orderId
 	            });
 	        });
 	    };
@@ -28664,7 +28666,13 @@
 	        case _index.FETCH_ORDERS_ERROR:
 	            return state;
 	        case _index.COMPLETE_ORDER:
-	            return state;
+	            return state.map(function (order) {
+	                if (order._id === action.orderId) {
+	                    order.complete = true;
+	                    return order;
+	                }
+	                return order;
+	            });
 	        default:
 	            return state;
 	    }
