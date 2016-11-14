@@ -9,7 +9,7 @@ const orderReducer = (state=null, action) => {
     case COMPLETE_ORDER:
         return state.map(function(order) {
             if (order._id === action.orderId) {
-                order.complete = true;
+                order.completed = true;
                 return order;
             }
             return order;

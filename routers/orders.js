@@ -31,4 +31,26 @@ app.delete('/orders', jsonParser, function(req, res) {
     });
 })
 
+// app.patch('/orders', jsonParser, function(req, res) {
+//     Orders.find({}, function (err, listOfOrders) {
+//         if (err) {
+//             console.log(err);
+//         }
+//
+//         console.log(listOfOrders);
+//         listOfOrders.forEach(function(order) {
+//             order.completed = false;
+//         });
+//         listOfOrders.save(function(err, result) {
+//             if (err) {
+//                 console.log(err);
+//             }
+//
+//             res.status(200);
+//             res.json('all orders marked incomplete')
+//         })
+//
+//     });
+// })
+
 module.exports = app;

@@ -25418,6 +25418,23 @@
 	            console.log(err);
 	            console.log(res);
 	        });
+	        this._handleStateClear();
+	    },
+
+	    _handleStateClear: function _handleStateClear() {
+	        this.setState({
+	            items: [],
+	            specialInstructions: '',
+	            methodOfTrans: '',
+	            favorite: false,
+	            paymentInfo: {
+	                nameOnCard: '',
+	                cardNumber: undefined,
+	                expMonth: '',
+	                expYear: '',
+	                cvv: undefined
+	            }
+	        });
 	    },
 
 	    _handlePreviousOrders: function _handlePreviousOrders() {

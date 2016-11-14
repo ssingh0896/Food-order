@@ -24,7 +24,7 @@ export const fetchOrders = () => {
 
 export const completeOrder = (orderId) => {
     return function(dispatch) {
-        axios.put('/api/orders/' + orderId)
+        axios.patch('/api/orders/' + orderId)
             .then((res) => {
                 dispatch({
                     type: COMPLETE_ORDER,

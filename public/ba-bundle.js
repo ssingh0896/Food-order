@@ -27093,7 +27093,7 @@
 
 
 	// module
-	exports.push([module.id, ".ba-order-complete {\n  background: #B5BEC2 !important; }\n\n.ba-order {\n  width: 100%;\n  background: #fff;\n  border-bottom: 2px solid #b5bec2;\n  margin: 0 auto 1em auto;\n  border-radius: 5px;\n  padding: 0.75em 0.75em 0.75em 0.75em; }\n  .ba-order .ba-order-left {\n    display: block;\n    padding-bottom: 0.5em;\n    width: 100%; }\n    .ba-order .ba-order-left h2 {\n      display: inline-block;\n      padding: 0em 0.5em 0 0;\n      font-size: 1.5em;\n      color: #1c2024;\n      margin-bottom: 0.5em; }\n    .ba-order .ba-order-left p {\n      display: inline-block;\n      padding: 0em;\n      font-size: 0.9em;\n      margin: 0;\n      color: #1c2024; }\n    .ba-order .ba-order-left .special-instructions {\n      font-size: 0.9em; }\n  .ba-order .ba-order-right {\n    text-align: left;\n    border-top: 1px solid #1C2024;\n    width: 100%;\n    padding-top: 0.5em; }\n    .ba-order .ba-order-right p {\n      margin: 0em 0 1.75em 0;\n      color: #1c2024; }\n      .ba-order .ba-order-right p .ba-order-time {\n        font-size: 1.5em; }\n    .ba-order .ba-order-right button {\n      width: 100%;\n      margin: 0 auto;\n      border: none;\n      background: #40B284;\n      padding: 0.3em 1.3em;\n      border-radius: 10px;\n      color: #fff;\n      font-size: 1em; }\n      .ba-order .ba-order-right button .fa-check-circle {\n        vertical-align: middle;\n        padding-left: 0.4em; }\n\n@media screen and (min-width: 500px) {\n  .ba-order {\n    width: 25em;\n    position: relative; }\n    .ba-order .ba-order-left, .ba-order .ba-order-right {\n      display: inline-block;\n      vertical-align: top; }\n    .ba-order .ba-order-left {\n      width: 58%; }\n    .ba-order .ba-order-right {\n      width: 42%;\n      border: none;\n      height: 100%;\n      padding-top: 0; }\n      .ba-order .ba-order-right p {\n        float: right; }\n      .ba-order .ba-order-right button {\n        width: 10em;\n        float: right;\n        vertical-align: bottom;\n        position: absolute;\n        bottom: 1em;\n        right: 0.75em; } }\n", ""]);
+	exports.push([module.id, ".ba-order-complete {\n  background: #B5BEC2 !important; }\n\n.ba-order {\n  width: 100%;\n  background: #fff;\n  border-bottom: 2px solid #b5bec2;\n  margin: 0 auto 1em auto;\n  border-radius: 5px;\n  padding: 0.75em 0.75em 0.75em 0.75em; }\n  .ba-order .ba-order-left {\n    display: block;\n    padding-bottom: 0.5em;\n    width: 100%; }\n    .ba-order .ba-order-left h2 {\n      display: inline-block;\n      padding: 0em 0.5em 0 0;\n      font-size: 1.5em;\n      color: #1c2024;\n      margin-bottom: 0.5em; }\n    .ba-order .ba-order-left p {\n      display: inline-block;\n      padding: 0em;\n      font-size: 0.85em;\n      margin: 0;\n      color: #1c2024; }\n    .ba-order .ba-order-left .special-instructions {\n      font-size: 0.9em; }\n  .ba-order .ba-order-right {\n    text-align: left;\n    border-top: 1px solid #1C2024;\n    width: 100%;\n    padding-top: 0.5em; }\n    .ba-order .ba-order-right p {\n      margin: 0em 0 1.75em 0;\n      color: #1c2024; }\n      .ba-order .ba-order-right p .ba-order-time {\n        font-size: 1.5em; }\n    .ba-order .ba-order-right button {\n      width: 100%;\n      margin: 0 auto;\n      border: none;\n      background: #40B284;\n      padding: 0.3em 1.3em;\n      border-radius: 10px;\n      color: #fff;\n      font-size: 1em; }\n      .ba-order .ba-order-right button .fa-check-circle {\n        vertical-align: middle;\n        padding-left: 0.4em; }\n\n@media screen and (min-width: 500px) {\n  .ba-order {\n    width: 25em;\n    position: relative; }\n    .ba-order .ba-order-left, .ba-order .ba-order-right {\n      display: inline-block;\n      vertical-align: top; }\n    .ba-order .ba-order-left {\n      width: 58%; }\n    .ba-order .ba-order-right {\n      width: 42%;\n      border: none;\n      height: 100%;\n      padding-top: 0; }\n      .ba-order .ba-order-right p {\n        float: right; }\n      .ba-order .ba-order-right button {\n        width: 10em;\n        float: right;\n        vertical-align: bottom;\n        position: absolute;\n        bottom: 1em;\n        right: 0.75em; } }\n", ""]);
 
 	// exports
 
@@ -27137,7 +27137,7 @@
 
 	var completeOrder = exports.completeOrder = function completeOrder(orderId) {
 	    return function (dispatch) {
-	        _axios2.default.put('/api/orders/' + orderId).then(function (res) {
+	        _axios2.default.patch('/api/orders/' + orderId).then(function (res) {
 	            dispatch({
 	                type: COMPLETE_ORDER,
 	                orderId: orderId
@@ -28697,7 +28697,7 @@
 	        case _index.COMPLETE_ORDER:
 	            return state.map(function (order) {
 	                if (order._id === action.orderId) {
-	                    order.complete = true;
+	                    order.completed = true;
 	                    return order;
 	                }
 	                return order;
