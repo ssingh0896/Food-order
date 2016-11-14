@@ -26873,7 +26873,12 @@
 	                )
 	            );
 	        } else {
-	            var orders = this.props.orders.map(function (order) {
+
+	            var filteredOrders = this.props.orders.filter(function (order) {
+	                return order.completed === false;
+	            });
+
+	            var orders = filteredOrders.map(function (order) {
 	                return _react2.default.createElement(_BAOrder2.default, {
 	                    key: order._id,
 	                    order: order,

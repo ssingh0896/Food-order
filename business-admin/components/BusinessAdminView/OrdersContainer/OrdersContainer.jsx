@@ -22,7 +22,14 @@ var OrdersContainer = React.createClass({
                 </div>
             )
         } else {
-            var orders = this.props.orders.map(
+
+            var filteredOrders = this.props.orders.filter(
+                function(order) {
+                    return order.completed === false;
+                }
+            )
+
+            var orders = filteredOrders.map(
                 function(order) {
                     return <BAOrder
                                 key={order._id}
