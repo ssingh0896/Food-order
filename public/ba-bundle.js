@@ -26865,7 +26865,12 @@
 	            return _react2.default.createElement(
 	                'div',
 	                null,
-	                'loading'
+	                _react2.default.createElement('i', { className: 'fa fa-cog fa-spin fa-3x fa-fw' }),
+	                _react2.default.createElement(
+	                    'span',
+	                    { className: 'sr-only' },
+	                    'Loading...'
+	                )
 	            );
 	        } else {
 	            var orders = this.props.orders.map(function (order) {
@@ -26960,8 +26965,9 @@
 	                milkType: _react2.default.PropTypes.string,
 	                price: _react2.default.PropTypes.number,
 	                quantity: _react2.default.PropTypes.string,
-	                size: _react2.default.PropTypes.string
-
+	                size: _react2.default.PropTypes.string,
+	                decaf: _react2.default.PropTypes.boolean,
+	                hotOrCold: _react2.default.PropTypes.string
 	            })),
 	            specialInstructions: _react2.default.PropTypes.string,
 	            time: _react2.default.PropTypes.string,
@@ -30441,7 +30447,9 @@
 	            milkType: _react2.default.PropTypes.string,
 	            price: _react2.default.PropTypes.number,
 	            quantity: _react2.default.PropTypes.string,
-	            size: _react2.default.PropTypes.string
+	            size: _react2.default.PropTypes.string,
+	            decaf: _react2.default.PropTypes.boolean,
+	            hotOrCold: _react2.default.PropTypes.string
 	        })
 	    },
 
@@ -30465,6 +30473,28 @@
 	            );
 	        }
 
+	        if (this.props.item.decaf) {
+	            var decaf = _react2.default.createElement(
+	                'div',
+	                { className: 'item-decaf' },
+	                '• Decaf'
+	            );
+	        }
+
+	        if (this.props.item.hotOrCold === 'hot') {
+	            var hotOrCold = _react2.default.createElement(
+	                'div',
+	                { className: 'item-hot-or-cold' },
+	                '• Hot'
+	            );
+	        } else if (this.props.item.hotOrCold === 'cold') {
+	            var hotOrCold = _react2.default.createElement(
+	                'div',
+	                { className: 'item-hot-or-cold' },
+	                '• Cold'
+	            );
+	        }
+
 	        return _react2.default.createElement(
 	            'div',
 	            { className: 'ba-order-details-container' },
@@ -30479,7 +30509,9 @@
 	                this.props.item.itemName
 	            ),
 	            itemSize,
-	            milkType
+	            milkType,
+	            decaf,
+	            hotOrCold
 	        );
 	    }
 	});
@@ -30521,7 +30553,7 @@
 
 
 	// module
-	exports.push([module.id, ".ba-order-details-container {\n  padding: 0.2em 0 0.75em 0;\n  border-top: 1px dotted #B5BEC2; }\n  .ba-order-details-container:last-child {\n    padding-bottom: 0; }\n  .ba-order-details-container .item-name {\n    padding-right: 1em;\n    padding-left: 1em;\n    color: #2c7a5a;\n    font-size: 0.9em; }\n  .ba-order-details-container .item-size, .ba-order-details-container .item-milk-type {\n    color: #5f6d7a;\n    font-size: 0.9em;\n    padding-left: 1.7em; }\n", ""]);
+	exports.push([module.id, ".ba-order-details-container {\n  padding: 0.2em 0 0.75em 0;\n  border-top: 1px dotted #B5BEC2; }\n  .ba-order-details-container:last-child {\n    padding-bottom: 0; }\n  .ba-order-details-container .item-name {\n    padding-right: 1em;\n    padding-left: 1em;\n    color: #2c7a5a;\n    font-size: 0.9em; }\n  .ba-order-details-container .item-size, .ba-order-details-container .item-milk-type, .ba-order-details-container .item-decaf, .ba-order-details-container .item-hot-or-cold {\n    color: #5f6d7a;\n    font-size: 0.9em;\n    padding-left: 1.7em; }\n", ""]);
 
 	// exports
 

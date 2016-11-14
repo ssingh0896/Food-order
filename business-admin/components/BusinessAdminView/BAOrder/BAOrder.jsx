@@ -15,7 +15,8 @@ var BAOrder = React.createClass({
                 price: React.PropTypes.number,
                 quantity: React.PropTypes.string,
                 size: React.PropTypes.string,
-
+                decaf: React.PropTypes.boolean,
+                hotOrCold: React.PropTypes.string
             })),
             specialInstructions: React.PropTypes.string,
             time: React.PropTypes.string,
