@@ -13,8 +13,8 @@ ReactDOM.render(
     document.getElementById('root')
 )
 
-// build orderReducer for COMPLETE_ORDER
-
+// clear specialInstructions state after order is placed
+// decaf/hot or cold option on BAOrderDetails
 // list orders by time until arrival
 // be able to check off order as complete
 // render out order details, create dropdown menu thing for larger orders
