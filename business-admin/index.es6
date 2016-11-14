@@ -13,15 +13,15 @@ ReactDOM.render(
     document.getElementById('root')
 )
 
-// clear specialInstructions state after order is placed
-// decaf/hot or cold option on BAOrderDetails
+
+
 // list orders by time until arrival
-// be able to check off order as complete
-// render out order details, create dropdown menu thing for larger orders
-// make order page responsive
+
 // create timer based on time until arrival that counts down and then renders 'customer is here' when it hits 0:00
 // create responsive navigation
 // add email or text notification options for user on consumer side
+// create upcoming orders and 'triggered orders' sections
+// create notification and 'ding' sound when order comes in
 
 
 // Create previous orders page -- all completed orders

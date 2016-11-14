@@ -22,10 +22,42 @@ var BAOrder = React.createClass({
             time: React.PropTypes.string,
             timeSelectedForPickup: React.PropTypes.string,
             timeUntilArrival: React.PropTypes.string,
+            secondsUntilArrival: React.PropTypes.number,
             username: React.PropTypes.string,
             completed: React.PropTypes.bool
         }),
         completeOrder: React.PropTypes.func
+    },
+
+    getInitialState: function() {
+        return {
+            secondsUntilArrival: undefined
+        }
+    },
+
+    componentWillMount: function() {
+        this._handleCountDown(this.props.order.secondsUntilArrival)
+    },
+
+    _handleCountDown: function(secs) {
+        var countDown;
+        function secondHandler(countDown) {
+            this.setState({
+                secondsUntilArrival: countDown
+            }).bind(this)
+        }
+
+        setInterval(function() {
+            secs--;
+            countDown = secs;
+            secondHandler(countDown);
+        }, 1000)
+    },
+
+    _handleSetSecondsToState: function(countDown) {
+        console.log('im working');
+
+        console.log(this.state.secondsUntilArrival);
     },
 
     _handleCompleteOrder: function() {
@@ -54,7 +86,12 @@ var BAOrder = React.createClass({
                         {specialInstructions}
                     </div>
                     <div className="ba-order-right">
-                        <p>ETA: <span className="ba-order-time">{this.props.order.timeUntilArrival ? this.props.order.timeUntilArrival : this.props.order.timeSelectedForPickup}</span></p>
+                        <p>ETA:
+                            {/* <span className="ba-order-time">{this.props.order.timeUntilArrival ?
+                             this.props.order.timeUntilArrival
+                             : this.props.order.timeSelectedForPickup}
+                             </span> */}
+                         </p>
                         <button onClick={this._handleCompleteOrder}>
                             Complete
                             <i className="fa fa-check-circle fa-2x" aria-hidden="true"></i>

@@ -25221,6 +25221,7 @@
 	            },
 	            distance: '',
 	            duration: '',
+	            durationSeconds: undefined,
 	            items: [],
 	            specialInstructions: '',
 	            notification: {
@@ -25390,9 +25391,11 @@
 	    },
 
 	    _handleDistanceAndDuration: function _handleDistanceAndDuration(response) {
+	        console.log(response);
 	        this.setState({
 	            distance: response.rows[0].elements[0].distance.text,
-	            duration: response.rows[0].elements[0].duration.text
+	            duration: response.rows[0].elements[0].duration.text,
+	            durationSeconds: response.rows[0].elements[0].duration.value
 	        });
 	    },
 
@@ -25412,6 +25415,7 @@
 	            date: date,
 	            time: time,
 	            timeUntilArrival: this.state.duration,
+	            secondsUntilArrival: this.state.durationSeconds,
 	            timeSelectedForPickup: this.state.pickupTime,
 	            completed: false
 	        }).end(function (err, res) {

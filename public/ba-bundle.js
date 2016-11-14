@@ -78,15 +78,13 @@
 	    _react2.default.createElement(_reactRouter.Router, { history: _reactRouter.browserHistory, routes: _routes2.default })
 	), document.getElementById('root'));
 
-	// clear specialInstructions state after order is placed
-	// decaf/hot or cold option on BAOrderDetails
 	// list orders by time until arrival
-	// be able to check off order as complete
-	// render out order details, create dropdown menu thing for larger orders
-	// make order page responsive
+
 	// create timer based on time until arrival that counts down and then renders 'customer is here' when it hits 0:00
 	// create responsive navigation
 	// add email or text notification options for user on consumer side
+	// create upcoming orders and 'triggered orders' sections
+	// create notification and 'ding' sound when order comes in
 
 	// Create previous orders page -- all completed orders
 
@@ -26978,10 +26976,42 @@
 	            time: _react2.default.PropTypes.string,
 	            timeSelectedForPickup: _react2.default.PropTypes.string,
 	            timeUntilArrival: _react2.default.PropTypes.string,
+	            secondsUntilArrival: _react2.default.PropTypes.number,
 	            username: _react2.default.PropTypes.string,
 	            completed: _react2.default.PropTypes.bool
 	        }),
 	        completeOrder: _react2.default.PropTypes.func
+	    },
+
+	    getInitialState: function getInitialState() {
+	        return {
+	            secondsUntilArrival: undefined
+	        };
+	    },
+
+	    componentWillMount: function componentWillMount() {
+	        this._handleCountDown(this.props.order.secondsUntilArrival);
+	    },
+
+	    _handleCountDown: function _handleCountDown(secs) {
+	        var countDown;
+	        function secondHandler(countDown) {
+	            this.setState({
+	                secondsUntilArrival: countDown
+	            }).bind(this);
+	        }
+
+	        setInterval(function () {
+	            secs--;
+	            countDown = secs;
+	            secondHandler(countDown);
+	        }, 1000);
+	    },
+
+	    _handleSetSecondsToState: function _handleSetSecondsToState(countDown) {
+	        console.log('im working');
+
+	        console.log(this.state.secondsUntilArrival);
 	    },
 
 	    _handleCompleteOrder: function _handleCompleteOrder() {
@@ -27037,12 +27067,7 @@
 	                    _react2.default.createElement(
 	                        'p',
 	                        null,
-	                        'ETA: ',
-	                        _react2.default.createElement(
-	                            'span',
-	                            { className: 'ba-order-time' },
-	                            this.props.order.timeUntilArrival ? this.props.order.timeUntilArrival : this.props.order.timeSelectedForPickup
-	                        )
+	                        'ETA:'
 	                    ),
 	                    _react2.default.createElement(
 	                        'button',
@@ -30558,7 +30583,7 @@
 
 
 	// module
-	exports.push([module.id, ".ba-order-details-container {\n  padding: 0.2em 0 0.75em 0;\n  border-top: 1px dotted #B5BEC2; }\n  .ba-order-details-container:last-child {\n    padding-bottom: 0; }\n  .ba-order-details-container .item-name {\n    padding-right: 1em;\n    padding-left: 1em;\n    color: #2c7a5a;\n    font-size: 0.9em; }\n  .ba-order-details-container .item-size, .ba-order-details-container .item-milk-type, .ba-order-details-container .item-decaf, .ba-order-details-container .item-hot-or-cold {\n    color: #5f6d7a;\n    font-size: 0.9em;\n    padding-left: 1.7em; }\n", ""]);
+	exports.push([module.id, ".ba-order-details-container {\n  padding: 0.2em 0 0.75em 0;\n  border-top: 1px dotted #B5BEC2; }\n  .ba-order-details-container:last-child {\n    padding-bottom: 0; }\n  .ba-order-details-container .item-name {\n    padding-right: 1em;\n    padding-left: 1em;\n    color: #2c7a5a;\n    font-size: 0.9em; }\n  .ba-order-details-container .item-quantity {\n    font-size: 0.9em; }\n  .ba-order-details-container .item-size, .ba-order-details-container .item-milk-type, .ba-order-details-container .item-decaf, .ba-order-details-container .item-hot-or-cold {\n    color: #5f6d7a;\n    font-size: 0.9em;\n    padding-left: 1.7em; }\n", ""]);
 
 	// exports
 

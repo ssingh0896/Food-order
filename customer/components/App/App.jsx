@@ -27,6 +27,7 @@ var App = React.createClass({
             },
             distance: '',
             duration: '',
+            durationSeconds: undefined,
             items: [],
             specialInstructions: '',
             notification: {
@@ -211,9 +212,11 @@ var App = React.createClass({
 
 
     _handleDistanceAndDuration: function(response) {
+        console.log(response);
         this.setState({
             distance: response.rows[0].elements[0].distance.text,
-            duration: response.rows[0].elements[0].duration.text
+            duration: response.rows[0].elements[0].duration.text,
+            durationSeconds: response.rows[0].elements[0].duration.value
         })
     },
 
@@ -235,6 +238,7 @@ var App = React.createClass({
                 date: date,
                 time: time,
                 timeUntilArrival: this.state.duration,
+                secondsUntilArrival: this.state.durationSeconds,
                 timeSelectedForPickup: this.state.pickupTime,
                 completed: false
             })
