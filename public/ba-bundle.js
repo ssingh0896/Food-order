@@ -78,14 +78,14 @@
 	    _react2.default.createElement(_reactRouter.Router, { history: _reactRouter.browserHistory, routes: _routes2.default })
 	), document.getElementById('root'));
 
-	// list orders by time until arrival
+	// create notification and 'ding' sound when order comes in
 	// timer for orders placed at pickup time
 	// create timer based on time until arrival that counts down and then renders 'customer is here' when it hits 0:00
 	// create responsive navigation
 	// add email or text notification options for user on consumer side
 	// create upcoming orders and 'triggered orders' sections
-	// create notification and 'ding' sound when order comes in
 	// create notification animation thing when an order is completed, or animation of order being removed
+	// add select time component to additional info so it only displays times in the future
 
 	// Create previous orders page -- all completed orders
 

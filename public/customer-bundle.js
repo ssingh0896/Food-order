@@ -25232,6 +25232,7 @@
 	                additionalInfo: false
 	            },
 	            methodOfTrans: '',
+	            methodOfTransShow: true,
 	            pickupTime: 'true',
 	            favorite: false,
 	            paymentInfo: {
@@ -25468,6 +25469,15 @@
 	        this.setState({
 	            pickupTime: newValue
 	        });
+	        if (newValue === 'true') {
+	            this.setState({
+	                methodOfTransShow: true
+	            });
+	        } else if (newValue !== true) {
+	            this.setState({
+	                methodOfTransShow: false
+	            });
+	        }
 	    },
 
 	    _handleFavorite: function _handleFavorite() {
@@ -25634,6 +25644,12 @@
 	        });
 	    },
 
+	    _handleMethodOfTransShow: function _handleMethodOfTransShow() {
+	        this.setState({
+	            methodOfTransShow: false
+	        });
+	    },
+
 	    render: function render() {
 	        var _this9 = this;
 
@@ -25767,6 +25783,8 @@
 	                    handleClearItemsFromOrder: this._handleClearItemsFromOrder,
 	                    handleMethodOfTrans: this._handleMethodOfTrans,
 	                    methodOfTrans: this.state.methodOfTrans,
+	                    methodOfTransShow: this.state.methodOfTransShow,
+	                    handleMethodOfTransShow: this._handleMethodOfTransShow,
 	                    handlePickupTime: this._handlePickupTime,
 	                    pickupTime: this.state.pickupTime,
 	                    handleFavorite: this._handleFavorite,
@@ -60748,7 +60766,8 @@
 	        expYear: _react2.default.PropTypes.string,
 	        handleCCCVV: _react2.default.PropTypes.func,
 	        toggleAdditionalInfoNotification: _react2.default.PropTypes.func,
-	        methodOfTrans: _react2.default.PropTypes.string
+	        methodOfTrans: _react2.default.PropTypes.string,
+	        methodOfTransShow: _react2.default.PropTypes.bool
 	    },
 
 	    render: function render() {
@@ -60801,11 +60820,13 @@
 	                _react2.default.createElement(
 	                    'form',
 	                    null,
-	                    _react2.default.createElement(_SelectMethodOfTrans2.default, {
-	                        handleMethodOfTrans: this.props.handleMethodOfTrans }),
 	                    _react2.default.createElement(_SelectPickUpTime2.default, {
 	                        handlePickupTime: this.props.handlePickupTime,
+	                        handleMethodOfTransShow: this.props.handleMethodOfTransShow,
 	                        value: this.props.pickupTime || 'true' }),
+	                    _react2.default.createElement(_SelectMethodOfTrans2.default, {
+	                        handleMethodOfTrans: this.props.handleMethodOfTrans,
+	                        methodOfTransShow: this.props.methodOfTransShow }),
 	                    _react2.default.createElement(_SelectIfFavorite2.default, {
 	                        handleFavorite: this.props.handleFavorite,
 	                        value: this.props.favorite || false }),
@@ -60852,13 +60873,14 @@
 
 
 	    propTypes: {
-	        handleMethodOfTrans: _react2.default.PropTypes.func
+	        handleMethodOfTrans: _react2.default.PropTypes.func,
+	        methodOfTransShow: _react2.default.PropTypes.bool
 	    },
 
 	    render: function render() {
 	        return _react2.default.createElement(
 	            'div',
-	            { className: 'method-of-trans-container' },
+	            { className: this.props.methodOfTransShow ? 'method-of-trans-container' : 'method-of-trans-container method-of-trans-container-hide' },
 	            _react2.default.createElement(
 	                'h2',
 	                null,
@@ -60944,7 +60966,7 @@
 
 
 	// module
-	exports.push([module.id, "@media only screen and (min-width: 600px) {\n  .method-of-trans-container {\n    width: 28em;\n    margin: 0 auto 1em auto; } }\n\n@media only screen and (max-width: 599px) {\n  .method-of-trans-container {\n    width: 90%;\n    margin: 0 auto 1em auto; } }\n\n.method-of-trans-container {\n  text-align: center;\n  padding: 0.75em 0.75em 1em 0.75em;\n  border: 1px solid #E4E4E4;\n  border-radius: 3px;\n  background: #fff;\n  box-shadow: #999999 0px 1px; }\n  .method-of-trans-container h2 {\n    font-size: 1.2em;\n    text-align: left; }\n  .method-of-trans-container p {\n    padding-top: 3.5em; }\n\n.method-of-trans-label {\n  display: inline-block;\n  width: 5em;\n  height: 3em;\n  background: #fff;\n  margin: 1em;\n  padding: 1em 1em 3em 1em;\n  color: #cbcbcb;\n  border: 2px solid #cbcbcb;\n  text-align: center;\n  border-radius: 50%;\n  cursor: pointer; }\n  .method-of-trans-label .fa-male {\n    display: block; }\n\ninput.method-of-trans-input {\n  display: none;\n  margin: 10px; }\n  input.method-of-trans-input:checked + label {\n    background: #3FB083;\n    border: 2px solid #3FB083;\n    color: #fff; }\n", ""]);
+	exports.push([module.id, "@media only screen and (min-width: 600px) {\n  .method-of-trans-container {\n    width: 28em;\n    margin: 0 auto 1em auto; } }\n\n@media only screen and (max-width: 599px) {\n  .method-of-trans-container {\n    width: 90%;\n    margin: 0 auto 1em auto; } }\n\n.method-of-trans-container-hide {\n  display: none; }\n\n.method-of-trans-container {\n  text-align: center;\n  padding: 0.75em 0.75em 1em 0.75em;\n  border: 1px solid #E4E4E4;\n  border-radius: 3px;\n  background: #fff;\n  box-shadow: #999999 0px 1px; }\n  .method-of-trans-container h2 {\n    font-size: 1.2em;\n    text-align: left; }\n  .method-of-trans-container p {\n    padding-top: 3.5em; }\n\n.method-of-trans-label {\n  display: inline-block;\n  width: 5em;\n  height: 3em;\n  background: #fff;\n  margin: 1em;\n  padding: 1em 1em 3em 1em;\n  color: #cbcbcb;\n  border: 2px solid #cbcbcb;\n  text-align: center;\n  border-radius: 50%;\n  cursor: pointer; }\n  .method-of-trans-label .fa-male {\n    display: block; }\n\ninput.method-of-trans-input {\n  display: none;\n  margin: 10px; }\n  input.method-of-trans-input:checked + label {\n    background: #3FB083;\n    border: 2px solid #3FB083;\n    color: #fff; }\n", ""]);
 
 	// exports
 
@@ -61218,7 +61240,7 @@
 
 
 	// module
-	exports.push([module.id, "@media only screen and (min-width: 600px) {\n  .select-pick-up-container {\n    width: 28em;\n    margin: 0 auto 1em auto; } }\n\n@media only screen and (max-width: 599px) {\n  .select-pick-up-container {\n    width: 90%;\n    margin: 0 auto 1em auto; } }\n\n.select-pick-up-container {\n  padding: 0.75em;\n  border: 1px solid #E4E4E4;\n  border-radius: 3px;\n  background: #fff;\n  box-shadow: #999999 0px 1px; }\n  .select-pick-up-container h2 {\n    margin: 0 0.25em 0.25em 0.25em;\n    padding-bottom: 0.75em;\n    font-size: 1.2em; }\n\n.select-pick-up-now {\n  margin-right: 4em;\n  display: inline-block; }\n\n.select-pick-up-time {\n  display: inline-block; }\n  .select-pick-up-time select {\n    display: inline-block;\n    -webkit-appearance: none;\n    -moz-appearance: none;\n    appearance: none;\n    padding: 0.3em 0.5em;\n    border-radius: 3px;\n    background: url(\"/img/down-arrow.png\") no-repeat #F8F8F8;\n    background-position: 85% 55%;\n    width: 6.5em;\n    margin-left: 0.5em; }\n    .select-pick-up-time select:hover {\n      cursor: pointer; }\n", ""]);
+	exports.push([module.id, "@media only screen and (min-width: 600px) {\n  .select-pick-up-container {\n    width: 28em;\n    margin: 0 auto 1em auto; } }\n\n@media only screen and (max-width: 599px) {\n  .select-pick-up-container {\n    width: 90%;\n    margin: 0 auto 1em auto; } }\n\n.select-pick-up-container {\n  padding: 0.75em;\n  border: 1px solid #E4E4E4;\n  border-radius: 3px;\n  background: #fff;\n  box-shadow: #999999 0px 1px; }\n  .select-pick-up-container h2 {\n    margin: 0 0.25em 0.25em 0em;\n    padding-bottom: 0.75em;\n    font-size: 1.2em; }\n\n.select-pick-up-now {\n  margin-right: 4em;\n  display: inline-block; }\n\n.select-pick-up-time {\n  display: inline-block; }\n  .select-pick-up-time select {\n    display: inline-block;\n    -webkit-appearance: none;\n    -moz-appearance: none;\n    appearance: none;\n    padding: 0.3em 0.5em;\n    border-radius: 3px;\n    background: url(\"/img/down-arrow.png\") no-repeat #F8F8F8;\n    background-position: 85% 55%;\n    width: 6.5em;\n    margin-left: 0.5em; }\n    .select-pick-up-time select:hover {\n      cursor: pointer; }\n", ""]);
 
 	// exports
 

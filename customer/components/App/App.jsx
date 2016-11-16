@@ -38,6 +38,7 @@ var App = React.createClass({
                 additionalInfo: false
             },
             methodOfTrans: '',
+            methodOfTransShow: true,
             pickupTime: 'true',
             favorite: false,
             paymentInfo: {
@@ -290,6 +291,15 @@ var App = React.createClass({
         this.setState({
             pickupTime: newValue
         })
+        if (newValue === 'true') {
+            this.setState({
+                methodOfTransShow: true
+            })
+        } else if (newValue !== true) {
+            this.setState({
+                methodOfTransShow: false
+            })
+        }
     },
 
     _handleFavorite: function() {
@@ -466,6 +476,12 @@ var App = React.createClass({
         });
     },
 
+    _handleMethodOfTransShow: function() {
+        this.setState({
+            methodOfTransShow: false
+        })
+    },
+
     render: function() {
         return (
             <div>
@@ -541,6 +557,8 @@ var App = React.createClass({
                              handleClearItemsFromOrder: this._handleClearItemsFromOrder,
                              handleMethodOfTrans: this._handleMethodOfTrans,
                              methodOfTrans: this.state.methodOfTrans,
+                             methodOfTransShow: this.state.methodOfTransShow,
+                             handleMethodOfTransShow: this._handleMethodOfTransShow,
                              handlePickupTime: this._handlePickupTime,
                              pickupTime: this.state.pickupTime,
                              handleFavorite: this._handleFavorite,

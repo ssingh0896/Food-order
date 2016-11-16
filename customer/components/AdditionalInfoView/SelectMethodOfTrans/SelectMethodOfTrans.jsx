@@ -4,12 +4,13 @@ import sass from './select-method-of-trans.scss'
 var SelectMethodOfTrans = React.createClass({
 
     propTypes: {
-        handleMethodOfTrans: React.PropTypes.func
+        handleMethodOfTrans: React.PropTypes.func,
+        methodOfTransShow: React.PropTypes.bool
     },
 
     render: function() {
         return (
-            <div className="method-of-trans-container">
+            <div className={this.props.methodOfTransShow ? 'method-of-trans-container' : 'method-of-trans-container method-of-trans-container-hide'}>
                 <h2>How will you get to the shop?</h2>
 
                         <input

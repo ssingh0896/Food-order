@@ -25,7 +25,8 @@ var AdditionalInfoView = React.createClass({
         expYear: React.PropTypes.string,
         handleCCCVV: React.PropTypes.func,
         toggleAdditionalInfoNotification: React.PropTypes.func,
-        methodOfTrans: React.PropTypes.string
+        methodOfTrans: React.PropTypes.string,
+        methodOfTransShow: React.PropTypes.bool
     },
 
     render: function() {
@@ -60,11 +61,13 @@ var AdditionalInfoView = React.createClass({
                     notification={this.props.notification} />
                 <div>
                     <form>
-                        <SelectMethodOfTrans
-                            handleMethodOfTrans={this.props.handleMethodOfTrans} />
                         <SelectPickUpTime
                             handlePickupTime={this.props.handlePickupTime}
+                            handleMethodOfTransShow={this.props.handleMethodOfTransShow}
                             value={this.props.pickupTime || 'true'} />
+                        <SelectMethodOfTrans
+                            handleMethodOfTrans={this.props.handleMethodOfTrans}
+                            methodOfTransShow={this.props.methodOfTransShow} />
                         <SelectIfFavorite
                             handleFavorite={this.props.handleFavorite}
                             value={this.props.favorite || false} />
