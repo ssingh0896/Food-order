@@ -1,6 +1,7 @@
 import React from 'react'
 import sass from './ba-order.scss'
 import BAOrderDetails from '../BAOrderDetails/BAOrderDetails'
+import Timer from '../Timer/Timer'
 
 var BAOrder = React.createClass({
 
@@ -29,36 +30,6 @@ var BAOrder = React.createClass({
         completeOrder: React.PropTypes.func
     },
 
-    getInitialState: function() {
-        return {
-            secondsUntilArrival: undefined
-        }
-    },
-
-    componentWillMount: function() {
-        this._handleCountDown(this.props.order.secondsUntilArrival)
-    },
-
-    _handleCountDown: function(secs) {
-        var countDown;
-        function secondHandler(countDown) {
-            this.setState({
-                secondsUntilArrival: countDown
-            }).bind(this)
-        }
-
-        setInterval(function() {
-            secs--;
-            countDown = secs;
-            secondHandler(countDown);
-        }, 1000)
-    },
-
-    _handleSetSecondsToState: function(countDown) {
-        console.log('im working');
-
-        console.log(this.state.secondsUntilArrival);
-    },
 
     _handleCompleteOrder: function() {
         this.props.completeOrder(this.props.order._id)
@@ -86,7 +57,9 @@ var BAOrder = React.createClass({
                         {specialInstructions}
                     </div>
                     <div className="ba-order-right">
-                        <p>ETA:
+                        <Timer
+                            secondsUntilArrival={this.props.order.secondsUntilArrival} />
+                         <p>ETA:
                             {/* <span className="ba-order-time">{this.props.order.timeUntilArrival ?
                              this.props.order.timeUntilArrival
                              : this.props.order.timeSelectedForPickup}

@@ -62,11 +62,11 @@
 
 	var _routes2 = _interopRequireDefault(_routes);
 
-	var _store = __webpack_require__(278);
+	var _store = __webpack_require__(284);
 
 	var _store2 = _interopRequireDefault(_store);
 
-	var _style = __webpack_require__(295);
+	var _style = __webpack_require__(301);
 
 	var _style2 = _interopRequireDefault(_style);
 
@@ -79,12 +79,13 @@
 	), document.getElementById('root'));
 
 	// list orders by time until arrival
-
+	// timer for orders placed at pickup time
 	// create timer based on time until arrival that counts down and then renders 'customer is here' when it hits 0:00
 	// create responsive navigation
 	// add email or text notification options for user on consumer side
 	// create upcoming orders and 'triggered orders' sections
 	// create notification and 'ding' sound when order comes in
+	// create notification animation thing when an order is completed
 
 	// Create previous orders page -- all completed orders
 
@@ -26421,7 +26422,7 @@
 
 	var _reactRedux = __webpack_require__(159);
 
-	var _index = __webpack_require__(252);
+	var _index = __webpack_require__(258);
 
 	var _redux = __webpack_require__(166);
 
@@ -26948,9 +26949,13 @@
 
 	var _baOrder2 = _interopRequireDefault(_baOrder);
 
-	var _BAOrderDetails = __webpack_require__(297);
+	var _BAOrderDetails = __webpack_require__(252);
 
 	var _BAOrderDetails2 = _interopRequireDefault(_BAOrderDetails);
+
+	var _Timer = __webpack_require__(255);
+
+	var _Timer2 = _interopRequireDefault(_Timer);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -26981,37 +26986,6 @@
 	            completed: _react2.default.PropTypes.bool
 	        }),
 	        completeOrder: _react2.default.PropTypes.func
-	    },
-
-	    getInitialState: function getInitialState() {
-	        return {
-	            secondsUntilArrival: undefined
-	        };
-	    },
-
-	    componentWillMount: function componentWillMount() {
-	        this._handleCountDown(this.props.order.secondsUntilArrival);
-	    },
-
-	    _handleCountDown: function _handleCountDown(secs) {
-	        var countDown;
-	        function secondHandler(countDown) {
-	            this.setState({
-	                secondsUntilArrival: countDown
-	            }).bind(this);
-	        }
-
-	        setInterval(function () {
-	            secs--;
-	            countDown = secs;
-	            secondHandler(countDown);
-	        }, 1000);
-	    },
-
-	    _handleSetSecondsToState: function _handleSetSecondsToState(countDown) {
-	        console.log('im working');
-
-	        console.log(this.state.secondsUntilArrival);
 	    },
 
 	    _handleCompleteOrder: function _handleCompleteOrder() {
@@ -27064,6 +27038,8 @@
 	                _react2.default.createElement(
 	                    'div',
 	                    { className: 'ba-order-right' },
+	                    _react2.default.createElement(_Timer2.default, {
+	                        secondsUntilArrival: this.props.order.secondsUntilArrival }),
 	                    _react2.default.createElement(
 	                        'p',
 	                        null,
@@ -27118,7 +27094,7 @@
 
 
 	// module
-	exports.push([module.id, ".ba-order-complete {\n  background: #B5BEC2 !important; }\n\n.ba-order {\n  width: 100%;\n  background: #fff;\n  border-bottom: 2px solid #b5bec2;\n  margin: 0 auto 1em auto;\n  border-radius: 5px;\n  padding: 0.75em 0.75em 0.75em 0.75em; }\n  .ba-order .ba-order-left {\n    display: block;\n    padding-bottom: 0.5em;\n    width: 100%; }\n    .ba-order .ba-order-left h2 {\n      display: inline-block;\n      padding: 0em 0.5em 0 0;\n      font-size: 1.5em;\n      color: #1c2024;\n      margin-bottom: 0.5em; }\n    .ba-order .ba-order-left p {\n      display: inline-block;\n      padding: 0em;\n      font-size: 0.85em;\n      margin: 0;\n      color: #1c2024; }\n    .ba-order .ba-order-left .special-instructions {\n      font-size: 0.9em; }\n  .ba-order .ba-order-right {\n    text-align: left;\n    border-top: 1px solid #1C2024;\n    width: 100%;\n    padding-top: 0.5em; }\n    .ba-order .ba-order-right p {\n      margin: 0em 0 1.75em 0;\n      color: #1c2024; }\n      .ba-order .ba-order-right p .ba-order-time {\n        font-size: 1.5em; }\n    .ba-order .ba-order-right button {\n      width: 100%;\n      margin: 0 auto;\n      border: none;\n      background: #40B284;\n      padding: 0.3em 1.3em;\n      border-radius: 10px;\n      color: #fff;\n      font-size: 1em; }\n      .ba-order .ba-order-right button .fa-check-circle {\n        vertical-align: middle;\n        padding-left: 0.4em; }\n\n@media screen and (min-width: 500px) {\n  .ba-order {\n    width: 25em;\n    position: relative; }\n    .ba-order .ba-order-left, .ba-order .ba-order-right {\n      display: inline-block;\n      vertical-align: top; }\n    .ba-order .ba-order-left {\n      width: 58%; }\n    .ba-order .ba-order-right {\n      width: 42%;\n      border: none;\n      height: 100%;\n      padding-top: 0; }\n      .ba-order .ba-order-right p {\n        float: right; }\n      .ba-order .ba-order-right button {\n        width: 10em;\n        float: right;\n        vertical-align: bottom;\n        position: absolute;\n        bottom: 1em;\n        right: 0.75em; } }\n", ""]);
+	exports.push([module.id, ".ba-order-complete {\n  background: #B5BEC2 !important; }\n\n.ba-order {\n  width: 100%;\n  background: #fff;\n  border-bottom: 2px solid #b5bec2;\n  margin: 0 auto 1em auto;\n  border-radius: 5px;\n  padding: 0.75em 0.75em 0.75em 0.75em; }\n  .ba-order .ba-order-left {\n    display: block;\n    padding-bottom: 0.5em;\n    width: 100%; }\n    .ba-order .ba-order-left h2 {\n      display: inline-block;\n      padding: 0em 0.5em 0 0;\n      font-size: 1.5em;\n      color: #1c2024;\n      margin-bottom: 0.5em; }\n    .ba-order .ba-order-left p {\n      display: inline-block;\n      padding: 0em;\n      font-size: 0.85em;\n      margin: 0;\n      color: #1c2024; }\n    .ba-order .ba-order-left .special-instructions {\n      font-size: 0.9em; }\n  .ba-order .ba-order-right {\n    text-align: left;\n    border-top: 1px solid #1C2024;\n    width: 100%;\n    padding-top: 0.5em; }\n    .ba-order .ba-order-right p {\n      display: inline-block;\n      margin: 0em 0 1.75em 0;\n      color: #1c2024; }\n      .ba-order .ba-order-right p .ba-order-time {\n        font-size: 1.5em; }\n    .ba-order .ba-order-right button {\n      width: 100%;\n      margin: 0 auto;\n      border: none;\n      background: #40B284;\n      padding: 0.3em 1.3em;\n      border-radius: 10px;\n      color: #fff;\n      font-size: 1em; }\n      .ba-order .ba-order-right button .fa-check-circle {\n        vertical-align: middle;\n        padding-left: 0.4em; }\n\n@media screen and (min-width: 500px) {\n  .ba-order {\n    width: 25em;\n    position: relative; }\n    .ba-order .ba-order-left, .ba-order .ba-order-right {\n      display: inline-block;\n      vertical-align: top; }\n    .ba-order .ba-order-left {\n      width: 58%; }\n    .ba-order .ba-order-right {\n      width: 42%;\n      border: none;\n      height: 100%;\n      padding-top: 0; }\n      .ba-order .ba-order-right p {\n        float: right; }\n      .ba-order .ba-order-right button {\n        width: 10em;\n        float: right;\n        vertical-align: bottom;\n        position: absolute;\n        bottom: 1em;\n        right: 0.75em; } }\n", ""]);
 
 	// exports
 
@@ -27129,12 +27105,254 @@
 
 	'use strict';
 
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _baOrderDetails = __webpack_require__(253);
+
+	var _baOrderDetails2 = _interopRequireDefault(_baOrderDetails);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var BAOrderDetails = _react2.default.createClass({
+	    displayName: 'BAOrderDetails',
+
+
+	    propTypes: {
+	        item: _react2.default.PropTypes.shape({
+	            itemName: _react2.default.PropTypes.string,
+	            milkType: _react2.default.PropTypes.string,
+	            price: _react2.default.PropTypes.number,
+	            quantity: _react2.default.PropTypes.string,
+	            size: _react2.default.PropTypes.string,
+	            decaf: _react2.default.PropTypes.boolean,
+	            hotOrCold: _react2.default.PropTypes.string
+	        })
+	    },
+
+	    render: function render() {
+
+	        if (this.props.item.size) {
+	            var itemSize = _react2.default.createElement(
+	                'div',
+	                { className: 'item-size' },
+	                '• ',
+	                this.props.item.size
+	            );
+	        }
+
+	        if (this.props.item.milkType) {
+	            var milkType = _react2.default.createElement(
+	                'div',
+	                { className: 'item-milk-type' },
+	                '• ',
+	                this.props.item.milkType
+	            );
+	        }
+
+	        if (this.props.item.decaf) {
+	            var decaf = _react2.default.createElement(
+	                'div',
+	                { className: 'item-decaf' },
+	                '• Decaf'
+	            );
+	        }
+
+	        if (this.props.item.hotOrCold === 'hot') {
+	            var hotOrCold = _react2.default.createElement(
+	                'div',
+	                { className: 'item-hot-or-cold' },
+	                '• Hot'
+	            );
+	        } else if (this.props.item.hotOrCold === 'cold') {
+	            var hotOrCold = _react2.default.createElement(
+	                'div',
+	                { className: 'item-hot-or-cold' },
+	                '• Cold'
+	            );
+	        }
+
+	        return _react2.default.createElement(
+	            'div',
+	            { className: 'ba-order-details-container' },
+	            _react2.default.createElement(
+	                'span',
+	                { className: 'item-quantity' },
+	                this.props.item.quantity
+	            ),
+	            _react2.default.createElement(
+	                'span',
+	                { className: 'item-name' },
+	                this.props.item.itemName
+	            ),
+	            itemSize,
+	            milkType,
+	            decaf,
+	            hotOrCold
+	        );
+	    }
+	});
+
+	module.exports = BAOrderDetails;
+
+/***/ },
+/* 253 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(254);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(245)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./ba-order-details.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./ba-order-details.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 254 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(244)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".ba-order-details-container {\n  padding: 0.2em 0 0.75em 0;\n  border-top: 1px dotted #B5BEC2; }\n  .ba-order-details-container:last-child {\n    padding-bottom: 0; }\n  .ba-order-details-container .item-name {\n    padding-right: 1em;\n    padding-left: 1em;\n    color: #2c7a5a;\n    font-size: 0.9em; }\n  .ba-order-details-container .item-quantity {\n    font-size: 0.9em; }\n  .ba-order-details-container .item-size, .ba-order-details-container .item-milk-type, .ba-order-details-container .item-decaf, .ba-order-details-container .item-hot-or-cold {\n    color: #5f6d7a;\n    font-size: 0.9em;\n    padding-left: 1.7em; }\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 255 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _timer = __webpack_require__(256);
+
+	var _timer2 = _interopRequireDefault(_timer);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Timer = _react2.default.createClass({
+	    displayName: 'Timer',
+
+
+	    propTypes: {
+	        secondsUntilArrival: _react2.default.PropTypes.number
+	    },
+
+	    getInitialState: function getInitialState() {
+	        return {
+	            secondsUntilArrival: this.props.secondsUntilArrival,
+	            formattedSeconds: ''
+	        };
+	    },
+
+	    componentWillMount: function componentWillMount() {
+	        setInterval(this._handleCountDown, 1000);
+	    },
+
+	    _handleCountDown: function _handleCountDown() {
+	        var newTime = this.state.secondsUntilArrival - 1;
+	        var formattedSeconds = '';
+
+	        if (newTime < 60) {
+	            formattedSeconds = '0:' + newTime.toString();
+	        } else if (newTime >= 60) {
+	            var hour = Math.floor(newTime / 60);
+	            var minutes = newTime % 60;
+	            formattedSeconds = hour + ':' + minutes;
+	        }
+	        console.log(formattedSeconds);
+
+	        this.setState({
+	            secondsUntilArrival: newTime,
+	            formattedSeconds: formattedSeconds
+	        });
+	    },
+
+	    render: function render() {
+	        return _react2.default.createElement(
+	            'div',
+	            { className: 'timer-container' },
+	            this.state.formattedSeconds
+	        );
+	    }
+	});
+
+	module.exports = Timer;
+
+/***/ },
+/* 256 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(257);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(245)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./timer.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./timer.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 257 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(244)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".timer-container {\n  display: inline-block;\n  float: right; }\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 258 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
 	exports.completeOrder = exports.fetchOrders = exports.COMPLETE_ORDER = exports.FETCH_ORDERS_ERROR = exports.FETCH_ORDERS_SUCCESS = undefined;
 
-	var _axios = __webpack_require__(253);
+	var _axios = __webpack_require__(259);
 
 	var _axios2 = _interopRequireDefault(_axios);
 
@@ -27172,20 +27390,20 @@
 	};
 
 /***/ },
-/* 253 */
+/* 259 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(254);
+	module.exports = __webpack_require__(260);
 
 /***/ },
-/* 254 */
+/* 260 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(255);
-	var bind = __webpack_require__(256);
-	var Axios = __webpack_require__(257);
+	var utils = __webpack_require__(261);
+	var bind = __webpack_require__(262);
+	var Axios = __webpack_require__(263);
 
 	/**
 	 * Create an instance of Axios
@@ -27218,15 +27436,15 @@
 	};
 
 	// Expose Cancel & CancelToken
-	axios.Cancel = __webpack_require__(275);
-	axios.CancelToken = __webpack_require__(276);
-	axios.isCancel = __webpack_require__(272);
+	axios.Cancel = __webpack_require__(281);
+	axios.CancelToken = __webpack_require__(282);
+	axios.isCancel = __webpack_require__(278);
 
 	// Expose all/spread
 	axios.all = function all(promises) {
 	  return Promise.all(promises);
 	};
-	axios.spread = __webpack_require__(277);
+	axios.spread = __webpack_require__(283);
 
 	module.exports = axios;
 
@@ -27235,12 +27453,12 @@
 
 
 /***/ },
-/* 255 */
+/* 261 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var bind = __webpack_require__(256);
+	var bind = __webpack_require__(262);
 
 	/*global toString:true*/
 
@@ -27540,7 +27758,7 @@
 
 
 /***/ },
-/* 256 */
+/* 262 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -27557,17 +27775,17 @@
 
 
 /***/ },
-/* 257 */
+/* 263 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var defaults = __webpack_require__(258);
-	var utils = __webpack_require__(255);
-	var InterceptorManager = __webpack_require__(269);
-	var dispatchRequest = __webpack_require__(270);
-	var isAbsoluteURL = __webpack_require__(273);
-	var combineURLs = __webpack_require__(274);
+	var defaults = __webpack_require__(264);
+	var utils = __webpack_require__(261);
+	var InterceptorManager = __webpack_require__(275);
+	var dispatchRequest = __webpack_require__(276);
+	var isAbsoluteURL = __webpack_require__(279);
+	var combineURLs = __webpack_require__(280);
 
 	/**
 	 * Create a new instance of Axios
@@ -27648,13 +27866,13 @@
 
 
 /***/ },
-/* 258 */
+/* 264 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
 
-	var utils = __webpack_require__(255);
-	var normalizeHeaderName = __webpack_require__(259);
+	var utils = __webpack_require__(261);
+	var normalizeHeaderName = __webpack_require__(265);
 
 	var PROTECTION_PREFIX = /^\)\]\}',?\n/;
 	var DEFAULT_CONTENT_TYPE = {
@@ -27671,10 +27889,10 @@
 	  var adapter;
 	  if (typeof XMLHttpRequest !== 'undefined') {
 	    // For browsers use XHR adapter
-	    adapter = __webpack_require__(260);
+	    adapter = __webpack_require__(266);
 	  } else if (typeof process !== 'undefined') {
 	    // For node use HTTP adapter
-	    adapter = __webpack_require__(260);
+	    adapter = __webpack_require__(266);
 	  }
 	  return adapter;
 	}
@@ -27741,12 +27959,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 259 */
+/* 265 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(255);
+	var utils = __webpack_require__(261);
 
 	module.exports = function normalizeHeaderName(headers, normalizedName) {
 	  utils.forEach(headers, function processHeader(value, name) {
@@ -27759,18 +27977,18 @@
 
 
 /***/ },
-/* 260 */
+/* 266 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
 
-	var utils = __webpack_require__(255);
-	var settle = __webpack_require__(261);
-	var buildURL = __webpack_require__(264);
-	var parseHeaders = __webpack_require__(265);
-	var isURLSameOrigin = __webpack_require__(266);
-	var createError = __webpack_require__(262);
-	var btoa = (typeof window !== 'undefined' && window.btoa) || __webpack_require__(267);
+	var utils = __webpack_require__(261);
+	var settle = __webpack_require__(267);
+	var buildURL = __webpack_require__(270);
+	var parseHeaders = __webpack_require__(271);
+	var isURLSameOrigin = __webpack_require__(272);
+	var createError = __webpack_require__(268);
+	var btoa = (typeof window !== 'undefined' && window.btoa) || __webpack_require__(273);
 
 	module.exports = function xhrAdapter(config) {
 	  return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -27866,7 +28084,7 @@
 	    // This is only done if running in a standard browser environment.
 	    // Specifically not if we're in a web worker, or react-native.
 	    if (utils.isStandardBrowserEnv()) {
-	      var cookies = __webpack_require__(268);
+	      var cookies = __webpack_require__(274);
 
 	      // Add xsrf header
 	      var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
@@ -27943,12 +28161,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 261 */
+/* 267 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var createError = __webpack_require__(262);
+	var createError = __webpack_require__(268);
 
 	/**
 	 * Resolve or reject a Promise based on response status.
@@ -27974,12 +28192,12 @@
 
 
 /***/ },
-/* 262 */
+/* 268 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var enhanceError = __webpack_require__(263);
+	var enhanceError = __webpack_require__(269);
 
 	/**
 	 * Create an Error with the specified message, config, error code, and response.
@@ -27997,7 +28215,7 @@
 
 
 /***/ },
-/* 263 */
+/* 269 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -28022,12 +28240,12 @@
 
 
 /***/ },
-/* 264 */
+/* 270 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(255);
+	var utils = __webpack_require__(261);
 
 	function encode(val) {
 	  return encodeURIComponent(val).
@@ -28096,12 +28314,12 @@
 
 
 /***/ },
-/* 265 */
+/* 271 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(255);
+	var utils = __webpack_require__(261);
 
 	/**
 	 * Parse headers into an object
@@ -28139,12 +28357,12 @@
 
 
 /***/ },
-/* 266 */
+/* 272 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(255);
+	var utils = __webpack_require__(261);
 
 	module.exports = (
 	  utils.isStandardBrowserEnv() ?
@@ -28213,7 +28431,7 @@
 
 
 /***/ },
-/* 267 */
+/* 273 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -28255,12 +28473,12 @@
 
 
 /***/ },
-/* 268 */
+/* 274 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(255);
+	var utils = __webpack_require__(261);
 
 	module.exports = (
 	  utils.isStandardBrowserEnv() ?
@@ -28314,12 +28532,12 @@
 
 
 /***/ },
-/* 269 */
+/* 275 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(255);
+	var utils = __webpack_require__(261);
 
 	function InterceptorManager() {
 	  this.handlers = [];
@@ -28372,15 +28590,15 @@
 
 
 /***/ },
-/* 270 */
+/* 276 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(255);
-	var transformData = __webpack_require__(271);
-	var isCancel = __webpack_require__(272);
-	var defaults = __webpack_require__(258);
+	var utils = __webpack_require__(261);
+	var transformData = __webpack_require__(277);
+	var isCancel = __webpack_require__(278);
+	var defaults = __webpack_require__(264);
 
 	/**
 	 * Throws a `Cancel` if cancellation has been requested.
@@ -28457,12 +28675,12 @@
 
 
 /***/ },
-/* 271 */
+/* 277 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(255);
+	var utils = __webpack_require__(261);
 
 	/**
 	 * Transform the data for a request or a response
@@ -28483,7 +28701,7 @@
 
 
 /***/ },
-/* 272 */
+/* 278 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -28494,7 +28712,7 @@
 
 
 /***/ },
-/* 273 */
+/* 279 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -28514,7 +28732,7 @@
 
 
 /***/ },
-/* 274 */
+/* 280 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -28532,7 +28750,7 @@
 
 
 /***/ },
-/* 275 */
+/* 281 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -28557,12 +28775,12 @@
 
 
 /***/ },
-/* 276 */
+/* 282 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var Cancel = __webpack_require__(275);
+	var Cancel = __webpack_require__(281);
 
 	/**
 	 * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -28620,7 +28838,7 @@
 
 
 /***/ },
-/* 277 */
+/* 283 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -28653,26 +28871,26 @@
 
 
 /***/ },
-/* 278 */
+/* 284 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var _redux = __webpack_require__(166);
 
-	var _reducers = __webpack_require__(279);
+	var _reducers = __webpack_require__(285);
 
 	var _reducers2 = _interopRequireDefault(_reducers);
 
-	var _reduxLogger = __webpack_require__(281);
+	var _reduxLogger = __webpack_require__(287);
 
 	var _reduxLogger2 = _interopRequireDefault(_reduxLogger);
 
-	var _reduxPromise = __webpack_require__(287);
+	var _reduxPromise = __webpack_require__(293);
 
 	var _reduxPromise2 = _interopRequireDefault(_reduxPromise);
 
-	var _reduxThunk = __webpack_require__(294);
+	var _reduxThunk = __webpack_require__(300);
 
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
@@ -28687,14 +28905,14 @@
 	module.exports = store;
 
 /***/ },
-/* 279 */
+/* 285 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var _redux = __webpack_require__(166);
 
-	var _orderReducer = __webpack_require__(280);
+	var _orderReducer = __webpack_require__(286);
 
 	var rootReducer = (0, _redux.combineReducers)({
 	    orders: _orderReducer.orderReducer
@@ -28703,12 +28921,12 @@
 	module.exports = rootReducer;
 
 /***/ },
-/* 280 */
+/* 286 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var _index = __webpack_require__(252);
+	var _index = __webpack_require__(258);
 
 	var orderReducer = function orderReducer() {
 	    var state = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
@@ -28735,7 +28953,7 @@
 	module.exports = { orderReducer: orderReducer };
 
 /***/ },
-/* 281 */
+/* 287 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28746,11 +28964,11 @@
 	  value: true
 	});
 
-	var _core = __webpack_require__(282);
+	var _core = __webpack_require__(288);
 
-	var _helpers = __webpack_require__(283);
+	var _helpers = __webpack_require__(289);
 
-	var _defaults = __webpack_require__(286);
+	var _defaults = __webpack_require__(292);
 
 	var _defaults2 = _interopRequireDefault(_defaults);
 
@@ -28853,7 +29071,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 282 */
+/* 288 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28863,9 +29081,9 @@
 	});
 	exports.printBuffer = printBuffer;
 
-	var _helpers = __webpack_require__(283);
+	var _helpers = __webpack_require__(289);
 
-	var _diff = __webpack_require__(284);
+	var _diff = __webpack_require__(290);
 
 	var _diff2 = _interopRequireDefault(_diff);
 
@@ -28994,7 +29212,7 @@
 	}
 
 /***/ },
-/* 283 */
+/* 289 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -29018,7 +29236,7 @@
 	var timer = exports.timer = typeof performance !== "undefined" && performance !== null && typeof performance.now === "function" ? performance : Date;
 
 /***/ },
-/* 284 */
+/* 290 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29028,7 +29246,7 @@
 	});
 	exports.default = diffLogger;
 
-	var _deepDiff = __webpack_require__(285);
+	var _deepDiff = __webpack_require__(291);
 
 	var _deepDiff2 = _interopRequireDefault(_deepDiff);
 
@@ -29114,7 +29332,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 285 */
+/* 291 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(global) {/*!
@@ -29543,7 +29761,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 286 */
+/* 292 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -29594,7 +29812,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 287 */
+/* 293 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29605,7 +29823,7 @@
 
 	exports['default'] = promiseMiddleware;
 
-	var _fluxStandardAction = __webpack_require__(288);
+	var _fluxStandardAction = __webpack_require__(294);
 
 	function isPromise(val) {
 	  return val && typeof val.then === 'function';
@@ -29632,7 +29850,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 288 */
+/* 294 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29643,7 +29861,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _lodashIsplainobject = __webpack_require__(289);
+	var _lodashIsplainobject = __webpack_require__(295);
 
 	var _lodashIsplainobject2 = _interopRequireDefault(_lodashIsplainobject);
 
@@ -29662,7 +29880,7 @@
 	}
 
 /***/ },
-/* 289 */
+/* 295 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -29673,9 +29891,9 @@
 	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 * Available under MIT license <https://lodash.com/license>
 	 */
-	var baseFor = __webpack_require__(290),
-	    isArguments = __webpack_require__(291),
-	    keysIn = __webpack_require__(292);
+	var baseFor = __webpack_require__(296),
+	    isArguments = __webpack_require__(297),
+	    keysIn = __webpack_require__(298);
 
 	/** `Object#toString` result references. */
 	var objectTag = '[object Object]';
@@ -29771,7 +29989,7 @@
 
 
 /***/ },
-/* 290 */
+/* 296 */
 /***/ function(module, exports) {
 
 	/**
@@ -29825,7 +30043,7 @@
 
 
 /***/ },
-/* 291 */
+/* 297 */
 /***/ function(module, exports) {
 
 	/**
@@ -30060,7 +30278,7 @@
 
 
 /***/ },
-/* 292 */
+/* 298 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -30071,8 +30289,8 @@
 	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 * Available under MIT license <https://lodash.com/license>
 	 */
-	var isArguments = __webpack_require__(291),
-	    isArray = __webpack_require__(293);
+	var isArguments = __webpack_require__(297),
+	    isArray = __webpack_require__(299);
 
 	/** Used to detect unsigned integer values. */
 	var reIsUint = /^\d+$/;
@@ -30198,7 +30416,7 @@
 
 
 /***/ },
-/* 293 */
+/* 299 */
 /***/ function(module, exports) {
 
 	/**
@@ -30384,7 +30602,7 @@
 
 
 /***/ },
-/* 294 */
+/* 300 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -30412,13 +30630,13 @@
 	exports['default'] = thunk;
 
 /***/ },
-/* 295 */
+/* 301 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(296);
+	var content = __webpack_require__(302);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(245)(content, {});
@@ -30438,7 +30656,7 @@
 	}
 
 /***/ },
-/* 296 */
+/* 302 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(244)();
@@ -30447,143 +30665,6 @@
 
 	// module
 	exports.push([module.id, "body {\n  font-weight: 300;\n  background: #efefef; }\n\nh1 {\n  text-align: center;\n  font-weight: 300; }\n\nh2 {\n  font-weight: 300;\n  margin: 0;\n  padding-bottom: 0.75em; }\n\ninput:focus,\nselect:focus,\ntextarea:focus,\nbutton:focus {\n  outline: none; }\n\n/* ------- NORMALIZE CSS ----------*/\nhtml {\n  font-family: 'Lato', sans-serif;\n  /* 1 */\n  font-size: 16px !important;\n  -ms-text-size-adjust: 100%;\n  /* 2 */\n  -webkit-text-size-adjust: 100%;\n  /* 2 */ }\n\n/**\n * Remove default margin (opinionated).\n */\nbody {\n  margin: 0; }\n\n/* HTML5 display definitions\n   ========================================================================== */\n/**\n * Correct `block` display not defined for any HTML5 element in IE 8/9.\n * Correct `block` display not defined for `details` or `summary` in IE 10/11\n * and Firefox.\n * Correct `block` display not defined for `main` in IE 11.\n */\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nmain,\nmenu,\nnav,\nsection,\nsummary {\n  display: block; }\n\n/**\n * 1. Correct `inline-block` display not defined in IE 8/9.\n * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.\n */\naudio,\ncanvas,\nprogress,\nvideo {\n  display: inline-block;\n  /* 1 */\n  vertical-align: baseline;\n  /* 2 */ }\n\n/**\n * Prevent displaying `audio` without controls in Mobile Safari 4/5/6/7.\n */\naudio:not([controls]) {\n  display: none;\n  height: 0; }\n\n/**\n * Address `[hidden]` styling not present in IE 8/9/10.\n * Hide the `template` element in IE 8/9/10/11, Safari, and Firefox < 22.\n */\n[hidden],\ntemplate {\n  display: none; }\n\n/* Links\n   ========================================================================== */\n/**\n * Remove the gray background color from active links in IE 10.\n */\na {\n  background-color: transparent; }\n\n/**\n * Improve readability of focused elements when they are also in an\n * active/hover state (opinionated).\n */\na:active,\na:hover {\n  outline-width: 0; }\n\n/* Text-level semantics\n   ========================================================================== */\n/**\n * Address inconsistent styling of `abbr[title]`.\n * 1. Correct styling in Firefox 39 and Opera 12.\n * 2. Correct missing styling in Chrome, Edge, IE, Opera, and Safari.\n */\nabbr[title] {\n  border-bottom: none;\n  /* 1 */\n  text-decoration: underline;\n  /* 2 */\n  text-decoration: underline dotted;\n  /* 2 */ }\n\n/**\n * Address inconsistent styling of b and strong.\n * 1. Correct duplicate application of `bolder` in Safari 6.0.2.\n * 2. Correct style set to `bold` in Edge 12+, Safari 6.2+, and Chrome 18+.\n */\nb,\nstrong {\n  font-weight: inherit;\n  /* 1 */ }\n\nb,\nstrong {\n  font-weight: bolder;\n  /* 2 */ }\n\n/**\n * Address styling not present in Android < 4.4.\n */\ndfn {\n  font-style: italic; }\n\n/**\n * Address variable `h1` font-size and margin within `section` and `article`\n * contexts in Firefox 4+, Safari, and Chrome.\n */\nh1 {\n  font-size: 2em;\n  margin: 0.67em 0; }\n\n/**\n * Address styling not present in IE 8/9.\n */\nmark {\n  background-color: #ff0;\n  color: #000; }\n\n/**\n * Address inconsistent and variable font size in all browsers.\n */\nsmall {\n  font-size: 80%; }\n\n/**\n * Prevent `sub` and `sup` affecting `line-height` in all browsers.\n */\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline; }\n\nsup {\n  top: -0.5em; }\n\nsub {\n  bottom: -0.25em; }\n\n/* Embedded content\n   ========================================================================== */\n/**\n * Correct border-style given when inside `a` element in IE 8/9/10.\n */\nimg {\n  border-style: none; }\n\n/**\n * Correct overflow not hidden in IE 9/10/11.\n */\nsvg:not(:root) {\n  overflow: hidden; }\n\n/* Grouping content\n   ========================================================================== */\n/**\n * Address margin not present in IE 8/9 and Safari.\n */\nfigure {\n  margin: 1em 40px; }\n\n/**\n * Address inconsistent styling of `hr`.\n * 1. Correct `box-sizing` set to `border-box` in Firefox.\n * 2. Correct `overflow` set to `hidden` in IE 8/9/10/11 and Edge 12.\n */\nhr {\n  box-sizing: content-box;\n  /* 1 */\n  height: 0;\n  /* 1 */\n  overflow: visible;\n  /* 2 */ }\n\n/**\n * Contain overflow in all browsers.\n */\npre {\n  overflow: auto; }\n\n/**\n * 1. Correct inheritance and scaling of font-size for preformatted text.\n * 2. Address odd `em`-unit font size rendering in all browsers.\n */\ncode,\nkbd,\npre,\nsamp {\n  font-family: monospace, monospace;\n  /* 1 */\n  font-size: 1em;\n  /* 2 */ }\n\n/* Forms\n   ========================================================================== */\n/**\n * Known limitation: by default, Chrome and Safari on OS X allow very limited\n * styling of `select`, unless a `border` property is set.\n */\n/**\n * 1. Correct font properties not being inherited.\n * 2. Address margins set differently in Firefox 4+, Safari, and Chrome.\n */\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font: inherit;\n  /* 1 */\n  margin: 0;\n  /* 2 */ }\n\n/**\n * Address `overflow` set to `hidden` in IE 8/9/10/11.\n */\nbutton {\n  overflow: visible; }\n\n/**\n * Address inconsistent `text-transform` inheritance for `button` and `select`.\n * All other form control elements do not inherit `text-transform` values.\n * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.\n * Correct `select` style inheritance in Firefox.\n */\nbutton,\nselect {\n  text-transform: none; }\n\n/**\n * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`\n *    and `video` controls.\n * 2. Correct inability to style clickable `input` types in iOS.\n * 3. Improve usability and consistency of cursor style between image-type\n *    `input` and others.\n */\nbutton,\nhtml input[type=\"button\"],\ninput[type=\"reset\"],\ninput[type=\"submit\"] {\n  -webkit-appearance: button;\n  /* 2 */\n  cursor: pointer;\n  /* 3 */ }\n\n/**\n * Re-set default cursor for disabled elements.\n */\nbutton[disabled],\nhtml input[disabled] {\n  cursor: default; }\n\n/**\n * Remove inner padding and border in Firefox 4+.\n */\nbutton::-moz-focus-inner,\ninput::-moz-focus-inner {\n  border: 0;\n  padding: 0; }\n\n/**\n * Restore focus style in Firefox 4+ (unset by a rule above)\n */\nbutton:-moz-focusring,\ninput:-moz-focusring {\n  outline: 1px dotted ButtonText; }\n\n/**\n * It's recommended that you don't attempt to style these elements.\n * Firefox's implementation doesn't respect box-sizing, padding, or width.\n *\n * 1. Address box sizing set to `content-box` in IE 8/9/10.\n * 2. Remove excess padding in IE 8/9/10.\n */\ninput[type=\"checkbox\"],\ninput[type=\"radio\"] {\n  box-sizing: border-box;\n  /* 1 */\n  padding: 0;\n  /* 2 */ }\n\n/**\n * Fix the cursor style for Chrome's increment/decrement buttons. For certain\n * `font-size` values of the `input`, it causes the cursor style of the\n * decrement button to change from `default` to `text`.\n */\ninput[type=\"number\"]::-webkit-inner-spin-button,\ninput[type=\"number\"]::-webkit-outer-spin-button {\n  height: auto; }\n\n/**\n * Address `appearance` set to `searchfield` in Safari and Chrome.\n */\ninput[type=\"search\"] {\n  -webkit-appearance: textfield; }\n\n/**\n * Remove inner padding and search cancel button in Safari and Chrome on OS X.\n * Safari (but not Chrome) clips the cancel button when the search input has\n * padding (and `textfield` appearance).\n */\ninput[type=\"search\"]::-webkit-search-cancel-button,\ninput[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none; }\n\n/**\n * Define consistent border, margin, and padding.\n */\nfieldset {\n  border: 1px solid #c0c0c0;\n  margin: 0 2px;\n  padding: 0.35em 0.625em 0.75em; }\n\n/**\n * 1. Correct `color` not being inherited from fieldset in IE 8/9/10/11.\n * 2. Remove padding so people aren't caught out if they zero out fieldsets.\n */\nlegend {\n  color: inherit;\n  /* 1 */\n  padding: 0;\n  /* 2 */ }\n\n/**\n * Remove default vertical scrollbar in IE 8/9/10/11.\n */\ntextarea {\n  overflow: auto; }\n\n/**\n * Restore font weight (unset by a rule above).\n * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.\n */\noptgroup {\n  font-weight: bold; }\n", ""]);
-
-	// exports
-
-
-/***/ },
-/* 297 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _baOrderDetails = __webpack_require__(298);
-
-	var _baOrderDetails2 = _interopRequireDefault(_baOrderDetails);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var BAOrderDetails = _react2.default.createClass({
-	    displayName: 'BAOrderDetails',
-
-
-	    propTypes: {
-	        item: _react2.default.PropTypes.shape({
-	            itemName: _react2.default.PropTypes.string,
-	            milkType: _react2.default.PropTypes.string,
-	            price: _react2.default.PropTypes.number,
-	            quantity: _react2.default.PropTypes.string,
-	            size: _react2.default.PropTypes.string,
-	            decaf: _react2.default.PropTypes.boolean,
-	            hotOrCold: _react2.default.PropTypes.string
-	        })
-	    },
-
-	    render: function render() {
-
-	        if (this.props.item.size) {
-	            var itemSize = _react2.default.createElement(
-	                'div',
-	                { className: 'item-size' },
-	                '• ',
-	                this.props.item.size
-	            );
-	        }
-
-	        if (this.props.item.milkType) {
-	            var milkType = _react2.default.createElement(
-	                'div',
-	                { className: 'item-milk-type' },
-	                '• ',
-	                this.props.item.milkType
-	            );
-	        }
-
-	        if (this.props.item.decaf) {
-	            var decaf = _react2.default.createElement(
-	                'div',
-	                { className: 'item-decaf' },
-	                '• Decaf'
-	            );
-	        }
-
-	        if (this.props.item.hotOrCold === 'hot') {
-	            var hotOrCold = _react2.default.createElement(
-	                'div',
-	                { className: 'item-hot-or-cold' },
-	                '• Hot'
-	            );
-	        } else if (this.props.item.hotOrCold === 'cold') {
-	            var hotOrCold = _react2.default.createElement(
-	                'div',
-	                { className: 'item-hot-or-cold' },
-	                '• Cold'
-	            );
-	        }
-
-	        return _react2.default.createElement(
-	            'div',
-	            { className: 'ba-order-details-container' },
-	            _react2.default.createElement(
-	                'span',
-	                { className: 'item-quantity' },
-	                this.props.item.quantity
-	            ),
-	            _react2.default.createElement(
-	                'span',
-	                { className: 'item-name' },
-	                this.props.item.itemName
-	            ),
-	            itemSize,
-	            milkType,
-	            decaf,
-	            hotOrCold
-	        );
-	    }
-	});
-
-	module.exports = BAOrderDetails;
-
-/***/ },
-/* 298 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(299);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(245)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./ba-order-details.scss", function() {
-				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./ba-order-details.scss");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 299 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(244)();
-	// imports
-
-
-	// module
-	exports.push([module.id, ".ba-order-details-container {\n  padding: 0.2em 0 0.75em 0;\n  border-top: 1px dotted #B5BEC2; }\n  .ba-order-details-container:last-child {\n    padding-bottom: 0; }\n  .ba-order-details-container .item-name {\n    padding-right: 1em;\n    padding-left: 1em;\n    color: #2c7a5a;\n    font-size: 0.9em; }\n  .ba-order-details-container .item-quantity {\n    font-size: 0.9em; }\n  .ba-order-details-container .item-size, .ba-order-details-container .item-milk-type, .ba-order-details-container .item-decaf, .ba-order-details-container .item-hot-or-cold {\n    color: #5f6d7a;\n    font-size: 0.9em;\n    padding-left: 1.7em; }\n", ""]);
 
 	// exports
 
