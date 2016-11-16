@@ -85,7 +85,7 @@
 	// add email or text notification options for user on consumer side
 	// create upcoming orders and 'triggered orders' sections
 	// create notification and 'ding' sound when order comes in
-	// create notification animation thing when an order is completed
+	// create notification animation thing when an order is completed, or animation of order being removed
 
 	// Create previous orders page -- all completed orders
 
@@ -27280,9 +27280,12 @@
 	        } else if (newTime >= 60) {
 	            var hour = Math.floor(newTime / 60);
 	            var minutes = newTime % 60;
-	            formattedSeconds = hour + ':' + minutes;
+	            if (minutes < 10) {
+	                formattedSeconds = hour + ':0' + minutes;
+	            } else {
+	                formattedSeconds = hour + ':' + minutes;
+	            }
 	        }
-	        console.log(formattedSeconds);
 
 	        this.setState({
 	            secondsUntilArrival: newTime,

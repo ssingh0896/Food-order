@@ -27,9 +27,13 @@ var Timer = React.createClass({
         } else if (newTime >= 60) {
             var hour = Math.floor(newTime / 60);
             var minutes = newTime % 60;
-            formattedSeconds = hour + ':' + minutes;
+            if (minutes < 10) {
+                formattedSeconds = hour + ':0' + minutes;
+            } else {
+                formattedSeconds = hour + ':' + minutes;
+            }
+
         }
-        console.log(formattedSeconds);
 
         this.setState({
             secondsUntilArrival: newTime,

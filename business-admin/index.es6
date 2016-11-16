@@ -22,6 +22,6 @@ ReactDOM.render(
 // add email or text notification options for user on consumer side
 // create upcoming orders and 'triggered orders' sections
 // create notification and 'ding' sound when order comes in
-// create notification animation thing when an order is completed
+// create notification animation thing when an order is completed, or animation of order being removed
 
 // Create previous orders page -- all completed orders
