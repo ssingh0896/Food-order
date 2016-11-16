@@ -15,30 +15,48 @@ var Timer = React.createClass({
     },
 
     componentWillMount: function() {
-        setInterval(this._handleCountDown, 1000);
+        this.counterInterval = setInterval(this._handleCountDown, 1000);
     },
 
     _handleCountDown: function() {
-        var newTime = this.state.secondsUntilArrival - 1;
-        var formattedSeconds = '';
+        if (this.state.secondsUntilArrival === 0) {
+            clearInterval(this.counterInterval);
+        } else {
+            var newTime = this.state.secondsUntilArrival - 1;
+            var formattedSeconds = '';
 
-        if (newTime < 60) {
-            formattedSeconds = '0:' + newTime.toString();
-        } else if (newTime >= 60) {
-            var hour = Math.floor(newTime / 60);
-            var minutes = newTime % 60;
-            if (minutes < 10) {
-                formattedSeconds = hour + ':0' + minutes;
-            } else {
-                formattedSeconds = hour + ':' + minutes;
+            if (newTime < 60) {
+                if (newTime > 9) {
+                    formattedSeconds = '0:' + newTime.toString();
+                } else {
+                    formattedSeconds = '0:0' + newTime.toString();
+                }
+
+            } else if (newTime >= 60) {
+                var hour = Math.floor(newTime / 60);
+                var minutes = newTime % 60;
+                if (minutes < 10) {
+                    formattedSeconds = hour + ':0' + minutes;
+                } else {
+                    formattedSeconds = hour + ':' + minutes;
+                }
             }
-
+            this._handleSetState(newTime, formattedSeconds);
         }
+    },
 
-        this.setState({
-            secondsUntilArrival: newTime,
-            formattedSeconds: formattedSeconds
-        })
+    _handleSetState: function(newTime, formattedSeconds) {
+        if (formattedSeconds !== '0:00') {
+            this.setState({
+                secondsUntilArrival: newTime,
+                formattedSeconds: formattedSeconds
+            })
+
+        } else if (formattedSeconds === '0:00') {
+            this.setState({
+                formattedSeconds: '0:00'
+            })
+        }
     },
 
     render: function() {
