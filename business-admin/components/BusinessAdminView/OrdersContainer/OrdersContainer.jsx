@@ -1,6 +1,7 @@
 import React from 'react'
 import sass from './orders-container.scss'
 import BAOrder from '../BAOrder/BAOrder'
+import lodash from 'lodash'
 
 var OrdersContainer = React.createClass({
 
@@ -28,8 +29,9 @@ var OrdersContainer = React.createClass({
                     return order.completed === false;
                 }
             )
+            var sortedOrders = _.sortBy(filteredOrders, 'secondsUntilArrival');
 
-            var orders = filteredOrders.map(
+            var orders = sortedOrders.map(
                 function(order) {
                     return <BAOrder
                                 key={order._id}
