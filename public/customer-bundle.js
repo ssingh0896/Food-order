@@ -25233,7 +25233,8 @@
 	            },
 	            methodOfTrans: '',
 	            methodOfTransShow: true,
-	            pickupTime: 'true',
+	            pickupTime: true,
+	            expectedPickupTime: '',
 	            favorite: false,
 	            paymentInfo: {
 	                nameOnCard: '',
@@ -25403,6 +25404,11 @@
 	    // --------------SERVER API REQUESTS--------------
 
 	    _handleOrderSubmit: function _handleOrderSubmit() {
+
+	        // if (timeSelectedForPickup === 'true') {
+	        // calculate expectedPickupTime and setState before posting order
+	        // }
+
 	        var date = (0, _moment2.default)().format('l');
 	        var time = (0, _moment2.default)().format('LT');
 
@@ -25418,6 +25424,7 @@
 	            timeUntilArrival: this.state.duration,
 	            secondsUntilArrival: this.state.durationSeconds,
 	            timeSelectedForPickup: this.state.pickupTime,
+	            expectedPickupTime: this.state.expectedPickupTime,
 	            completed: false
 	        }).end(function (err, res) {
 	            console.log(err);
@@ -25425,6 +25432,8 @@
 	        });
 	        this._handleStateClear();
 	    },
+
+	    _handlePostOrder: function _handlePostOrder() {},
 
 	    _handleStateClear: function _handleStateClear() {
 	        this.setState({
@@ -25469,7 +25478,7 @@
 	        this.setState({
 	            pickupTime: newValue
 	        });
-	        if (newValue === 'true') {
+	        if (newValue === true) {
 	            this.setState({
 	                methodOfTransShow: true
 	            });
@@ -25644,12 +25653,6 @@
 	        });
 	    },
 
-	    _handleMethodOfTransShow: function _handleMethodOfTransShow() {
-	        this.setState({
-	            methodOfTransShow: false
-	        });
-	    },
-
 	    render: function render() {
 	        var _this9 = this;
 
@@ -25784,7 +25787,6 @@
 	                    handleMethodOfTrans: this._handleMethodOfTrans,
 	                    methodOfTrans: this.state.methodOfTrans,
 	                    methodOfTransShow: this.state.methodOfTransShow,
-	                    handleMethodOfTransShow: this._handleMethodOfTransShow,
 	                    handlePickupTime: this._handlePickupTime,
 	                    pickupTime: this.state.pickupTime,
 	                    handleFavorite: this._handleFavorite,
@@ -60773,7 +60775,18 @@
 	    render: function render() {
 
 	        var nextButton;
-	        if (this.props.methodOfTrans) {
+	        if (this.props.pickupTime === true && this.props.methodOfTrans) {
+	            nextButton = _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '/order-summary' },
+	                _react2.default.createElement(
+	                    'button',
+	                    { className: 'next-button' },
+	                    'Next',
+	                    _react2.default.createElement('i', { className: 'fa fa-arrow-right fa-lg', 'aria-hidden': 'true' })
+	                )
+	            );
+	        } else if (this.props.pickupTime !== true) {
 	            nextButton = _react2.default.createElement(
 	                _reactRouter.Link,
 	                { to: '/order-summary' },
@@ -60822,7 +60835,6 @@
 	                    null,
 	                    _react2.default.createElement(_SelectPickUpTime2.default, {
 	                        handlePickupTime: this.props.handlePickupTime,
-	                        handleMethodOfTransShow: this.props.handleMethodOfTransShow,
 	                        value: this.props.pickupTime || 'true' }),
 	                    _react2.default.createElement(_SelectMethodOfTrans2.default, {
 	                        handleMethodOfTrans: this.props.handleMethodOfTrans,
@@ -61020,10 +61032,10 @@
 	                    'Now: ',
 	                    _react2.default.createElement('input', {
 	                        onChange: function onChange() {
-	                            return _this.props.handlePickupTime('true');
+	                            return _this.props.handlePickupTime(true);
 	                        },
 	                        type: 'radio',
-	                        checked: this.props.value === 'true' })
+	                        checked: this.props.value === true })
 	                )
 	            ),
 	            _react2.default.createElement(

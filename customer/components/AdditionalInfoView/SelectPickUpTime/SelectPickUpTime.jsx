@@ -15,9 +15,9 @@ var SelectPickUpTime = React.createClass({
                 <h2>Pick up now or schedule pick up?</h2>
             <div className="select-pick-up-now">
                     <label>Now: <input
-                                    onChange={() => this.props.handlePickupTime('true')}
+                                    onChange={() => this.props.handlePickupTime(true)}
                                     type="radio"
-                                    checked={this.props.value === 'true'} />
+                                    checked={this.props.value === true} />
                     </label>
                 </div>
                 <div className="select-pick-up-time">

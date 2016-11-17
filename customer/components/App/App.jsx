@@ -39,7 +39,8 @@ var App = React.createClass({
             },
             methodOfTrans: '',
             methodOfTransShow: true,
-            pickupTime: 'true',
+            pickupTime: true,
+            expectedPickupTime: '',
             favorite: false,
             paymentInfo: {
                 nameOnCard: '',
@@ -224,6 +225,13 @@ var App = React.createClass({
     // --------------SERVER API REQUESTS--------------
 
     _handleOrderSubmit: function() {
+
+        // if (timeSelectedForPickup === 'true') {
+            // calculate expectedPickupTime and setState before posting order
+    // }
+
+
+
         var date = moment().format('l');
         var time = moment().format('LT');
 
@@ -241,6 +249,7 @@ var App = React.createClass({
                 timeUntilArrival: this.state.duration,
                 secondsUntilArrival: this.state.durationSeconds,
                 timeSelectedForPickup: this.state.pickupTime,
+                expectedPickupTime: this.state.expectedPickupTime,
                 completed: false
             })
             .end(function(err, res){
@@ -248,6 +257,10 @@ var App = React.createClass({
                 console.log(res);
             })
         this._handleStateClear();
+    },
+
+    _handlePostOrder: function() {
+
     },
 
     _handleStateClear: function() {
@@ -291,7 +304,7 @@ var App = React.createClass({
         this.setState({
             pickupTime: newValue
         })
-        if (newValue === 'true') {
+        if (newValue === true) {
             this.setState({
                 methodOfTransShow: true
             })
@@ -476,12 +489,6 @@ var App = React.createClass({
         });
     },
 
-    _handleMethodOfTransShow: function() {
-        this.setState({
-            methodOfTransShow: false
-        })
-    },
-
     render: function() {
         return (
             <div>
@@ -558,7 +565,6 @@ var App = React.createClass({
                              handleMethodOfTrans: this._handleMethodOfTrans,
                              methodOfTrans: this.state.methodOfTrans,
                              methodOfTransShow: this.state.methodOfTransShow,
-                             handleMethodOfTransShow: this._handleMethodOfTransShow,
                              handlePickupTime: this._handlePickupTime,
                              pickupTime: this.state.pickupTime,
                              handleFavorite: this._handleFavorite,

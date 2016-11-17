@@ -32,7 +32,14 @@ var AdditionalInfoView = React.createClass({
     render: function() {
 
         var nextButton;
-        if (this.props.methodOfTrans) {
+        if (this.props.pickupTime === true && this.props.methodOfTrans) {
+            nextButton = <Link to="/order-summary">
+                            <button className="next-button">
+                                Next
+                                <i className="fa fa-arrow-right fa-lg" aria-hidden="true"></i>
+                            </button>
+                        </Link>
+        } else if (this.props.pickupTime !== true) {
             nextButton = <Link to="/order-summary">
                             <button className="next-button">
                                 Next
@@ -63,7 +70,6 @@ var AdditionalInfoView = React.createClass({
                     <form>
                         <SelectPickUpTime
                             handlePickupTime={this.props.handlePickupTime}
-                            handleMethodOfTransShow={this.props.handleMethodOfTransShow}
                             value={this.props.pickupTime || 'true'} />
                         <SelectMethodOfTrans
                             handleMethodOfTrans={this.props.handleMethodOfTrans}

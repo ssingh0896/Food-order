@@ -13,6 +13,7 @@ var orderSchema = mongoose.Schema({
     timeUntilArrival: String,
     secondsUntilArrival: Number,
     timeSelectedForPickup: String,
+    expectedPickupTime: String,
     completed: Boolean
 });
 
