@@ -5,7 +5,7 @@ var OrderReadyTime = React.createClass({
 
     propTypes: {
         methodOfTrans: React.PropTypes.string,
-        pickupTime: React.PropTypes.string,
+        pickupTime: React.PropTypes.bool,
         duration: React.PropTypes.string
     },
 

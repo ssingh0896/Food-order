@@ -25405,9 +25405,13 @@
 
 	    _handleOrderSubmit: function _handleOrderSubmit() {
 
-	        // if (timeSelectedForPickup === 'true') {
-	        // calculate expectedPickupTime and setState before posting order
-	        // }
+	        if (this.state.pickupTime === true) {
+	            var expectedPickupTime = (0, _moment2.default)().add(this.state.durationSeconds, 's').format('LT');
+
+	            this.setState({
+	                expectedPickupTime: expectedPickupTime
+	            });
+	        }
 
 	        var date = (0, _moment2.default)().format('l');
 	        var time = (0, _moment2.default)().format('LT');
@@ -60757,7 +60761,7 @@
 	    propTypes: {
 	        handleMethodOfTrans: _react2.default.PropTypes.func,
 	        handlePickupTime: _react2.default.PropTypes.func,
-	        pickupTime: _react2.default.PropTypes.string,
+	        pickupTime: _react2.default.PropTypes.bool,
 	        handleFavorite: _react2.default.PropTypes.func,
 	        favorite: _react2.default.PropTypes.bool,
 	        handleCCName: _react2.default.PropTypes.func,
@@ -61009,7 +61013,7 @@
 
 	    propTypes: {
 	        handlePickupTime: _react2.default.PropTypes.func,
-	        value: _react2.default.PropTypes.string
+	        value: _react2.default.PropTypes.bool
 	    },
 
 	    render: function render() {
@@ -61982,7 +61986,7 @@
 
 	    propTypes: {
 	        methodOfTrans: _react2.default.PropTypes.string,
-	        pickupTime: _react2.default.PropTypes.string,
+	        pickupTime: _react2.default.PropTypes.bool,
 	        duration: _react2.default.PropTypes.string,
 	        selectedShop: _react2.default.PropTypes.object,
 	        distance: _react2.default.PropTypes.string,
@@ -62068,7 +62072,7 @@
 
 	    propTypes: {
 	        methodOfTrans: _react2.default.PropTypes.string,
-	        pickupTime: _react2.default.PropTypes.string,
+	        pickupTime: _react2.default.PropTypes.bool,
 	        duration: _react2.default.PropTypes.string
 	    },
 

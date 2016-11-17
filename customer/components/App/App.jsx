@@ -226,9 +226,13 @@ var App = React.createClass({
 
     _handleOrderSubmit: function() {
 
-        // if (timeSelectedForPickup === 'true') {
-            // calculate expectedPickupTime and setState before posting order
-    // }
+        if (this.state.pickupTime === true) {
+            var expectedPickupTime = moment().add(this.state.durationSeconds, 's').format('LT');
+
+            this.setState({
+                expectedPickupTime: expectedPickupTime
+            })
+        }
 
 
 

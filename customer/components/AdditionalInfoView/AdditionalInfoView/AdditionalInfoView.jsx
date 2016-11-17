@@ -14,7 +14,7 @@ var AdditionalInfoView = React.createClass({
     propTypes: {
         handleMethodOfTrans: React.PropTypes.func,
         handlePickupTime: React.PropTypes.func,
-        pickupTime: React.PropTypes.string,
+        pickupTime: React.PropTypes.bool,
         handleFavorite: React.PropTypes.func,
         favorite: React.PropTypes.bool,
         handleCCName: React.PropTypes.func,
