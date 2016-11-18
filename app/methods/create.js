@@ -7,7 +7,6 @@ var create = function(order, callback) {
             console.log(err);
             return;
         }
-        console.log("Created order", order);
         callback(null, result);
     });
 };

@@ -214,7 +214,6 @@ var App = React.createClass({
 
 
     _handleDistanceAndDuration: function(response) {
-        console.log(response);
         this.setState({
             distance: response.rows[0].elements[0].distance.text,
             duration: response.rows[0].elements[0].duration.text,
@@ -229,12 +228,12 @@ var App = React.createClass({
         if (this.state.pickupTime === true) {
             var expectedPickupTime = moment().add(this.state.durationSeconds, 's').format('LT');
 
-            this.setState({
-                expectedPickupTime: expectedPickupTime
-            })
+            // this.setState({
+            //     expectedPickupTime: expectedPickupTime
+            // })
         }
 
-
+        console.log(expectedPickupTime);
 
         var date = moment().format('l');
         var time = moment().format('LT');
@@ -253,12 +252,11 @@ var App = React.createClass({
                 timeUntilArrival: this.state.duration,
                 secondsUntilArrival: this.state.durationSeconds,
                 timeSelectedForPickup: this.state.pickupTime,
-                expectedPickupTime: this.state.expectedPickupTime,
+                expectedPickupTime: expectedPickupTime,
                 completed: false
             })
             .end(function(err, res){
                 console.log(err);
-                console.log(res);
             })
         this._handleStateClear();
     },
@@ -284,7 +282,6 @@ var App = React.createClass({
     },
 
     _handlePreviousOrders: function() {
-        console.log('handling previous orders');
         request.get('/api/users/' + String(this.state.username) + '/orders/previous')
            .end((err, res) => {
                this.setState({
@@ -458,7 +455,6 @@ var App = React.createClass({
             })
         };
         setTimeout(clearNotification, 3000);
-        console.log('toggle additionalInfo not');
     },
 
     _handleSpecialInstructions: function(event) {

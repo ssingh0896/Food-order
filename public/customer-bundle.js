@@ -25393,7 +25393,6 @@
 	    },
 
 	    _handleDistanceAndDuration: function _handleDistanceAndDuration(response) {
-	        console.log(response);
 	        this.setState({
 	            distance: response.rows[0].elements[0].distance.text,
 	            duration: response.rows[0].elements[0].duration.text,
@@ -25408,10 +25407,12 @@
 	        if (this.state.pickupTime === true) {
 	            var expectedPickupTime = (0, _moment2.default)().add(this.state.durationSeconds, 's').format('LT');
 
-	            this.setState({
-	                expectedPickupTime: expectedPickupTime
-	            });
+	            // this.setState({
+	            //     expectedPickupTime: expectedPickupTime
+	            // })
 	        }
+
+	        console.log(expectedPickupTime);
 
 	        var date = (0, _moment2.default)().format('l');
 	        var time = (0, _moment2.default)().format('LT');
@@ -25428,11 +25429,10 @@
 	            timeUntilArrival: this.state.duration,
 	            secondsUntilArrival: this.state.durationSeconds,
 	            timeSelectedForPickup: this.state.pickupTime,
-	            expectedPickupTime: this.state.expectedPickupTime,
+	            expectedPickupTime: expectedPickupTime,
 	            completed: false
 	        }).end(function (err, res) {
 	            console.log(err);
-	            console.log(res);
 	        });
 	        this._handleStateClear();
 	    },
@@ -25458,7 +25458,6 @@
 	    _handlePreviousOrders: function _handlePreviousOrders() {
 	        var _this2 = this;
 
-	        console.log('handling previous orders');
 	        _superagent2.default.get('/api/users/' + String(this.state.username) + '/orders/previous').end(function (err, res) {
 	            _this2.setState({
 	                previousOrders: res.body
@@ -25622,7 +25621,6 @@
 	            });
 	        };
 	        setTimeout(clearNotification, 3000);
-	        console.log('toggle additionalInfo not');
 	    },
 
 	    _handleSpecialInstructions: function _handleSpecialInstructions(event) {
@@ -60761,7 +60759,7 @@
 	    propTypes: {
 	        handleMethodOfTrans: _react2.default.PropTypes.func,
 	        handlePickupTime: _react2.default.PropTypes.func,
-	        pickupTime: _react2.default.PropTypes.bool,
+	        pickupTime: _react2.default.PropTypes.oneOfType([_react2.default.PropTypes.string, _react2.default.PropTypes.bool]),
 	        handleFavorite: _react2.default.PropTypes.func,
 	        favorite: _react2.default.PropTypes.bool,
 	        handleCCName: _react2.default.PropTypes.func,
@@ -60839,7 +60837,7 @@
 	                    null,
 	                    _react2.default.createElement(_SelectPickUpTime2.default, {
 	                        handlePickupTime: this.props.handlePickupTime,
-	                        value: this.props.pickupTime || 'true' }),
+	                        value: this.props.pickupTime || true }),
 	                    _react2.default.createElement(_SelectMethodOfTrans2.default, {
 	                        handleMethodOfTrans: this.props.handleMethodOfTrans,
 	                        methodOfTransShow: this.props.methodOfTransShow }),
@@ -61013,7 +61011,7 @@
 
 	    propTypes: {
 	        handlePickupTime: _react2.default.PropTypes.func,
-	        value: _react2.default.PropTypes.bool
+	        value: _react2.default.PropTypes.oneOfType([_react2.default.PropTypes.string, _react2.default.PropTypes.bool])
 	    },
 
 	    render: function render() {
@@ -61986,7 +61984,7 @@
 
 	    propTypes: {
 	        methodOfTrans: _react2.default.PropTypes.string,
-	        pickupTime: _react2.default.PropTypes.bool,
+	        pickupTime: _react2.default.PropTypes.oneOfType([_react2.default.PropTypes.string, _react2.default.PropTypes.bool]),
 	        duration: _react2.default.PropTypes.string,
 	        selectedShop: _react2.default.PropTypes.object,
 	        distance: _react2.default.PropTypes.string,
@@ -62072,7 +62070,7 @@
 
 	    propTypes: {
 	        methodOfTrans: _react2.default.PropTypes.string,
-	        pickupTime: _react2.default.PropTypes.bool,
+	        pickupTime: _react2.default.PropTypes.oneOfType([_react2.default.PropTypes.string, _react2.default.PropTypes.bool]),
 	        duration: _react2.default.PropTypes.string
 	    },
 

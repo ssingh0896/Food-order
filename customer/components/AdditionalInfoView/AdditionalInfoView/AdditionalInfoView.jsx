@@ -14,7 +14,10 @@ var AdditionalInfoView = React.createClass({
     propTypes: {
         handleMethodOfTrans: React.PropTypes.func,
         handlePickupTime: React.PropTypes.func,
-        pickupTime: React.PropTypes.bool,
+        pickupTime: React.PropTypes.oneOfType([
+            React.PropTypes.string,
+            React.PropTypes.bool
+        ]),
         handleFavorite: React.PropTypes.func,
         favorite: React.PropTypes.bool,
         handleCCName: React.PropTypes.func,
@@ -70,7 +73,7 @@ var AdditionalInfoView = React.createClass({
                     <form>
                         <SelectPickUpTime
                             handlePickupTime={this.props.handlePickupTime}
-                            value={this.props.pickupTime || 'true'} />
+                            value={this.props.pickupTime || true} />
                         <SelectMethodOfTrans
                             handleMethodOfTrans={this.props.handleMethodOfTrans}
                             methodOfTransShow={this.props.methodOfTransShow} />

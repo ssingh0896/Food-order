@@ -11,7 +11,10 @@ var ConfirmationView = React.createClass({
 
     propTypes: {
         methodOfTrans: React.PropTypes.string,
-        pickupTime: React.PropTypes.bool,
+        pickupTime: React.PropTypes.oneOfType([
+            React.PropTypes.string,
+            React.PropTypes.bool
+        ]),
         duration: React.PropTypes.string,
         selectedShop: React.PropTypes.object,
         distance: React.PropTypes.string,

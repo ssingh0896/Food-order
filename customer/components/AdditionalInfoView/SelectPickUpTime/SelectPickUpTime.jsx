@@ -6,7 +6,10 @@ var SelectPickUpTime = React.createClass({
 
     propTypes: {
         handlePickupTime: React.PropTypes.func,
-        value: React.PropTypes.bool
+        value: React.PropTypes.oneOfType([
+            React.PropTypes.string,
+            React.PropTypes.bool
+        ])
     },
 
     render: function() {
