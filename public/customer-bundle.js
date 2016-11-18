@@ -25406,13 +25406,9 @@
 
 	        if (this.state.pickupTime === true) {
 	            var expectedPickupTime = (0, _moment2.default)().add(this.state.durationSeconds, 's').format('LT');
-
-	            // this.setState({
-	            //     expectedPickupTime: expectedPickupTime
-	            // })
+	        } else {
+	            var expectedPickupTime = '';
 	        }
-
-	        console.log(expectedPickupTime);
 
 	        var date = (0, _moment2.default)().format('l');
 	        var time = (0, _moment2.default)().format('LT');

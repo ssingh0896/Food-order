@@ -1,10 +1,16 @@
 import React from 'react'
 import sass from './timer.scss'
+import moment from 'moment'
 
 var Timer = React.createClass({
 
     propTypes: {
-        secondsUntilArrival: React.PropTypes.number
+        secondsUntilArrival: React.PropTypes.number,
+        timeSelectedForPickup: React.PropTypes.oneOfType([
+            React.PropTypes.string,
+            React.PropTypes.bool
+        ]),
+        expectedPickupTime: React.PropTypes.string
     },
 
     getInitialState: function() {
@@ -15,49 +21,65 @@ var Timer = React.createClass({
     },
 
     componentWillMount: function() {
-        this.counterInterval = setInterval(this._handleCountDown, 1000);
-    },
 
-    _handleCountDown: function() {
-        if (this.state.secondsUntilArrival === 0) {
-            clearInterval(this.counterInterval);
-        } else {
-            var newTime = this.state.secondsUntilArrival - 1;
-            var formattedSeconds = '';
+        console.log(this.props);
 
-            if (newTime < 60) {
-                if (newTime > 9) {
-                    formattedSeconds = '0:' + newTime.toString();
-                } else {
-                    formattedSeconds = '0:0' + newTime.toString();
-                }
+        var timeSelectedForPickup = this.props.timeSelectedForPickup;
+        var expectedPickupTime = this.props.expectedPickupTime;
 
-            } else if (newTime >= 60) {
-                var hour = Math.floor(newTime / 60);
-                var minutes = newTime % 60;
-                if (minutes < 10) {
-                    formattedSeconds = hour + ':0' + minutes;
-                } else {
-                    formattedSeconds = hour + ':' + minutes;
-                }
-            }
-            this._handleSetState(newTime, formattedSeconds);
+        if (expectedPickupTime) {
+            console.log('true');
+            // console.log(expectedPickupTime);
+            // console.log(moment().format('LT'));
+        } else if (expectedPickupTime === '') {
+            console.log('time');
+            // console.log(timeSelectedForPickup);
+            // console.log(moment().format('LT'));
         }
-    },
 
-    _handleSetState: function(newTime, formattedSeconds) {
-        if (formattedSeconds !== '0:00') {
-            this.setState({
-                secondsUntilArrival: newTime,
-                formattedSeconds: formattedSeconds
-            })
-
-        } else if (formattedSeconds === '0:00') {
-            this.setState({
-                formattedSeconds: '0:00'
-            })
-        }
+        // this.counterInterval = setInterval(this._handleCountDown, 1000);
     },
+    //
+    // _handleCountDown: function() {
+    //     if (this.state.secondsUntilArrival === 0) {
+    //         clearInterval(this.counterInterval);
+    //     } else {
+    //         var newTime = this.state.secondsUntilArrival - 1;
+    //         var formattedSeconds = '';
+    //
+    //         if (newTime < 60) {
+    //             if (newTime > 9) {
+    //                 formattedSeconds = '0:' + newTime.toString();
+    //             } else {
+    //                 formattedSeconds = '0:0' + newTime.toString();
+    //             }
+    //
+    //         } else if (newTime >= 60) {
+    //             var hour = Math.floor(newTime / 60);
+    //             var minutes = newTime % 60;
+    //             if (minutes < 10) {
+    //                 formattedSeconds = hour + ':0' + minutes;
+    //             } else {
+    //                 formattedSeconds = hour + ':' + minutes;
+    //             }
+    //         }
+    //         this._handleSetState(newTime, formattedSeconds);
+    //     }
+    // },
+    //
+    // _handleSetState: function(newTime, formattedSeconds) {
+    //     if (formattedSeconds !== '0:00') {
+    //         this.setState({
+    //             secondsUntilArrival: newTime,
+    //             formattedSeconds: formattedSeconds
+    //         })
+    //
+    //     } else if (formattedSeconds === '0:00') {
+    //         this.setState({
+    //             formattedSeconds: '0:00'
+    //         })
+    //     }
+    // },
 
     render: function() {
         return (

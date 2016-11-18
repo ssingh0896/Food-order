@@ -22,6 +22,7 @@ var BAOrder = React.createClass({
             specialInstructions: React.PropTypes.string,
             time: React.PropTypes.string,
             timeSelectedForPickup: React.PropTypes.string,
+            expectedPickupTime: React.PropTypes.string,
             timeUntilArrival: React.PropTypes.string,
             secondsUntilArrival: React.PropTypes.number,
             username: React.PropTypes.string,
@@ -58,7 +59,9 @@ var BAOrder = React.createClass({
                     </div>
                     <div className="ba-order-right">
                         <Timer
-                            secondsUntilArrival={this.props.order.secondsUntilArrival} />
+                            secondsUntilArrival={this.props.order.secondsUntilArrival}
+                            timeSelectedForPickup={this.props.order.timeSelectedForPickup}
+                            expectedPickupTime={this.props.order.expectedPickupTime} />
                          <p>ETA:
                             {/* <span className="ba-order-time">{this.props.order.timeUntilArrival ?
                              this.props.order.timeUntilArrival

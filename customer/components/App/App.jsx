@@ -227,13 +227,9 @@ var App = React.createClass({
 
         if (this.state.pickupTime === true) {
             var expectedPickupTime = moment().add(this.state.durationSeconds, 's').format('LT');
-
-            // this.setState({
-            //     expectedPickupTime: expectedPickupTime
-            // })
+        } else {
+            var expectedPickupTime = '';
         }
-
-        console.log(expectedPickupTime);
 
         var date = moment().format('l');
         var time = moment().format('LT');
