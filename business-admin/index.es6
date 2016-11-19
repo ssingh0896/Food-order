@@ -13,8 +13,9 @@ ReactDOM.render(
     document.getElementById('root')
 )
 
-
+// if order is more than 10 minutes away, show in other panel
 // create notification and 'ding' sound when order comes in
+// can only order 30 min out or something
 // timer for orders placed at pickup time
 // create timer based on time until arrival that counts down and then renders 'customer is here' when it hits 0:00
 // create responsive navigation

@@ -78,7 +78,9 @@
 	    _react2.default.createElement(_reactRouter.Router, { history: _reactRouter.browserHistory, routes: _routes2.default })
 	), document.getElementById('root'));
 
+	// if order is more than 10 minutes away, show in other panel
 	// create notification and 'ding' sound when order comes in
+	// can only order 30 min out or something
 	// timer for orders placed at pickup time
 	// create timer based on time until arrival that counts down and then renders 'customer is here' when it hits 0:00
 	// create responsive navigation
@@ -27276,71 +27278,90 @@
 
 	    getInitialState: function getInitialState() {
 	        return {
-	            secondsUntilArrival: this.props.secondsUntilArrival,
+	            secondsUntilArrival: undefined,
 	            formattedSeconds: ''
 	        };
 	    },
 
-	    componentWillMount: function componentWillMount() {
-
-	        console.log(this.props);
-
+	    componentDidMount: function componentDidMount() {
 	        var timeSelectedForPickup = this.props.timeSelectedForPickup;
 	        var expectedPickupTime = this.props.expectedPickupTime;
-
 	        if (expectedPickupTime) {
-	            console.log('true');
-	            // console.log(expectedPickupTime);
-	            // console.log(moment().format('LT'));
-	        } else if (expectedPickupTime === '') {
-	                console.log('time');
-	                // console.log(timeSelectedForPickup);
-	                // console.log(moment().format('LT'));
+	            var now = (0, _moment2.default)().format('LT'); // get current time
+	            var nowSlice = now.slice(0, now.length - 3); // remove AM/PM
+	            var nowArr = nowSlice.split(':'); // split into array
+	            if (nowArr[1].charAt(0) === '0') {
+	                // if min = 0X, remove 0
+	                nowArr[1] = nowArr[1].slice(1, 2);
 	            }
+
+	            var pickUpTimeSlice = expectedPickupTime.slice(0, now.length - 3); // remove AM/PM
+	            var pickupTimeArr = pickUpTimeSlice.split(':'); // split into array
+	            if (pickupTimeArr[1].charAt(0) === '0') {
+	                // if min = 0X, remove 0
+	                pickupTimeArr[1] = pickupTimeArr[1].slice(1, 2);
+	            }
+	            console.log(nowArr);
+	            console.log(pickupTimeArr);
+
+	            if (nowArr[0] === pickupTimeArr[0]) {
+	                // if same hour, get difference of minutes and convert to seconds
+	                var secsDiff = (pickupTimeArr[1] - nowArr[1]) * 60;
+	            } else {
+	                // if diff hour, get difference of minutes and hours and convert to seconds
+	                var secsDiff = (60 - nowArr[1] + pickupTimeArr[1] + 60 * (pickupTimeArr[0] - nowArr[0] - 1)) * 60;
+	            }
+	            this.setState({
+	                secondsUntilArrival: secsDiff
+	            });
+	            console.log(this.state.secondsUntilArrival);
+	        } else if (!expectedPickupTime) {}
+	        // console.log('selected pickup time');
+	        // console.log(timeSelectedForPickup);
+	        // console.log(moment().format('LT'));
+
 
 	        // this.counterInterval = setInterval(this._handleCountDown, 1000);
 	    },
-	    //
-	    // _handleCountDown: function() {
-	    //     if (this.state.secondsUntilArrival === 0) {
-	    //         clearInterval(this.counterInterval);
-	    //     } else {
-	    //         var newTime = this.state.secondsUntilArrival - 1;
-	    //         var formattedSeconds = '';
-	    //
-	    //         if (newTime < 60) {
-	    //             if (newTime > 9) {
-	    //                 formattedSeconds = '0:' + newTime.toString();
-	    //             } else {
-	    //                 formattedSeconds = '0:0' + newTime.toString();
-	    //             }
-	    //
-	    //         } else if (newTime >= 60) {
-	    //             var hour = Math.floor(newTime / 60);
-	    //             var minutes = newTime % 60;
-	    //             if (minutes < 10) {
-	    //                 formattedSeconds = hour + ':0' + minutes;
-	    //             } else {
-	    //                 formattedSeconds = hour + ':' + minutes;
-	    //             }
-	    //         }
-	    //         this._handleSetState(newTime, formattedSeconds);
-	    //     }
-	    // },
-	    //
-	    // _handleSetState: function(newTime, formattedSeconds) {
-	    //     if (formattedSeconds !== '0:00') {
-	    //         this.setState({
-	    //             secondsUntilArrival: newTime,
-	    //             formattedSeconds: formattedSeconds
-	    //         })
-	    //
-	    //     } else if (formattedSeconds === '0:00') {
-	    //         this.setState({
-	    //             formattedSeconds: '0:00'
-	    //         })
-	    //     }
-	    // },
+
+	    _handleCountDown: function _handleCountDown(secs) {
+	        if (this.state.secondsUntilArrival === 0) {
+	            clearInterval(this.counterInterval);
+	        } else {
+	            var newTime = this.state.secondsUntilArrival - 1;
+	            var formattedSeconds = '';
+
+	            if (newTime < 60) {
+	                if (newTime > 9) {
+	                    formattedSeconds = '0:' + newTime.toString();
+	                } else {
+	                    formattedSeconds = '0:0' + newTime.toString();
+	                }
+	            } else if (newTime >= 60) {
+	                var hour = Math.floor(newTime / 60);
+	                var minutes = newTime % 60;
+	                if (minutes < 10) {
+	                    formattedSeconds = hour + ':0' + minutes;
+	                } else {
+	                    formattedSeconds = hour + ':' + minutes;
+	                }
+	            }
+	            this._handleSetState(newTime, formattedSeconds);
+	        }
+	    },
+
+	    _handleSetState: function _handleSetState(newTime, formattedSeconds) {
+	        if (formattedSeconds !== '0:00') {
+	            this.setState({
+	                secondsUntilArrival: newTime,
+	                formattedSeconds: formattedSeconds
+	            });
+	        } else if (formattedSeconds === '0:00') {
+	            this.setState({
+	                formattedSeconds: '0:00'
+	            });
+	        }
+	    },
 
 	    render: function render() {
 	        return _react2.default.createElement(
