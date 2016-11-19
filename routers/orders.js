@@ -11,22 +11,46 @@ app.get('/orders', jsonParser, function(req,res) {
         if (err) {
             res.json(err)
         }
-        console.log(listOfOrders);
         res.json(listOfOrders);
+        res.status(200);
     })
 })
 
 app.post('/orders', jsonParser, function(req, res) {
     create(req.body, function(err, order) {
         res.json(order);
-    });
-})
-
-app.post('/orders/remove', jsonParser, function(req, res) {
-    Orders.remove({}, function(err) {
-        console.log('collection removed');
         res.status(201);
     });
 })
+
+app.delete('/orders', jsonParser, function(req, res) {
+    Orders.remove({}, function(err) {
+        console.log('collection removed');
+        res.json('collection removed')
+        res.status(200);
+    });
+})
+
+// app.patch('/orders', jsonParser, function(req, res) {
+//     Orders.find({}, function (err, listOfOrders) {
+//         if (err) {
+//             console.log(err);
+//         }
+//
+//         console.log(listOfOrders);
+//         listOfOrders.forEach(function(order) {
+//             order.completed = false;
+//         });
+//         listOfOrders.save(function(err, result) {
+//             if (err) {
+//                 console.log(err);
+//             }
+//
+//             res.status(200);
+//             res.json('all orders marked incomplete')
+//         })
+//
+//     });
+// })
 
 module.exports = app;

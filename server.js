@@ -5,6 +5,7 @@ var MongoClient = require('mongodb').MongoClient;
 var mongoose = require('mongoose');
 var getPrevsAndFavs = require('./routers/getPrevsAndFavs');
 var orders = require('./routers/orders');
+var ordersOrdersId = require('./routers/ordersOrdersId');
 
 
 /* ------------------Mongoose--------------------- */
@@ -25,19 +26,25 @@ mongoose.connection.on('error', function(err) {
 
 /* -----------------Express------------------------ */
 
-function requestHandler(request, response) {
-    response.sendFile(__dirname + '/public/index.html');
+function customerRequestHandler(request, response) {
+    response.sendFile(__dirname + '/public/customer.html');
 }
 
-app.use(express.static(__dirname + '/public')); // creates special route for handling static files (.js, .html, .css). These will automatically be served from public directory when something is requested
+function BARequestHandler(request, response) {
+    response.sendFile(__dirname + '/public/business-admin.html');
+}
+
+app.use(express.static(__dirname + '/public'));
 
 app.use('/api', getPrevsAndFavs);
 app.use('/api', orders);
+app.use('/api', ordersOrdersId);
 
-app.get('*', requestHandler);
+app.get('/admin', BARequestHandler)
+app.get('/', customerRequestHandler);
 
-var test = function() {
+var log = function() {
     console.log('app listening on port 4005');
 }
 
-app.listen(process.env.PORT || 4005, test);
+app.listen(process.env.PORT || 4005, log);
