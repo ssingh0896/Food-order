@@ -7,8 +7,12 @@ import ReduxThunk from 'redux-thunk'
 const logger = createLogger();
 
 const store = createStore(rootReducer,
+  // compose(
+  //   applyMiddleware(ReduxPromise, ReduxThunk, logger),
+  //   window.devToolsExtension ? window.devToolsExtension() : f => f
+  // )
   compose(
-    applyMiddleware(ReduxPromise, ReduxThunk, logger),
+    applyMiddleware(ReduxPromise, ReduxThunk),
     window.devToolsExtension ? window.devToolsExtension() : f => f
   )
 );

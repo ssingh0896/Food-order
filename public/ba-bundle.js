@@ -27284,9 +27284,13 @@
 	    },
 
 	    componentDidMount: function componentDidMount() {
+	        // declare variables ---------------------------
 	        var timeSelectedForPickup = this.props.timeSelectedForPickup;
 	        var expectedPickupTime = this.props.expectedPickupTime;
+
+	        //  if user is leaving now ---------------------------
 	        if (expectedPickupTime) {
+	            // format times into arrays ---------------------------
 	            var now = (0, _moment2.default)().format('LT'); // get current time
 	            var nowSlice = now.slice(0, now.length - 3); // remove AM/PM
 	            var nowArr = nowSlice.split(':'); // split into array
@@ -27304,6 +27308,7 @@
 	            console.log(nowArr);
 	            console.log(pickupTimeArr);
 
+	            // calculate time difference converted to seconds ---------------
 	            if (nowArr[0] === pickupTimeArr[0]) {
 	                // if same hour, get difference of minutes and convert to seconds
 	                var secsDiff = (pickupTimeArr[1] - nowArr[1]) * 60;
@@ -27314,17 +27319,18 @@
 	            this.setState({
 	                secondsUntilArrival: secsDiff
 	            });
-	            console.log(this.state.secondsUntilArrival);
-	        } else if (!expectedPickupTime) {}
-	        // console.log('selected pickup time');
-	        // console.log(timeSelectedForPickup);
-	        // console.log(moment().format('LT'));
 
+	            // if user selected a pickup time ---------------------------
+	        } else if (!expectedPickupTime) {
+	                // console.log('selected pickup time');
+	                // console.log(timeSelectedForPickup);
+	                // console.log(moment().format('LT'));
+	            }
 
-	        // this.counterInterval = setInterval(this._handleCountDown, 1000);
+	        this.counterInterval = setInterval(this._handleCountDown, 1000);
 	    },
 
-	    _handleCountDown: function _handleCountDown(secs) {
+	    _handleCountDown: function _handleCountDown() {
 	        if (this.state.secondsUntilArrival === 0) {
 	            clearInterval(this.counterInterval);
 	        } else {
@@ -58448,7 +58454,12 @@
 
 	var logger = (0, _reduxLogger2.default)();
 
-	var store = (0, _redux.createStore)(_reducers2.default, (0, _redux.compose)((0, _redux.applyMiddleware)(_reduxPromise2.default, _reduxThunk2.default, logger), window.devToolsExtension ? window.devToolsExtension() : function (f) {
+	var store = (0, _redux.createStore)(_reducers2.default,
+	// compose(
+	//   applyMiddleware(ReduxPromise, ReduxThunk, logger),
+	//   window.devToolsExtension ? window.devToolsExtension() : f => f
+	// )
+	(0, _redux.compose)((0, _redux.applyMiddleware)(_reduxPromise2.default, _reduxThunk2.default), window.devToolsExtension ? window.devToolsExtension() : function (f) {
 	  return f;
 	}));
 

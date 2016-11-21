@@ -21,9 +21,13 @@ var Timer = React.createClass({
     },
 
     componentDidMount: function() {
+        // declare variables ---------------------------
         var timeSelectedForPickup = this.props.timeSelectedForPickup;
         var expectedPickupTime = this.props.expectedPickupTime;
+
+        //  if user is leaving now ---------------------------
         if (expectedPickupTime) {
+            // format times into arrays ---------------------------
             var now = moment().format('LT'); // get current time
             var nowSlice = now.slice(0, now.length - 3) // remove AM/PM
             var nowArr = nowSlice.split(':'); // split into array
@@ -39,7 +43,7 @@ var Timer = React.createClass({
             console.log(nowArr);
             console.log(pickupTimeArr);
 
-
+            // calculate time difference converted to seconds ---------------
             if (nowArr[0] === pickupTimeArr[0]) { // if same hour, get difference of minutes and convert to seconds
                 var secsDiff = (pickupTimeArr[1] - nowArr[1]) * 60;
             } else { // if diff hour, get difference of minutes and hours and convert to seconds
@@ -47,20 +51,19 @@ var Timer = React.createClass({
             }
             this.setState({
                 secondsUntilArrival: secsDiff
-            });
-            console.log(this.state.secondsUntilArrival);
+            })
 
-
+        // if user selected a pickup time ---------------------------
         } else if (!expectedPickupTime) {
             // console.log('selected pickup time');
             // console.log(timeSelectedForPickup);
             // console.log(moment().format('LT'));
         }
 
-        // this.counterInterval = setInterval(this._handleCountDown, 1000);
+        this.counterInterval = setInterval(this._handleCountDown, 1000);
     },
 
-    _handleCountDown: function(secs) {
+    _handleCountDown: function() {
         if (this.state.secondsUntilArrival === 0) {
             clearInterval(this.counterInterval);
         } else {
