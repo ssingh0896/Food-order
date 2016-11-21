@@ -25406,9 +25406,6 @@
 
 	        if (this.state.pickupTime === true) {
 	            var expectedPickupTime = (0, _moment2.default)().add(this.state.durationSeconds, 's').format('LT');
-	            this.setState({
-	                expectedPickupTime: expectedPickupTime
-	            });
 	        } else {
 	            var expectedPickupTime = '';
 	        }
@@ -25807,8 +25804,7 @@
 	                    previousOrders: this.state.previousOrders,
 	                    favoriteOrders: this.state.favoriteOrders,
 	                    handleMenuToggle: this._handleMenuToggle,
-	                    menuShow: this.state.menuShow,
-	                    expectedPickupTime: this.state.expectedPickupTime
+	                    menuShow: this.state.menuShow
 	                })
 	            )
 	        );

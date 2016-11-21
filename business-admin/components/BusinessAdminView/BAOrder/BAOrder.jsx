@@ -33,6 +33,7 @@ var BAOrder = React.createClass({
 
 
     _handleCompleteOrder: function() {
+        console.log('completing order');
         this.props.completeOrder(this.props.order._id)
     },
 
@@ -62,12 +63,7 @@ var BAOrder = React.createClass({
                             secondsUntilArrival={this.props.order.secondsUntilArrival}
                             timeSelectedForPickup={this.props.order.timeSelectedForPickup}
                             expectedPickupTime={this.props.order.expectedPickupTime} />
-                         <p>ETA:
-                            {/* <span className="ba-order-time">{this.props.order.timeUntilArrival ?
-                             this.props.order.timeUntilArrival
-                             : this.props.order.timeSelectedForPickup}
-                             </span> */}
-                         </p>
+                         <p>ETA:</p>
                         <button onClick={this._handleCompleteOrder}>
                             Complete
                             <i className="fa fa-check-circle fa-2x" aria-hidden="true"></i>

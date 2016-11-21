@@ -26998,6 +26998,7 @@
 	    },
 
 	    _handleCompleteOrder: function _handleCompleteOrder() {
+	        console.log('completing order');
 	        this.props.completeOrder(this.props.order._id);
 	    },
 
@@ -27355,6 +27356,10 @@
 	            }
 
 	        this.counterInterval = setInterval(this._handleCountDown, 1000);
+	    },
+
+	    componentWillUnmount: function componentWillUnmount() {
+	        clearInterval(this.counterInterval);
 	    },
 
 	    _handleCountDown: function _handleCountDown() {

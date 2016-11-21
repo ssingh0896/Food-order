@@ -86,6 +86,10 @@ var Timer = React.createClass({
         this.counterInterval = setInterval(this._handleCountDown, 1000);
     },
 
+    componentWillUnmount: function() {
+        clearInterval(this.counterInterval);
+    },
+
     _handleCountDown: function() {
         if (this.state.formattedSeconds === '0:00') {
             clearInterval(this.counterInterval);
