@@ -25,3 +25,4 @@ ReactDOM.render(
 // add select time component to additional info so it only displays times in the future
 
 // Create previous orders page -- all completed orders
+// fix refresh bug on customer

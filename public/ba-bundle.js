@@ -90,6 +90,7 @@
 	// add select time component to additional info so it only displays times in the future
 
 	// Create previous orders page -- all completed orders
+	// fix refresh bug on customer
 
 /***/ },
 /* 1 */
@@ -27305,8 +27306,6 @@
 	                // if min = 0X, remove 0
 	                pickupTimeArr[1] = pickupTimeArr[1].slice(1, 2);
 	            }
-	            // console.log(nowArr);
-	            // console.log(pickupTimeArr);
 
 	            // calculate time difference converted to seconds ---------------
 	            if (nowArr[0] === pickupTimeArr[0]) {
@@ -27316,10 +27315,10 @@
 	                // if diff hour, get difference of minutes and hours and convert to seconds
 	                var secsDiff = (60 - nowArr[1] + pickupTimeArr[1] + 60 * (pickupTimeArr[0] - nowArr[0] - 1)) * 60;
 	            }
-	            console.log(secsDiff);
 	            this.setState({
 	                secondsUntilArrival: secsDiff
 	            });
+	            console.log('secs diff', secsDiff);
 
 	            // if user selected a pickup time ---------------------------
 	        } else if (!expectedPickupTime) {
@@ -27350,19 +27349,18 @@
 	                    // if diff hour, get difference of minutes and hours and convert to seconds
 	                    var secsDiff = (60 - nowArr[1] + pickupTimeArr[1] + 60 * (pickupTimeArr[0] - nowArr[0] - 1)) * 60;
 	                }
-	                console.log(secsDiff);
 	                this.setState({
 	                    secondsUntilArrival: secsDiff
 	                });
 	            }
 
-	        this.counterInterval = setInterval(this._handleCountDown(secsDiff), 1000);
+	        this.counterInterval = setInterval(this._handleCountDown, 1000);
 	    },
 
-	    _handleCountDown: function _handleCountDown(secsDiff) {
+	    _handleCountDown: function _handleCountDown() {
 	        if (this.state.formattedSeconds === '0:00') {
 	            clearInterval(this.counterInterval);
-	        } else if (secsDiff <= 0) {
+	        } else if (this.state.secondsUntilArrival <= 0) {
 	            clearInterval(this.counterInterval);
 	            this.setState({
 	                formattedSeconds: '0:00'
@@ -27386,6 +27384,7 @@
 	                    formattedSeconds = hour + ':' + minutes;
 	                }
 	            }
+
 	            this._handleSetState(newTime, formattedSeconds);
 	        }
 	    },
