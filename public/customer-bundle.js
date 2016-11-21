@@ -25406,6 +25406,9 @@
 
 	        if (this.state.pickupTime === true) {
 	            var expectedPickupTime = (0, _moment2.default)().add(this.state.durationSeconds, 's').format('LT');
+	            this.setState({
+	                expectedPickupTime: expectedPickupTime
+	            });
 	        } else {
 	            var expectedPickupTime = '';
 	        }
@@ -25804,7 +25807,8 @@
 	                    previousOrders: this.state.previousOrders,
 	                    favoriteOrders: this.state.favoriteOrders,
 	                    handleMenuToggle: this._handleMenuToggle,
-	                    menuShow: this.state.menuShow
+	                    menuShow: this.state.menuShow,
+	                    expectedPickupTime: this.state.expectedPickupTime
 	                })
 	            )
 	        );
@@ -61993,7 +61997,8 @@
 	        selectedShopLocation: _react2.default.PropTypes.shape({
 	            lat: _react2.default.PropTypes.number,
 	            lng: _react2.default.PropTypes.number
-	        })
+	        }),
+	        expectedPickupTime: _react2.default.PropTypes.string
 	    },
 
 	    render: function render() {
@@ -62069,44 +62074,14 @@
 	    propTypes: {
 	        methodOfTrans: _react2.default.PropTypes.string,
 	        pickupTime: _react2.default.PropTypes.oneOfType([_react2.default.PropTypes.string, _react2.default.PropTypes.bool]),
-	        duration: _react2.default.PropTypes.string
+	        duration: _react2.default.PropTypes.string,
+	        expectedPickupTime: _react2.default.PropTypes.string
 	    },
 
 	    render: function render() {
 
-	        var methodOfTransIcon;
-	        switch (this.props.methodOfTrans) {
-	            case 'walking':
-	                methodOfTransIcon = _react2.default.createElement(
-	                    'div',
-	                    { className: 'method-of-trans-icon' },
-	                    _react2.default.createElement('i', { className: 'fa fa-male fa-3x', 'aria-hidden': 'true' })
-	                );
-	                break;
-	            case 'biking':
-	                methodOfTransIcon = _react2.default.createElement(
-	                    'div',
-	                    { className: 'method-of-trans-icon' },
-	                    _react2.default.createElement('i', { className: 'fa fa-bicycle fa-3x', 'aria-hidden': 'true' })
-	                );
-	                break;
-	            case 'driving':
-	                methodOfTransIcon = _react2.default.createElement(
-	                    'div',
-	                    { className: 'method-of-trans-icon' },
-	                    _react2.default.createElement('i', { className: 'fa fa-car fa-3x', 'aria-hidden': 'true' })
-	                );
-	                break;
-	            default:
-	                methodOfTransIcon = _react2.default.createElement(
-	                    'div',
-	                    { className: 'method-of-trans-icon' },
-	                    'No user input :('
-	                );
-	        }
-
 	        var pickupTime;
-	        if (this.props.pickupTime) {
+	        if (this.props.pickupTime === true) {
 	            pickupTime = _react2.default.createElement(
 	                'div',
 	                { className: 'order-ready-time-container' },

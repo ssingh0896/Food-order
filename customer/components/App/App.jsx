@@ -227,6 +227,9 @@ var App = React.createClass({
 
         if (this.state.pickupTime === true) {
             var expectedPickupTime = moment().add(this.state.durationSeconds, 's').format('LT');
+            this.setState({
+                expectedPickupTime: expectedPickupTime
+            })
         } else {
             var expectedPickupTime = '';
         }
@@ -580,7 +583,8 @@ var App = React.createClass({
                              previousOrders: this.state.previousOrders,
                              favoriteOrders: this.state.favoriteOrders,
                              handleMenuToggle:this._handleMenuToggle,
-                             menuShow:this.state.menuShow
+                             menuShow:this.state.menuShow,
+                             expectedPickupTime: this.state.expectedPickupTime
                          })
                         }
                     </div>

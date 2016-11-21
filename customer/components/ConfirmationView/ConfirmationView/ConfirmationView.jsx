@@ -25,7 +25,8 @@ var ConfirmationView = React.createClass({
         selectedShopLocation: React.PropTypes.shape({
             lat: React.PropTypes.number,
             lng: React.PropTypes.number
-        })
+        }),
+        expectedPickupTime: React.PropTypes.string
     },
 
     render: function() {

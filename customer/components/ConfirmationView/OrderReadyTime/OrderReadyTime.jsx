@@ -9,28 +9,14 @@ var OrderReadyTime = React.createClass({
             React.PropTypes.string,
             React.PropTypes.bool
         ]),
-        duration: React.PropTypes.string
+        duration: React.PropTypes.string,
+        expectedPickupTime: React.PropTypes.string
     },
 
     render: function() {
 
-        var methodOfTransIcon;
-        switch(this.props.methodOfTrans) {
-        case 'walking':
-            methodOfTransIcon = <div className="method-of-trans-icon"><i className="fa fa-male fa-3x" aria-hidden="true"></i></div>;
-            break;
-        case 'biking':
-            methodOfTransIcon = <div className="method-of-trans-icon"><i className="fa fa-bicycle fa-3x" aria-hidden="true"></i></div>;
-            break;
-        case 'driving':
-            methodOfTransIcon = <div className="method-of-trans-icon"><i className="fa fa-car fa-3x" aria-hidden="true"></i></div>;
-            break;
-        default:
-            methodOfTransIcon = <div className="method-of-trans-icon">No user input :(</div>
-        }
-
         var pickupTime;
-        if (this.props.pickupTime) {
+        if (this.props.pickupTime === true) {
             pickupTime = <div className="order-ready-time-container">
                 <h2>Head to the shop,
                 and your order will be ready in...</h2>
