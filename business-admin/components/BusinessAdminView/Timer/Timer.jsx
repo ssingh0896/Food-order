@@ -25,62 +25,78 @@ var Timer = React.createClass({
         var timeSelectedForPickup = this.props.timeSelectedForPickup;
         var expectedPickupTime = this.props.expectedPickupTime;
 
-        //  if user is leaving now ---------------------------
-        if (expectedPickupTime) {
-            // format times into arrays ---------------------------
-            var now = moment().format('LT'); // get current time
-            var nowSlice = now.slice(0, now.length - 3) // remove AM/PM
-            var nowArr = nowSlice.split(':'); // split into array
-            if (nowArr[1].charAt(0) === '0') { // if min = 0X, remove 0
-                nowArr[1] = nowArr[1].slice(1, 2);
+            //  if user is leaving now ---------------------------
+            if (expectedPickupTime) {
+                // format times into arrays ---------------------------
+                var now = moment().format('LT'); // get current time
+                var nowSlice = now.slice(0, now.length - 3) // remove AM/PM
+                var nowArr = nowSlice.split(':'); // split into array
+                if (nowArr[1].charAt(0) === '0') { // if min = 0X, remove 0
+                    nowArr[1] = nowArr[1].slice(1, 2);
+                }
+
+                var pickUpTimeSlice = expectedPickupTime.slice(0, now.length - 3); // remove AM/PM
+                var pickupTimeArr = pickUpTimeSlice.split(':'); // split into array
+                if (pickupTimeArr[1].charAt(0) === '0') { // if min = 0X, remove 0
+                    pickupTimeArr[1] = pickupTimeArr[1].slice(1, 2);
+                }
+                // console.log(nowArr);
+                // console.log(pickupTimeArr);
+
+                // calculate time difference converted to seconds ---------------
+                if (nowArr[0] === pickupTimeArr[0]) { // if same hour, get difference of minutes and convert to seconds
+                    var secsDiff = (pickupTimeArr[1] - nowArr[1]) * 60;
+                } else { // if diff hour, get difference of minutes and hours and convert to seconds
+                    var secsDiff = (60 - nowArr[1] + pickupTimeArr[1] + 60 * (pickupTimeArr[0] - nowArr[0] - 1)) * 60;
+                }
+                console.log(secsDiff);
+                this.setState({
+                    secondsUntilArrival: secsDiff
+                })
+
+            // if user selected a pickup time ---------------------------
+            } else if (!expectedPickupTime) {
+                // format times into arrays ---------------------------
+                var now = moment().format('LT'); // get current time
+                var nowSlice = now.slice(0, now.length - 3) // remove AM/PM
+                var nowArr = nowSlice.split(':'); // split into array
+                if (nowArr[1].charAt(0) === '0') { // if min = 0X, remove 0
+                    nowArr[1] = nowArr[1].slice(1, 2);
+                }
+                console.log(nowArr);
+                var pickUpTimeSlice = expectedPickupTime.slice(0, now.length - 2); // remove AM/PM
+                var pickupTimeArr = pickUpTimeSlice.split(':'); // split into array
+                if (pickupTimeArr[1].charAt(0) === '0') { // if min = 0X, remove 0
+                    pickupTimeArr[1] = pickupTimeArr[1].slice(1, 2);
+                }
+
+                // console.log(nowArr);
+                // console.log(pickupTimeArr);
+
+                // calculate time difference converted to seconds ---------------
+                if (nowArr[0] === pickupTimeArr[0]) { // if same hour, get difference of minutes and convert to seconds
+                    var secsDiff = (pickupTimeArr[1] - nowArr[1]) * 60;
+                } else { // if diff hour, get difference of minutes and hours and convert to seconds
+                    var secsDiff = (60 - nowArr[1] + pickupTimeArr[1] + 60 * (pickupTimeArr[0] - nowArr[0] - 1)) * 60;
+                }
+                console.log(secsDiff);
+                this.setState({
+                    secondsUntilArrival: secsDiff
+                })
+
             }
 
-            var pickUpTimeSlice = expectedPickupTime.slice(0, now.length - 3); // remove AM/PM
-            var pickupTimeArr = pickUpTimeSlice.split(':'); // split into array
-            if (pickupTimeArr[1].charAt(0) === '0') { // if min = 0X, remove 0
-                pickupTimeArr[1] = pickupTimeArr[1].slice(1, 2);
-            }
-            // console.log(nowArr);
-            // console.log(pickupTimeArr);
-
-            // calculate time difference converted to seconds ---------------
-            if (nowArr[0] === pickupTimeArr[0]) { // if same hour, get difference of minutes and convert to seconds
-                var secsDiff = (pickupTimeArr[1] - nowArr[1]) * 60;
-            } else { // if diff hour, get difference of minutes and hours and convert to seconds
-                var secsDiff = (60 - nowArr[1] + pickupTimeArr[1] + 60 * (pickupTimeArr[0] - nowArr[0] - 1)) * 60;
-            }
-            this.setState({
-                secondsUntilArrival: secsDiff
-            })
-
-        // if user selected a pickup time ---------------------------
-        } else if (!expectedPickupTime) {
-
-            // format times into arrays ---------------------------
-            var now = moment().format('LT'); // get current time
-            var nowSlice = now.slice(0, now.length - 3) // remove AM/PM
-            var nowArr = nowSlice.split(':'); // split into array
-            if (nowArr[1].charAt(0) === '0') { // if min = 0X, remove 0
-                nowArr[1] = nowArr[1].slice(1, 2);
-            }
-console.log(nowArr);
-            var pickUpTimeSlice = expectedPickupTime.slice(0, now.length - 2); // remove AM/PM
-            var pickupTimeArr = pickUpTimeSlice.split(':'); // split into array
-            if (pickupTimeArr[1].charAt(0) === '0') { // if min = 0X, remove 0
-                pickupTimeArr[1] = pickupTimeArr[1].slice(1, 2);
-            }
-
-
-            console.log(pickupTimeArr);
-
-        }
-
-        this.counterInterval = setInterval(this._handleCountDown, 1000);
+        this.counterInterval = setInterval(this._handleCountDown(secsDiff), 1000);
     },
 
-    _handleCountDown: function() {
+    _handleCountDown: function(secsDiff) {
         if (this.state.formattedSeconds === '0:00') {
             clearInterval(this.counterInterval);
+        } else if (secsDiff <= 0) {
+            clearInterval(this.counterInterval);
+            this.setState({
+                formattedSeconds: '0:00'
+            })
         } else {
             var newTime = this.state.secondsUntilArrival - 1;
             var formattedSeconds = '';

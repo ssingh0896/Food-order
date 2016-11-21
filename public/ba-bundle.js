@@ -27104,7 +27104,7 @@
 
 
 	// module
-	exports.push([module.id, ".ba-order-complete {\n  background: #B5BEC2 !important; }\n\n.ba-order {\n  width: 100%;\n  background: #fff;\n  border-bottom: 2px solid #b5bec2;\n  margin: 0 auto 1em auto;\n  border-radius: 5px;\n  padding: 0.75em 0.75em 0.75em 0.75em; }\n  .ba-order .ba-order-left {\n    display: block;\n    padding-bottom: 0.5em;\n    width: 100%; }\n    .ba-order .ba-order-left h2 {\n      display: inline-block;\n      padding: 0em 0.5em 0 0;\n      font-size: 1.5em;\n      color: #1c2024;\n      margin-bottom: 0.5em; }\n    .ba-order .ba-order-left p {\n      display: inline-block;\n      padding: 0em;\n      font-size: 0.85em;\n      margin: 0;\n      color: #1c2024; }\n    .ba-order .ba-order-left .special-instructions {\n      font-size: 0.9em; }\n  .ba-order .ba-order-right {\n    text-align: left;\n    border-top: 1px solid #1C2024;\n    width: 100%;\n    padding-top: 0.5em; }\n    .ba-order .ba-order-right p {\n      display: inline-block;\n      margin: 0em 0 1.75em 0;\n      color: #1c2024; }\n      .ba-order .ba-order-right p .ba-order-time {\n        font-size: 1.5em; }\n    .ba-order .ba-order-right button {\n      width: 100%;\n      margin: 0 auto;\n      border: none;\n      background: #40B284;\n      padding: 0.3em 1.3em;\n      border-radius: 10px;\n      color: #fff;\n      font-size: 1em; }\n      .ba-order .ba-order-right button:hover {\n        box-shadow: 0px 1px 2px #000; }\n      .ba-order .ba-order-right button:active {\n        background: #379871;\n        box-shadow: none; }\n      .ba-order .ba-order-right button .fa-check-circle {\n        vertical-align: middle;\n        padding-left: 0.4em; }\n\n@media screen and (min-width: 500px) {\n  .ba-order {\n    width: 25em;\n    position: relative; }\n    .ba-order .ba-order-left, .ba-order .ba-order-right {\n      display: inline-block;\n      vertical-align: top; }\n    .ba-order .ba-order-left {\n      width: 58%; }\n    .ba-order .ba-order-right {\n      width: 42%;\n      border: none;\n      height: 100%;\n      padding-top: 0; }\n      .ba-order .ba-order-right p {\n        float: right; }\n      .ba-order .ba-order-right button {\n        width: 10em;\n        float: right;\n        vertical-align: bottom;\n        position: absolute;\n        bottom: 1em;\n        right: 0.75em; } }\n", ""]);
+	exports.push([module.id, ".ba-order-complete {\n  background: #B5BEC2 !important; }\n\n.ba-order {\n  width: 100%;\n  background: #fff;\n  border-bottom: 2px solid #b5bec2;\n  margin: 0 auto 1em auto;\n  border-radius: 5px;\n  padding: 0.75em 0.75em 0.75em 0.75em; }\n  .ba-order .ba-order-left {\n    display: block;\n    padding-bottom: 0.5em;\n    width: 100%; }\n    .ba-order .ba-order-left h2 {\n      display: inline-block;\n      padding: 0em 0.5em 0 0;\n      font-size: 1.5em;\n      color: #1c2024;\n      margin-bottom: 0.5em; }\n    .ba-order .ba-order-left p {\n      display: inline-block;\n      padding: 0em;\n      font-size: 0.85em;\n      margin: 0;\n      color: #1c2024; }\n    .ba-order .ba-order-left .special-instructions {\n      font-size: 0.9em; }\n  .ba-order .ba-order-right {\n    text-align: left;\n    border-top: 1px solid #1C2024;\n    width: 100%;\n    padding-top: 0.5em; }\n    .ba-order .ba-order-right p {\n      display: inline-block;\n      margin: 0em 0 1.75em 0;\n      color: #1c2024;\n      padding-top: 0.4em; }\n      .ba-order .ba-order-right p .ba-order-time {\n        font-size: 1.5em; }\n    .ba-order .ba-order-right button {\n      width: 100%;\n      margin: 0 auto;\n      border: none;\n      background: #40B284;\n      padding: 0.3em 1.3em;\n      border-radius: 10px;\n      color: #fff;\n      font-size: 1em; }\n      .ba-order .ba-order-right button:hover {\n        box-shadow: 0px 1px 2px #000; }\n      .ba-order .ba-order-right button:active {\n        background: #379871;\n        box-shadow: none; }\n      .ba-order .ba-order-right button .fa-check-circle {\n        vertical-align: middle;\n        padding-left: 0.4em; }\n\n@media screen and (min-width: 500px) {\n  .ba-order {\n    width: 25em;\n    position: relative; }\n    .ba-order .ba-order-left, .ba-order .ba-order-right {\n      display: inline-block;\n      vertical-align: top; }\n    .ba-order .ba-order-left {\n      width: 58%; }\n    .ba-order .ba-order-right {\n      width: 42%;\n      border: none;\n      height: 100%;\n      padding-top: 0; }\n      .ba-order .ba-order-right p {\n        float: right; }\n      .ba-order .ba-order-right button {\n        width: 10em;\n        float: right;\n        vertical-align: bottom;\n        position: absolute;\n        bottom: 1em;\n        right: 0.75em; } }\n", ""]);
 
 	// exports
 
@@ -27316,13 +27316,13 @@
 	                // if diff hour, get difference of minutes and hours and convert to seconds
 	                var secsDiff = (60 - nowArr[1] + pickupTimeArr[1] + 60 * (pickupTimeArr[0] - nowArr[0] - 1)) * 60;
 	            }
+	            console.log(secsDiff);
 	            this.setState({
 	                secondsUntilArrival: secsDiff
 	            });
 
 	            // if user selected a pickup time ---------------------------
 	        } else if (!expectedPickupTime) {
-
 	                // format times into arrays ---------------------------
 	                var now = (0, _moment2.default)().format('LT'); // get current time
 	                var nowSlice = now.slice(0, now.length - 3); // remove AM/PM
@@ -27339,15 +27339,34 @@
 	                    pickupTimeArr[1] = pickupTimeArr[1].slice(1, 2);
 	                }
 
-	                console.log(pickupTimeArr);
+	                // console.log(nowArr);
+	                // console.log(pickupTimeArr);
+
+	                // calculate time difference converted to seconds ---------------
+	                if (nowArr[0] === pickupTimeArr[0]) {
+	                    // if same hour, get difference of minutes and convert to seconds
+	                    var secsDiff = (pickupTimeArr[1] - nowArr[1]) * 60;
+	                } else {
+	                    // if diff hour, get difference of minutes and hours and convert to seconds
+	                    var secsDiff = (60 - nowArr[1] + pickupTimeArr[1] + 60 * (pickupTimeArr[0] - nowArr[0] - 1)) * 60;
+	                }
+	                console.log(secsDiff);
+	                this.setState({
+	                    secondsUntilArrival: secsDiff
+	                });
 	            }
 
-	        this.counterInterval = setInterval(this._handleCountDown, 1000);
+	        this.counterInterval = setInterval(this._handleCountDown(secsDiff), 1000);
 	    },
 
-	    _handleCountDown: function _handleCountDown() {
+	    _handleCountDown: function _handleCountDown(secsDiff) {
 	        if (this.state.formattedSeconds === '0:00') {
 	            clearInterval(this.counterInterval);
+	        } else if (secsDiff <= 0) {
+	            clearInterval(this.counterInterval);
+	            this.setState({
+	                formattedSeconds: '0:00'
+	            });
 	        } else {
 	            var newTime = this.state.secondsUntilArrival - 1;
 	            var formattedSeconds = '';
@@ -27430,7 +27449,7 @@
 
 
 	// module
-	exports.push([module.id, ".timer-container {\n  display: inline-block;\n  float: right; }\n", ""]);
+	exports.push([module.id, ".timer-container {\n  display: inline-block;\n  float: right;\n  font-size: 1.5em;\n  padding-left: 0.5em; }\n", ""]);
 
 	// exports
 

@@ -252,7 +252,9 @@ var App = React.createClass({
                 completed: false
             })
             .end(function(err, res){
-                console.log(err);
+                if (err) {
+                    console.log(err);
+                }
             })
         this._handleStateClear();
     },
