@@ -27314,7 +27314,7 @@
 	                var secsDiff = (pickupTimeArr[1] - nowArr[1]) * 60;
 	            } else {
 	                // if diff hour, get difference of minutes and hours and convert to seconds
-	                var secsDiff = (60 - nowArr[1] + pickupTimeArr[1] + 60 * (pickupTimeArr[0] - nowArr[0] - 1)) * 60;
+	                var secsDiff = 60 - nowArr[1] + pickupTimeArr[1] + 60 * (pickupTimeArr[0] - nowArr[0] - 1);
 	            }
 	            this.setState({
 	                secondsUntilArrival: secsDiff
@@ -27331,24 +27331,20 @@
 	                    // if min = 0X, remove 0
 	                    nowArr[1] = nowArr[1].slice(1, 2);
 	                }
-	                console.log(nowArr);
-	                var pickUpTimeSlice = expectedPickupTime.slice(0, now.length - 2); // remove AM/PM
+
+	                var pickUpTimeSlice = timeSelectedForPickup.slice(0, now.length - 3); // remove AM/PM
 	                var pickupTimeArr = pickUpTimeSlice.split(':'); // split into array
 	                if (pickupTimeArr[1].charAt(0) === '0') {
 	                    // if min = 0X, remove 0
 	                    pickupTimeArr[1] = pickupTimeArr[1].slice(1, 2);
 	                }
-
-	                // console.log(nowArr);
-	                // console.log(pickupTimeArr);
-
 	                // calculate time difference converted to seconds ---------------
 	                if (nowArr[0] === pickupTimeArr[0]) {
 	                    // if same hour, get difference of minutes and convert to seconds
 	                    var secsDiff = (pickupTimeArr[1] - nowArr[1]) * 60;
 	                } else {
 	                    // if diff hour, get difference of minutes and hours and convert to seconds
-	                    var secsDiff = (60 - nowArr[1] + pickupTimeArr[1] + 60 * (pickupTimeArr[0] - nowArr[0] - 1)) * 60;
+	                    var secsDiff = 60 - nowArr[1] + pickupTimeArr[1] + 60 * (pickupTimeArr[0] - nowArr[0] - 1);
 	                }
 	                this.setState({
 	                    secondsUntilArrival: secsDiff
