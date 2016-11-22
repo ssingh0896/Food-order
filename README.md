@@ -33,6 +33,7 @@ GoMocha Business Admin
 <br /><br />
 ## Development Roadmap
 Future developments of the app will include:<br />
+• ~~Calculate customer arrival time based on customer location, coffee shop location, and selected method of transportation~~  <br />
 • ~~Business admin (BA) interface to receive all orders submitted by customers, to be handled by the coffee shop~~  <br />
 • ~~Timer component to tell the coffee shop exactly when the customer will arrive~~  <br />
 • Text or Email notification options for customer<br />
