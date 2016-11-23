@@ -6,8 +6,8 @@ var Nav = React.createClass({
         return (
             <div className="nav-container">
                 <div className="nav-icons">
-                    <i className="fa fa-tachometer fa-3x" aria-hidden="true"></i>
-                    <i className="fa fa-history fa-3x" aria-hidden="true"></i>
+                    <i className="fa fa-tachometer fa-2x" aria-hidden="true"></i>
+                    <i className="fa fa-history fa-2x" aria-hidden="true"></i>
                 </div>
             </div>
         )

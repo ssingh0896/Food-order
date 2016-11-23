@@ -39,11 +39,19 @@ var OrdersContainer = React.createClass({
                                 completeOrder={this.props.completeOrder} />
             }, this);
 
-            return (
-                <div className="ba-orders-container">
-                    {orders}
-                </div>
-            )
+            if (orders.length > 0) {
+                return (
+                    <div className="ba-orders-container">
+                        {orders}
+                    </div>
+                )
+            }
+            else if (orders.length === 0) {
+                return (
+                    <div className="no-orders">No current orders!</div>
+                )
+            }
+
         }
 
 

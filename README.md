@@ -6,6 +6,8 @@ GoMocha is a full-stack, monolithic geolocation food and drink ordering system. 
 GoMocha Consumer allows a customer to select a coffee shop within a given radius of their current location, customize their order, and place their order. GoMocha Consumer will calculate how long it will take the customer to arrive at the coffee shop using the customer's location, the selected coffee shop location, and their selected method of transportation. This sends an order to GoMocha-BA, which displays a list of incoming orders. Each order has a timer component that tells the coffee shop approximately when the customer is going to arrive given the information collected mentioned above. If a customer selects a desired pickup time, the timer will adjust and calculate the difference in the current time and the customer's selected pickup time. Orders can then be marked as complete on GoMocha-BA once the coffee shop has handed them off to their customer.
 
 To see GoMocha live in action, open a browser tab for <a href="http://gomocha.herokuapp.com/">GoMocha Consumer</a> and a tab for <a href="https://gomocha.herokuapp.com/admin">GoMocha-BA</a>. All you have to do is place an order on GoMocha Consumer, and then watch GoMocha-BA receive the order.
+<br />
+Front end source code for GoMocha Consumer can be found in the `/customer` directory, and `/business-admin` for GoMocha-BA. Back end source code can be found in `/routers`.
 <br /><br />
 GoMocha Consumer
 <img src="public/img/select-shop-custom-order.png" style="width: 400px" />
