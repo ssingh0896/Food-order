@@ -48,3 +48,5 @@ var log = function() {
 }
 
 app.listen(process.env.PORT || 4005, log);
+
+module.exports = app;

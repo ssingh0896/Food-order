@@ -42,7 +42,7 @@
     "webpack": "^1.12.14"
   },
   "scripts": {
-    "test": "nodemon --exec 'mocha --recursive -R min",
+    "test": "nodemon --exec 'mocha --recursive -R min'",
     "start": "node server.js"
   },
   "repository": {
