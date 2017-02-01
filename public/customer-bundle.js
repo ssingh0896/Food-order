@@ -25853,7 +25853,7 @@
 
 	        setTimeout(function () {
 	            _this._handleUserLocationCheck();
-	        }, 7000);
+	        }, 8000);
 	    },
 
 	    _handleUserLocationCheck: function _handleUserLocationCheck() {
@@ -61335,7 +61335,7 @@
 
 
 	// module
-	exports.push([module.id, ".select-shop-container {\n  margin-left: 0em;\n  margin-top: 4em; }\n  .select-shop-container .main-wrap {\n    min-height: 25em; }\n    .select-shop-container .main-wrap .loading-icon {\n      margin-top: 0em;\n      text-align: center; }\n    .select-shop-container .main-wrap .location-notification-container {\n      background: #fff;\n      width: 90%;\n      max-width: 30em;\n      margin: 0 auto;\n      border: 1px solid #bebcbc;\n      border-radius: 3px;\n      padding: 2em;\n      text-align: center; }\n      .select-shop-container .main-wrap .location-notification-container h2 {\n        color: #737373; }\n      .select-shop-container .main-wrap .location-notification-container .fa-location-arrow {\n        color: #40B284; }\n  .select-shop-container .userProgress {\n    position: relative;\n    width: 100%;\n    height: 30px;\n    background-color: #fff;\n    border-radius: 5px;\n    margin: 0 auto;\n    border: 1px solid #E4E4E4; }\n    .select-shop-container .userProgress #oneOfFive {\n      position: absolute;\n      width: 20%;\n      height: 100%;\n      background: #3FB083;\n      border-radius: 5px 0px 0px 5px; }\n  .select-shop-container .hide {\n    display: none; }\n\n@media only screen and (min-width: 600px) {\n  .select-shop-container .userProgress {\n    width: 25em; } }\n\n@media only screen and (min-width: 960px) {\n  .select-shop-container {\n    margin-top: 0em;\n    margin-left: 5em; } }\n", ""]);
+	exports.push([module.id, ".select-shop-container {\n  margin-left: 0em;\n  margin-top: 4em; }\n  .select-shop-container .main-wrap {\n    min-height: 25em; }\n    .select-shop-container .main-wrap .loading-icon {\n      margin-top: 0em;\n      text-align: center; }\n    .select-shop-container .main-wrap .location-notification-container {\n      background: #fff;\n      max-width: 30em;\n      margin: 0 auto;\n      border: 1px solid #bebcbc;\n      border-radius: 3px;\n      padding: 1em;\n      text-align: center; }\n      .select-shop-container .main-wrap .location-notification-container h2 {\n        color: #737373; }\n      .select-shop-container .main-wrap .location-notification-container .fa-location-arrow {\n        color: #40B284; }\n  .select-shop-container .userProgress {\n    position: relative;\n    width: 100%;\n    height: 30px;\n    background-color: #fff;\n    border-radius: 5px;\n    margin: 0 auto;\n    border: 1px solid #E4E4E4; }\n    .select-shop-container .userProgress #oneOfFive {\n      position: absolute;\n      width: 20%;\n      height: 100%;\n      background: #3FB083;\n      border-radius: 5px 0px 0px 5px; }\n  .select-shop-container .hide {\n    display: none; }\n\n@media only screen and (min-width: 600px) {\n  .select-shop-container .userProgress {\n    width: 25em; } }\n\n@media only screen and (min-width: 960px) {\n  .select-shop-container {\n    margin-top: 0em;\n    margin-left: 5em; } }\n", ""]);
 
 	// exports
 

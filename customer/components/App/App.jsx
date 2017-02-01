@@ -64,7 +64,7 @@ var App = React.createClass({
 
         setTimeout(() => {
             this._handleUserLocationCheck();
-        }, 7000);
+        }, 8000);
     },
 
     _handleUserLocationCheck: function() {
