@@ -61028,6 +61028,34 @@
 	        } else if (this.props.shops.length > 0) {
 	            loadingIcon = _react2.default.createElement('i', { className: 'hide fa-spinner fa-spin fa-3x fa-fw margin-bottom' });
 	        }
+
+	        var content;
+	        if (!this.props.notification.userLocation) {
+	            content = _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'loading-icon' },
+	                    loadingIcon
+	                ),
+	                _react2.default.createElement(_ShopList2.default, {
+	                    shops: this.props.shops,
+	                    handleSelectedShop: this.props.handleSelectedShop })
+	            );
+	        } else {
+	            content = _react2.default.createElement(
+	                'div',
+	                { className: 'location-notification-container' },
+	                _react2.default.createElement(
+	                    'h2',
+	                    null,
+	                    'You must allow access to your location to use this app.'
+	                ),
+	                _react2.default.createElement('i', { className: 'fa fa-location-arrow fa-5x', 'aria-hidden': 'true' })
+	            );
+	        }
+
 	        return _react2.default.createElement(
 	            'div',
 	            { className: 'select-shop-container' },
@@ -61049,14 +61077,7 @@
 	            _react2.default.createElement(
 	                'div',
 	                { className: 'main-wrap' },
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'loading-icon' },
-	                    loadingIcon
-	                ),
-	                _react2.default.createElement(_ShopList2.default, {
-	                    shops: this.props.shops,
-	                    handleSelectedShop: this.props.handleSelectedShop })
+	                content
 	            ),
 	            _react2.default.createElement(_Footer2.default, null)
 	        );
@@ -61314,7 +61335,7 @@
 
 
 	// module
-	exports.push([module.id, ".select-shop-container {\n  margin-left: 0em;\n  margin-top: 4em; }\n  .select-shop-container .main-wrap {\n    min-height: 25em; }\n    .select-shop-container .main-wrap .loading-icon {\n      margin-top: 0em;\n      text-align: center; }\n  .select-shop-container .userProgress {\n    position: relative;\n    width: 100%;\n    height: 30px;\n    background-color: #fff;\n    border-radius: 5px;\n    margin: 0 auto;\n    border: 1px solid #E4E4E4; }\n    .select-shop-container .userProgress #oneOfFive {\n      position: absolute;\n      width: 20%;\n      height: 100%;\n      background: #3FB083;\n      border-radius: 5px 0px 0px 5px; }\n  .select-shop-container .hide {\n    display: none; }\n\n@media only screen and (min-width: 600px) {\n  .select-shop-container .userProgress {\n    width: 25em; } }\n\n@media only screen and (min-width: 960px) {\n  .select-shop-container {\n    margin-top: 0em;\n    margin-left: 5em; } }\n", ""]);
+	exports.push([module.id, ".select-shop-container {\n  margin-left: 0em;\n  margin-top: 4em; }\n  .select-shop-container .main-wrap {\n    min-height: 25em; }\n    .select-shop-container .main-wrap .loading-icon {\n      margin-top: 0em;\n      text-align: center; }\n    .select-shop-container .main-wrap .location-notification-container {\n      background: #fff;\n      width: 90%;\n      max-width: 30em;\n      margin: 0 auto;\n      border: 1px solid #bebcbc;\n      border-radius: 3px;\n      padding: 2em;\n      text-align: center; }\n      .select-shop-container .main-wrap .location-notification-container h2 {\n        color: #737373; }\n      .select-shop-container .main-wrap .location-notification-container .fa-location-arrow {\n        color: #40B284; }\n  .select-shop-container .userProgress {\n    position: relative;\n    width: 100%;\n    height: 30px;\n    background-color: #fff;\n    border-radius: 5px;\n    margin: 0 auto;\n    border: 1px solid #E4E4E4; }\n    .select-shop-container .userProgress #oneOfFive {\n      position: absolute;\n      width: 20%;\n      height: 100%;\n      background: #3FB083;\n      border-radius: 5px 0px 0px 5px; }\n  .select-shop-container .hide {\n    display: none; }\n\n@media only screen and (min-width: 600px) {\n  .select-shop-container .userProgress {\n    width: 25em; } }\n\n@media only screen and (min-width: 960px) {\n  .select-shop-container {\n    margin-top: 0em;\n    margin-left: 5em; } }\n", ""]);
 
 	// exports
 

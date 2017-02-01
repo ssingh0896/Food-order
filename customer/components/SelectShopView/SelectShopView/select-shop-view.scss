@@ -10,6 +10,26 @@
             margin-top: 0em;
             text-align: center;
         }
+
+        .location-notification-container {
+            background: #fff;
+            // height: 15em;
+            width: 90%;
+            max-width: 30em;
+            margin: 0 auto;
+            border: 1px solid #bebcbc;
+            border-radius: 3px;
+            padding: 2em;
+            text-align: center;
+
+            h2 {
+                color: darken(#999999, 15%);
+            }
+
+            .fa-location-arrow {
+                color: #40B284;
+            }
+        }
     }
 
     .userProgress {
