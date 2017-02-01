@@ -35,7 +35,8 @@ var App = React.createClass({
                 delete: false,
                 error: false,
                 form: false,
-                additionalInfo: false
+                additionalInfo: false,
+                userLocation: false
             },
             methodOfTrans: '',
             methodOfTransShow: true,
@@ -60,6 +61,19 @@ var App = React.createClass({
     componentWillMount: function() {
         api.getLocation(this._handleUserLocation, this._handleGetLocation);
         this._handleUsernameCheck();
+
+        setTimeout(() => {
+            this._handleUserLocationCheck();
+        }, 4000);
+    },
+
+    _handleUserLocationCheck: function() {
+        console.log('hey');
+        this.setState({
+            notification: {
+                userLocation: true
+            }
+        });
     },
 
     // -------------- USERNAME VALIDATION --------------

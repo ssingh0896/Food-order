@@ -25822,7 +25822,8 @@
 	                delete: false,
 	                error: false,
 	                form: false,
-	                additionalInfo: false
+	                additionalInfo: false,
+	                userLocation: false
 	            },
 	            methodOfTrans: '',
 	            methodOfTransShow: true,
@@ -25845,8 +25846,23 @@
 	    // Calls the getLocation function which returns the user's current location
 	    // and passes it to its callback (_handleGetLocation)
 	    componentWillMount: function componentWillMount() {
+	        var _this = this;
+
 	        _api2.default.getLocation(this._handleUserLocation, this._handleGetLocation);
 	        this._handleUsernameCheck();
+
+	        setTimeout(function () {
+	            _this._handleUserLocationCheck();
+	        }, 4000);
+	    },
+
+	    _handleUserLocationCheck: function _handleUserLocationCheck() {
+	        console.log('hey');
+	        this.setState({
+	            notification: {
+	                userLocation: true
+	            }
+	        });
 	    },
 
 	    // -------------- USERNAME VALIDATION --------------
@@ -25918,23 +25934,23 @@
 	    },
 
 	    _getShopsDistances: function _getShopsDistances() {
-	        var _this = this;
+	        var _this2 = this;
 
 	        var _handleGetShopsDistance = function _handleGetShopsDistance(response, shop) {
-	            var shopsWithDistance = _this.state.shops.map(function (s) {
+	            var shopsWithDistance = _this2.state.shops.map(function (s) {
 	                if (s.place_id === shop.place_id) {
 	                    return _lodash2.default.assign({}, s, { shopDistance: response.rows[0].elements[0].distance.text });
 	                } else {
 	                    return s;
 	                }
 	            });
-	            _this.setState({
+	            _this2.setState({
 	                shops: shopsWithDistance
 	            });
 	        };
 
 	        _lodash2.default.forEach(this.state.shops, function (shop) {
-	            _api2.default.calculateTravelTime(_this.state.userLocation, shop.shopCoordinates, 'driving', function (response) {
+	            _api2.default.calculateTravelTime(_this2.state.userLocation, shop.shopCoordinates, 'driving', function (response) {
 	                _handleGetShopsDistance(response, shop);
 	            });
 	        });
@@ -26047,20 +26063,20 @@
 	    },
 
 	    _handlePreviousOrders: function _handlePreviousOrders() {
-	        var _this2 = this;
+	        var _this3 = this;
 
 	        _superagent2.default.get('/api/users/' + String(this.state.username) + '/orders/previous').end(function (err, res) {
-	            _this2.setState({
+	            _this3.setState({
 	                previousOrders: res.body
 	            });
 	        });
 	    },
 
 	    _handleFavoriteOrders: function _handleFavoriteOrders() {
-	        var _this3 = this;
+	        var _this4 = this;
 
 	        _superagent2.default.get('/api/users/' + String(this.state.username) + '/orders/favorites').end(function (err, res) {
-	            _this3.setState({
+	            _this4.setState({
 	                favoriteOrders: res.body
 	            });
 	        });
@@ -26125,7 +26141,7 @@
 	    },
 
 	    _toggleAddNotification: function _toggleAddNotification() {
-	        var _this4 = this;
+	        var _this5 = this;
 
 	        this.setState({
 	            notification: {
@@ -26133,7 +26149,7 @@
 	            }
 	        });
 	        var clearNotification = function clearNotification() {
-	            _this4.setState({
+	            _this5.setState({
 	                notification: {
 	                    add: false
 	                }
@@ -26143,7 +26159,7 @@
 	    },
 
 	    _toggleDeleteNotification: function _toggleDeleteNotification() {
-	        var _this5 = this;
+	        var _this6 = this;
 
 	        this.setState({
 	            notification: {
@@ -26151,7 +26167,7 @@
 	            }
 	        });
 	        var clearNotification = function clearNotification() {
-	            _this5.setState({
+	            _this6.setState({
 	                notification: {
 	                    delete: false
 	                }
@@ -26161,7 +26177,7 @@
 	    },
 
 	    _toggleErrorNotification: function _toggleErrorNotification() {
-	        var _this6 = this;
+	        var _this7 = this;
 
 	        this.setState({
 	            notification: {
@@ -26169,7 +26185,7 @@
 	            }
 	        });
 	        var clearNotification = function clearNotification() {
-	            _this6.setState({
+	            _this7.setState({
 	                notification: {
 	                    error: false
 	                }
@@ -26179,7 +26195,7 @@
 	    },
 
 	    _toggleFormNotification: function _toggleFormNotification() {
-	        var _this7 = this;
+	        var _this8 = this;
 
 	        this.setState({
 	            notification: {
@@ -26187,7 +26203,7 @@
 	            }
 	        });
 	        var clearNotification = function clearNotification() {
-	            _this7.setState({
+	            _this8.setState({
 	                notification: {
 	                    form: false
 	                }
@@ -26197,7 +26213,7 @@
 	    },
 
 	    _toggleAdditionalInfoNotification: function _toggleAdditionalInfoNotification() {
-	        var _this8 = this;
+	        var _this9 = this;
 
 	        this.setState({
 	            notification: {
@@ -26205,7 +26221,7 @@
 	            }
 	        });
 	        var clearNotification = function clearNotification() {
-	            _this8.setState({
+	            _this9.setState({
 	                notification: {
 	                    additionalInfo: false
 	                }
@@ -26247,7 +26263,7 @@
 	    },
 
 	    render: function render() {
-	        var _this9 = this;
+	        var _this10 = this;
 
 	        return _react2.default.createElement(
 	            'div',
@@ -26263,7 +26279,7 @@
 	                        {
 	                            className: 'menu-bars',
 	                            onClick: function onClick() {
-	                                _this9._handleMenuToggle();
+	                                _this10._handleMenuToggle();
 	                            } },
 	                        _react2.default.createElement('i', { className: this.state.menuShow ? 'fa fa-times fa-2x' : 'fa fa-bars fa-2x', 'aria-hidden': 'true' })
 	                    ),
@@ -26281,7 +26297,7 @@
 	                            _react2.default.createElement(
 	                                'li',
 	                                { onClick: function onClick() {
-	                                        _this9._handleMenuToggle();
+	                                        _this10._handleMenuToggle();
 	                                    } },
 	                                'Dashboard'
 	                            )
@@ -26292,7 +26308,7 @@
 	                            _react2.default.createElement(
 	                                'li',
 	                                { onClick: function onClick() {
-	                                        _this9._handleMenuToggle();
+	                                        _this10._handleMenuToggle();
 	                                    } },
 	                                'Previous Orders'
 	                            )
@@ -26303,7 +26319,7 @@
 	                            _react2.default.createElement(
 	                                'li',
 	                                { onClick: function onClick() {
-	                                        _this9._handleMenuToggle();
+	                                        _this10._handleMenuToggle();
 	                                    } },
 	                                'Favorite Orders'
 	                            )
@@ -26314,7 +26330,7 @@
 	                            _react2.default.createElement(
 	                                'li',
 	                                { className: 'sign-out', onClick: function onClick() {
-	                                        _this9._handleMenuToggle();
+	                                        _this10._handleMenuToggle();
 	                                    } },
 	                                'Sign Out'
 	                            )
