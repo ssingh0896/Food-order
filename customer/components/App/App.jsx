@@ -68,12 +68,15 @@ var App = React.createClass({
     },
 
     _handleUserLocationCheck: function() {
-        console.log('hey');
-        this.setState({
-            notification: {
-                userLocation: true
-            }
-        });
+        if (this.state.userLocation.lat === '') {
+            console.log('nope');
+            this.setState({
+                notification: {
+                    userLocation: true
+                }
+            });
+        }
+        
     },
 
     // -------------- USERNAME VALIDATION --------------

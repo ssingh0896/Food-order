@@ -25857,12 +25857,14 @@
 	    },
 
 	    _handleUserLocationCheck: function _handleUserLocationCheck() {
-	        console.log('hey');
-	        this.setState({
-	            notification: {
-	                userLocation: true
-	            }
-	        });
+	        if (this.state.userLocation.lat === '') {
+	            console.log('nope');
+	            this.setState({
+	                notification: {
+	                    userLocation: true
+	                }
+	            });
+	        }
 	    },
 
 	    // -------------- USERNAME VALIDATION --------------
@@ -61014,7 +61016,8 @@
 
 	    propTypes: {
 	        shops: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.object),
-	        handleSelectedShop: _react2.default.PropTypes.func
+	        handleSelectedShop: _react2.default.PropTypes.func,
+	        notification: _react2.default.PropTypes.object
 	    },
 
 	    render: function render() {
@@ -61028,6 +61031,7 @@
 	        return _react2.default.createElement(
 	            'div',
 	            { className: 'select-shop-container' },
+	            _react2.default.createElement('div', null),
 	            _react2.default.createElement(
 	                'div',
 	                { className: 'title-cover' },
@@ -61310,7 +61314,7 @@
 
 
 	// module
-	exports.push([module.id, ".select-shop-container {\n  margin-left: 0em;\n  margin-top: 4em; }\n  .select-shop-container .main-wrap .loading-icon {\n    margin-top: 0em;\n    text-align: center; }\n  .select-shop-container .userProgress {\n    position: relative;\n    width: 100%;\n    height: 30px;\n    background-color: #fff;\n    border-radius: 5px;\n    margin: 0 auto;\n    border: 1px solid #E4E4E4; }\n    .select-shop-container .userProgress #oneOfFive {\n      position: absolute;\n      width: 20%;\n      height: 100%;\n      background: #3FB083;\n      border-radius: 5px 0px 0px 5px; }\n  .select-shop-container .hide {\n    display: none; }\n\n@media only screen and (min-width: 600px) {\n  .select-shop-container .userProgress {\n    width: 25em; } }\n\n@media only screen and (min-width: 960px) {\n  .select-shop-container {\n    margin-top: 0em;\n    margin-left: 5em; } }\n", ""]);
+	exports.push([module.id, ".select-shop-container {\n  margin-left: 0em;\n  margin-top: 4em;\n  background: black; }\n  .select-shop-container .main-wrap {\n    min-height: 25em; }\n    .select-shop-container .main-wrap .loading-icon {\n      margin-top: 0em;\n      text-align: center; }\n  .select-shop-container .userProgress {\n    position: relative;\n    width: 100%;\n    height: 30px;\n    background-color: #fff;\n    border-radius: 5px;\n    margin: 0 auto;\n    border: 1px solid #E4E4E4; }\n    .select-shop-container .userProgress #oneOfFive {\n      position: absolute;\n      width: 20%;\n      height: 100%;\n      background: #3FB083;\n      border-radius: 5px 0px 0px 5px; }\n  .select-shop-container .hide {\n    display: none; }\n\n@media only screen and (min-width: 600px) {\n  .select-shop-container .userProgress {\n    width: 25em; } }\n\n@media only screen and (min-width: 960px) {\n  .select-shop-container {\n    margin-top: 0em;\n    margin-left: 5em; } }\n", ""]);
 
 	// exports
 

@@ -1,8 +1,11 @@
 .select-shop-container {
     margin-left: 0em;
     margin-top: 4em;
+    background: black;
 
     .main-wrap {
+        min-height: 25em;
+
         .loading-icon {
             margin-top: 0em;
             text-align: center;

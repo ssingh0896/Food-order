@@ -9,7 +9,8 @@ var SelectShopView = React.createClass({
 
     propTypes: {
         shops: React.PropTypes.arrayOf(React.PropTypes.object),
-        handleSelectedShop: React.PropTypes.func
+        handleSelectedShop: React.PropTypes.func,
+        notification: React.PropTypes.object
     },
 
     render: function() {
@@ -22,6 +23,11 @@ var SelectShopView = React.createClass({
         }
         return (
             <div className="select-shop-container">
+
+                <div>
+
+                </div>
+
                 <div className="title-cover">
                     <h1>Select a Shop</h1>
                     <div className="userProgress">
@@ -31,7 +37,6 @@ var SelectShopView = React.createClass({
                 </div>
 
                 <div className="main-wrap">
-                    {/*<ShopSearch />*/}
                     <div className="loading-icon">{loadingIcon}</div>
                     <ShopList
                     shops={this.props.shops}
