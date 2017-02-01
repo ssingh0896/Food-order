@@ -42,6 +42,9 @@ app.use('/api', ordersOrdersId);
 
 app.get('/admin', BARequestHandler)
 app.get('/', customerRequestHandler);
+app.get('/*', (req, res) => {
+    res.redirect('/');
+  });
 
 var log = function() {
     console.log('app listening on port 4005');
