@@ -1,8 +1,8 @@
-import React from 'react'
-import { Link } from 'react-router'
-import sass from './previous-orders-view.scss'
-import sass2 from '../../App/app.scss'
-import PreviousOrder from '../PreviousOrder/PreviousOrder'
+import React from 'react';
+import { Link } from 'react-router';
+import './previous-orders-view.scss';
+import '../../App/app.scss';
+import PreviousOrder from '../PreviousOrder/PreviousOrder';
 
 var PreviousOrdersView = React.createClass({
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import SelectMethodOfTrans from ;'../SelectMethodOfTrans/SelectMethodOfTrans';
+import SelectMethodOfTrans from '../SelectMethodOfTrans/SelectMethodOfTrans';
 import SelectPickUpTime from '../SelectPickUpTime/SelectPickUpTime';
 import SelectIfFavorite from '../SelectIfFavorite/SelectIfFavorite';
 import EnterPaymentInfo from '../EnterPaymentInfo/EnterPaymentInfo';

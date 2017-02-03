@@ -1,6 +1,6 @@
-import React from 'react'
-import MenuSection from '../MenuSection/MenuSection'
-import sass from './menu-form-container.scss'
+import React from 'react';
+import MenuSection from '../MenuSection/MenuSection';
+import './menu-form-container.scss';
 
 var MenuFormContainer = React.createClass({
 

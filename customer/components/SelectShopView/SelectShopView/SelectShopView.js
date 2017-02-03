@@ -1,9 +1,9 @@
-import React from 'react'
-import ShopList from '../ShopList/ShopList'
-import Footer from '../../DashboardView/Footer/Footer'
-import { Link } from 'react-router'
-import sass from '../../App/app.scss'
-import sass2 from './select-shop-view.scss'
+import React from 'react';
+import ShopList from '../ShopList/ShopList';
+import Footer from '../../DashboardView/Footer/Footer';
+import { Link } from 'react-router';
+import '../../App/app.scss';
+import './select-shop-view.scss';
 
 var SelectShopView = React.createClass({
 

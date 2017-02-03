@@ -1,4 +1,5 @@
 import React from 'react';
+import './special-instructions.scss';
 
 var SpecialInstructionsOS = React.createClass({
 

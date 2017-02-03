@@ -1,6 +1,6 @@
-import React from 'react'
-import sass from './shop-list-item.scss'
-import { Link } from 'react-router'
+import React from 'react';
+import './shop-list-item.scss';
+import { Link } from 'react-router';
 
 var ShopListItem = React.createClass({
 

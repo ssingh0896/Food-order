@@ -1,5 +1,5 @@
-import React from 'react'
-import sass from './directions-and-call.scss'
+import React from 'react';
+import './directions-and-call.scss';
 
 var DirectionsAndCall = React.createClass({
 

@@ -1,7 +1,7 @@
-import React from 'react'
-import sass from './shop-list.scss'
-import ShopListItem from '../ShopListItem/ShopListItem'
-import _ from 'lodash'
+import React from 'react';
+import _ from 'lodash';
+import './shop-list.scss';
+import ShopListItem from '../ShopListItem/ShopListItem';
 
 var ShopList = React.createClass({
     propTypes: {

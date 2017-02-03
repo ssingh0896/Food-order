@@ -1,5 +1,5 @@
-import React from 'react'
-import sass from './special-instructions.scss'
+import React from 'react';
+import './special-instructions.scss';
 
 var SpecialInstructions = React.createClass({
 

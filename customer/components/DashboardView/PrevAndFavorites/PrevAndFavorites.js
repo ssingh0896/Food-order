@@ -1,6 +1,6 @@
-import React from 'react'
-import sass from './prev-and-favorites.scss'
-import { Link } from 'react-router'
+import React from 'react';
+import { Link } from 'react-router';
+import './prev-and-favorites.scss';
 
 var PrevAndFavorites = React.createClass({
 

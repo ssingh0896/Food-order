@@ -1,8 +1,8 @@
-import React from 'react'
-import Footer from '../../DashboardView/Footer/Footer'
-import sass from './username-view.scss'
-import sass2 from '../../App/app.scss'
-import { Link } from 'react-router'
+import React from 'react';
+import { Link } from 'react-router';
+import Footer from '../../DashboardView/Footer/Footer';
+import './username-view.scss';
+import '../../App/app.scss';
 
 var UsernameView = React.createClass({
 

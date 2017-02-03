@@ -20052,27 +20052,27 @@
 
 	var _CustomOrderView2 = _interopRequireDefault(_CustomOrderView);
 
-	var _SelectShopView = __webpack_require__(392);
+	var _SelectShopView = __webpack_require__(394);
 
 	var _SelectShopView2 = _interopRequireDefault(_SelectShopView);
 
-	var _AdditionalInfoView = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./components/AdditionalInfoView/AdditionalInfoView/AdditionalInfoView\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var _AdditionalInfoView = __webpack_require__(403);
 
 	var _AdditionalInfoView2 = _interopRequireDefault(_AdditionalInfoView);
 
-	var _OrderSummaryView = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./components/OrderSummaryView/OrderSummaryView/OrderSummaryView\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var _OrderSummaryView = __webpack_require__(421);
 
 	var _OrderSummaryView2 = _interopRequireDefault(_OrderSummaryView);
 
-	var _ConfirmationView = __webpack_require__(423);
+	var _ConfirmationView = __webpack_require__(427);
 
 	var _ConfirmationView2 = _interopRequireDefault(_ConfirmationView);
 
-	var _PreviousOrdersView = __webpack_require__(435);
+	var _PreviousOrdersView = __webpack_require__(439);
 
 	var _PreviousOrdersView2 = _interopRequireDefault(_PreviousOrdersView);
 
-	var _FavoriteOrdersView = __webpack_require__(444);
+	var _FavoriteOrdersView = __webpack_require__(448);
 
 	var _FavoriteOrdersView2 = _interopRequireDefault(_FavoriteOrdersView);
 
@@ -27638,9 +27638,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _addItemNotification = __webpack_require__(232);
-
-	var _addItemNotification2 = _interopRequireDefault(_addItemNotification);
+	__webpack_require__(232);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27742,19 +27740,15 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactRouter = __webpack_require__(164);
+
 	var _Footer = __webpack_require__(235);
 
 	var _Footer2 = _interopRequireDefault(_Footer);
 
-	var _usernameView = __webpack_require__(238);
+	__webpack_require__(238);
 
-	var _usernameView2 = _interopRequireDefault(_usernameView);
-
-	var _app = __webpack_require__(229);
-
-	var _app2 = _interopRequireDefault(_app);
-
-	var _reactRouter = __webpack_require__(164);
+	__webpack_require__(229);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27924,11 +27918,9 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _footer = __webpack_require__(236);
-
-	var _footer2 = _interopRequireDefault(_footer);
-
 	var _reactRouter = __webpack_require__(164);
+
+	__webpack_require__(236);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -59329,13 +59321,9 @@
 
 	var _reactRouter = __webpack_require__(164);
 
-	var _app = __webpack_require__(229);
+	__webpack_require__(229);
 
-	var _app2 = _interopRequireDefault(_app);
-
-	var _dashboardView = __webpack_require__(357);
-
-	var _dashboardView2 = _interopRequireDefault(_dashboardView);
+	__webpack_require__(357);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -59487,7 +59475,7 @@
 
 	var _AddItemNotification2 = _interopRequireDefault(_AddItemNotification);
 
-	var _SpecialInstructions = __webpack_require__(387);
+	var _SpecialInstructions = __webpack_require__(389);
 
 	var _SpecialInstructions2 = _interopRequireDefault(_SpecialInstructions);
 
@@ -59497,13 +59485,9 @@
 
 	var _reactRouter = __webpack_require__(164);
 
-	var _app = __webpack_require__(229);
+	__webpack_require__(229);
 
-	var _app2 = _interopRequireDefault(_app);
-
-	var _customOrderView = __webpack_require__(390);
-
-	var _customOrderView2 = _interopRequireDefault(_customOrderView);
+	__webpack_require__(392);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -59618,9 +59602,7 @@
 
 	var _MenuSection2 = _interopRequireDefault(_MenuSection);
 
-	var _menuFormContainer = __webpack_require__(375);
-
-	var _menuFormContainer2 = _interopRequireDefault(_menuFormContainer);
+	__webpack_require__(375);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -59688,9 +59670,7 @@
 
 	var _lodash2 = _interopRequireDefault(_lodash);
 
-	var _menuSection = __webpack_require__(373);
-
-	var _menuSection2 = _interopRequireDefault(_menuSection);
+	__webpack_require__(373);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -59749,6 +59729,10 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _lodash = __webpack_require__(240);
+
+	var _lodash2 = _interopRequireDefault(_lodash);
+
 	var _AddToOrderButton = __webpack_require__(363);
 
 	var _AddToOrderButton2 = _interopRequireDefault(_AddToOrderButton);
@@ -59773,13 +59757,7 @@
 
 	var _HotOrCold2 = _interopRequireDefault(_HotOrCold);
 
-	var _menuItem = __webpack_require__(371);
-
-	var _menuItem2 = _interopRequireDefault(_menuItem);
-
-	var _lodash = __webpack_require__(240);
-
-	var _lodash2 = _interopRequireDefault(_lodash);
+	__webpack_require__(371);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -59950,9 +59928,7 @@
 
 	var _lodash2 = _interopRequireDefault(_lodash);
 
-	var _options = __webpack_require__(364);
-
-	var _options2 = _interopRequireDefault(_options);
+	__webpack_require__(364);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -60056,9 +60032,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _options = __webpack_require__(364);
-
-	var _options2 = _interopRequireDefault(_options);
+	__webpack_require__(364);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -60123,9 +60097,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _options = __webpack_require__(364);
-
-	var _options2 = _interopRequireDefault(_options);
+	__webpack_require__(364);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -60179,9 +60151,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _options = __webpack_require__(364);
-
-	var _options2 = _interopRequireDefault(_options);
+	__webpack_require__(364);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -60249,9 +60219,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _options = __webpack_require__(364);
-
-	var _options2 = _interopRequireDefault(_options);
+	__webpack_require__(364);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -60292,9 +60260,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _options = __webpack_require__(364);
-
-	var _options2 = _interopRequireDefault(_options);
+	__webpack_require__(364);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -60470,13 +60436,11 @@
 
 	var _OrderTax2 = _interopRequireDefault(_OrderTax);
 
-	var _OrderTotalTotal = __webpack_require__(382);
+	var _OrderTotalTotal = __webpack_require__(384);
 
 	var _OrderTotalTotal2 = _interopRequireDefault(_OrderTotalTotal);
 
-	var _orderTotal = __webpack_require__(385);
-
-	var _orderTotal2 = _interopRequireDefault(_orderTotal);
+	__webpack_require__(387);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -60554,9 +60518,7 @@
 
 	var _AddItemNotification2 = _interopRequireDefault(_AddItemNotification);
 
-	var _orderTotalRow = __webpack_require__(379);
-
-	var _orderTotalRow2 = _interopRequireDefault(_orderTotalRow);
+	__webpack_require__(379);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -60704,7 +60666,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(447);
+	__webpack_require__(382);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -60741,13 +60703,53 @@
 /* 382 */
 /***/ function(module, exports, __webpack_require__) {
 
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(383);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(4)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./order-tax.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./order-tax.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 383 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(3)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".order-total-tax {\n  font-weight: 400; }\n  .order-total-tax .title {\n    color: #888888; }\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 384 */
+/***/ function(module, exports, __webpack_require__) {
+
 	'use strict';
 
 	var _react = __webpack_require__(5);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(383);
+	__webpack_require__(385);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -60782,13 +60784,13 @@
 	module.exports = OrderTotalTotal;
 
 /***/ },
-/* 383 */
+/* 385 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(384);
+	var content = __webpack_require__(386);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(4)(content, {});
@@ -60808,7 +60810,7 @@
 	}
 
 /***/ },
-/* 384 */
+/* 386 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(3)();
@@ -60822,13 +60824,13 @@
 
 
 /***/ },
-/* 385 */
+/* 387 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(386);
+	var content = __webpack_require__(388);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(4)(content, {});
@@ -60848,7 +60850,7 @@
 	}
 
 /***/ },
-/* 386 */
+/* 388 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(3)();
@@ -60862,7 +60864,7 @@
 
 
 /***/ },
-/* 387 */
+/* 389 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -60871,9 +60873,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _specialInstructions = __webpack_require__(388);
-
-	var _specialInstructions2 = _interopRequireDefault(_specialInstructions);
+	__webpack_require__(390);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -60901,13 +60901,13 @@
 	module.exports = SpecialInstructions;
 
 /***/ },
-/* 388 */
+/* 390 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(389);
+	var content = __webpack_require__(391);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(4)(content, {});
@@ -60927,7 +60927,7 @@
 	}
 
 /***/ },
-/* 389 */
+/* 391 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(3)();
@@ -60941,13 +60941,13 @@
 
 
 /***/ },
-/* 390 */
+/* 392 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(391);
+	var content = __webpack_require__(393);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(4)(content, {});
@@ -60967,7 +60967,7 @@
 	}
 
 /***/ },
-/* 391 */
+/* 393 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(3)();
@@ -60981,7 +60981,7 @@
 
 
 /***/ },
-/* 392 */
+/* 394 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -60990,7 +60990,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _ShopList = __webpack_require__(393);
+	var _ShopList = __webpack_require__(395);
 
 	var _ShopList2 = _interopRequireDefault(_ShopList);
 
@@ -61000,13 +61000,9 @@
 
 	var _reactRouter = __webpack_require__(164);
 
-	var _app = __webpack_require__(229);
+	__webpack_require__(229);
 
-	var _app2 = _interopRequireDefault(_app);
-
-	var _selectShopView = __webpack_require__(399);
-
-	var _selectShopView2 = _interopRequireDefault(_selectShopView);
+	__webpack_require__(401);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -61087,7 +61083,7 @@
 	module.exports = SelectShopView;
 
 /***/ },
-/* 393 */
+/* 395 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -61096,17 +61092,15 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _shopList = __webpack_require__(394);
-
-	var _shopList2 = _interopRequireDefault(_shopList);
-
-	var _ShopListItem = __webpack_require__(396);
-
-	var _ShopListItem2 = _interopRequireDefault(_ShopListItem);
-
 	var _lodash = __webpack_require__(240);
 
 	var _lodash2 = _interopRequireDefault(_lodash);
+
+	__webpack_require__(396);
+
+	var _ShopListItem = __webpack_require__(398);
+
+	var _ShopListItem2 = _interopRequireDefault(_ShopListItem);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -61141,13 +61135,13 @@
 	module.exports = ShopList;
 
 /***/ },
-/* 394 */
+/* 396 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(395);
+	var content = __webpack_require__(397);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(4)(content, {});
@@ -61167,7 +61161,7 @@
 	}
 
 /***/ },
-/* 395 */
+/* 397 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(3)();
@@ -61181,7 +61175,7 @@
 
 
 /***/ },
-/* 396 */
+/* 398 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -61190,9 +61184,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _shopListItem = __webpack_require__(397);
-
-	var _shopListItem2 = _interopRequireDefault(_shopListItem);
+	__webpack_require__(399);
 
 	var _reactRouter = __webpack_require__(164);
 
@@ -61261,13 +61253,13 @@
 	module.exports = ShopListItem;
 
 /***/ },
-/* 397 */
+/* 399 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(398);
+	var content = __webpack_require__(400);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(4)(content, {});
@@ -61287,7 +61279,7 @@
 	}
 
 /***/ },
-/* 398 */
+/* 400 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(3)();
@@ -61301,13 +61293,13 @@
 
 
 /***/ },
-/* 399 */
+/* 401 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(400);
+	var content = __webpack_require__(402);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(4)(content, {});
@@ -61327,7 +61319,7 @@
 	}
 
 /***/ },
-/* 400 */
+/* 402 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(3)();
@@ -61341,29 +61333,7 @@
 
 
 /***/ },
-/* 401 */,
-/* 402 */,
-/* 403 */,
-/* 404 */,
-/* 405 */,
-/* 406 */,
-/* 407 */,
-/* 408 */,
-/* 409 */,
-/* 410 */,
-/* 411 */,
-/* 412 */,
-/* 413 */,
-/* 414 */,
-/* 415 */,
-/* 416 */,
-/* 417 */,
-/* 418 */,
-/* 419 */,
-/* 420 */,
-/* 421 */,
-/* 422 */,
-/* 423 */
+/* 403 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -61372,15 +61342,1277 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _OrderReadyTime = __webpack_require__(424);
+	var _reactRouter = __webpack_require__(164);
+
+	var _SelectMethodOfTrans = __webpack_require__(404);
+
+	var _SelectMethodOfTrans2 = _interopRequireDefault(_SelectMethodOfTrans);
+
+	var _SelectPickUpTime = __webpack_require__(407);
+
+	var _SelectPickUpTime2 = _interopRequireDefault(_SelectPickUpTime);
+
+	var _SelectIfFavorite = __webpack_require__(410);
+
+	var _SelectIfFavorite2 = _interopRequireDefault(_SelectIfFavorite);
+
+	var _EnterPaymentInfo = __webpack_require__(413);
+
+	var _EnterPaymentInfo2 = _interopRequireDefault(_EnterPaymentInfo);
+
+	var _AdditionalInfoNotification = __webpack_require__(416);
+
+	var _AdditionalInfoNotification2 = _interopRequireDefault(_AdditionalInfoNotification);
+
+	var _Footer = __webpack_require__(235);
+
+	var _Footer2 = _interopRequireDefault(_Footer);
+
+	__webpack_require__(229);
+
+	__webpack_require__(419);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var AdditionalInfoView = _react2.default.createClass({
+	    displayName: 'AdditionalInfoView',
+
+
+	    propTypes: {
+	        handleMethodOfTrans: _react2.default.PropTypes.func,
+	        handlePickupTime: _react2.default.PropTypes.func,
+	        pickupTime: _react2.default.PropTypes.oneOfType([_react2.default.PropTypes.string, _react2.default.PropTypes.bool]),
+	        handleFavorite: _react2.default.PropTypes.func,
+	        favorite: _react2.default.PropTypes.bool,
+	        handleCCName: _react2.default.PropTypes.func,
+	        handleCCNumber: _react2.default.PropTypes.func,
+	        handleCCExpMonth: _react2.default.PropTypes.func,
+	        expMonth: _react2.default.PropTypes.string,
+	        handleCCExpYear: _react2.default.PropTypes.func,
+	        expYear: _react2.default.PropTypes.string,
+	        handleCCCVV: _react2.default.PropTypes.func,
+	        toggleAdditionalInfoNotification: _react2.default.PropTypes.func,
+	        methodOfTrans: _react2.default.PropTypes.string,
+	        methodOfTransShow: _react2.default.PropTypes.bool
+	    },
+
+	    render: function render() {
+
+	        var nextButton;
+	        if (this.props.pickupTime === true && this.props.methodOfTrans) {
+	            nextButton = _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '/order-summary' },
+	                _react2.default.createElement(
+	                    'button',
+	                    { className: 'next-button' },
+	                    'Next',
+	                    _react2.default.createElement('i', { className: 'fa fa-arrow-right fa-lg', 'aria-hidden': 'true' })
+	                )
+	            );
+	        } else if (this.props.pickupTime !== true) {
+	            nextButton = _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '/order-summary' },
+	                _react2.default.createElement(
+	                    'button',
+	                    { className: 'next-button' },
+	                    'Next',
+	                    _react2.default.createElement('i', { className: 'fa fa-arrow-right fa-lg', 'aria-hidden': 'true' })
+	                )
+	            );
+	        } else {
+	            nextButton = _react2.default.createElement(
+	                'button',
+	                {
+	                    onClick: this.props.toggleAdditionalInfoNotification,
+	                    className: 'next-button' },
+	                'Next',
+	                _react2.default.createElement('i', { className: 'fa fa-arrow-right fa-lg', 'aria-hidden': 'true' })
+	            );
+	        }
+
+	        return _react2.default.createElement(
+	            'div',
+	            { className: 'additional-info-container' },
+	            _react2.default.createElement(
+	                'div',
+	                { className: 'title-cover' },
+	                _react2.default.createElement(
+	                    'h1',
+	                    null,
+	                    'Tell us a little more!'
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'userProgress' },
+	                    _react2.default.createElement('div', { id: 'threeOfFive' })
+	                )
+	            ),
+	            _react2.default.createElement(_AdditionalInfoNotification2.default, {
+	                notification: this.props.notification }),
+	            _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(
+	                    'form',
+	                    null,
+	                    _react2.default.createElement(_SelectPickUpTime2.default, {
+	                        handlePickupTime: this.props.handlePickupTime,
+	                        value: this.props.pickupTime || true }),
+	                    _react2.default.createElement(_SelectMethodOfTrans2.default, {
+	                        handleMethodOfTrans: this.props.handleMethodOfTrans,
+	                        methodOfTransShow: this.props.methodOfTransShow }),
+	                    _react2.default.createElement(_SelectIfFavorite2.default, {
+	                        handleFavorite: this.props.handleFavorite,
+	                        value: this.props.favorite || false }),
+	                    _react2.default.createElement(_EnterPaymentInfo2.default, {
+	                        handleCCName: this.props.handleCCName,
+	                        handleCCNumber: this.props.handleCCNumber,
+	                        handleCCExpMonth: this.props.handleCCExpMonth,
+	                        expMonthValue: this.props.expMonth || 'default',
+	                        handleCCExpYear: this.props.handleCCExpYear,
+	                        expYearValue: this.props.expYear || 'default',
+	                        handleCCCVV: this.props.handleCCCVV })
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'next-button-container' },
+	                    nextButton
+	                )
+	            ),
+	            _react2.default.createElement(_Footer2.default, null)
+	        );
+	    }
+	});
+
+	module.exports = AdditionalInfoView;
+
+/***/ },
+/* 404 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(5);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(405);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var SelectMethodOfTrans = _react2.default.createClass({
+	    displayName: 'SelectMethodOfTrans',
+
+
+	    propTypes: {
+	        handleMethodOfTrans: _react2.default.PropTypes.func,
+	        methodOfTransShow: _react2.default.PropTypes.bool
+	    },
+
+	    render: function render() {
+	        return _react2.default.createElement(
+	            'div',
+	            { className: this.props.methodOfTransShow ? 'method-of-trans-container' : 'method-of-trans-container method-of-trans-container-hide' },
+	            _react2.default.createElement(
+	                'h2',
+	                null,
+	                'How will you get to the shop?'
+	            ),
+	            _react2.default.createElement('input', {
+	                onChange: this.props.handleMethodOfTrans,
+	                type: 'radio',
+	                name: 'methodOfTrans',
+	                className: 'method-of-trans-input',
+	                id: 'walking',
+	                value: 'walking' }),
+	            _react2.default.createElement(
+	                'label',
+	                { className: 'method-of-trans-label', htmlFor: 'walking' },
+	                _react2.default.createElement('i', { className: 'fa fa-male fa-3x', 'aria-hidden': 'true' }),
+	                'Walking'
+	            ),
+	            _react2.default.createElement('input', {
+	                onChange: this.props.handleMethodOfTrans,
+	                type: 'radio',
+	                name: 'methodOfTrans',
+	                className: 'method-of-trans-input',
+	                id: 'biking',
+	                value: 'biking' }),
+	            _react2.default.createElement(
+	                'label',
+	                { className: 'method-of-trans-label', htmlFor: 'biking' },
+	                _react2.default.createElement('i', { className: 'fa fa-bicycle fa-3x', 'aria-hidden': 'true' }),
+	                'Biking'
+	            ),
+	            _react2.default.createElement('input', {
+	                onChange: this.props.handleMethodOfTrans,
+	                type: 'radio',
+	                name: 'methodOfTrans',
+	                className: 'method-of-trans-input',
+	                id: 'driving',
+	                value: 'driving' }),
+	            _react2.default.createElement(
+	                'label',
+	                { className: 'method-of-trans-label', htmlFor: 'driving' },
+	                _react2.default.createElement('i', { className: 'fa fa-car fa-3x', 'aria-hidden': 'true' }),
+	                'Driving'
+	            )
+	        );
+	    }
+	});
+
+	module.exports = SelectMethodOfTrans;
+
+/***/ },
+/* 405 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(406);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(4)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./select-method-of-trans.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./select-method-of-trans.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 406 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(3)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "@media only screen and (min-width: 600px) {\n  .method-of-trans-container {\n    width: 28em;\n    margin: 0 auto 1em auto; } }\n\n@media only screen and (max-width: 599px) {\n  .method-of-trans-container {\n    width: 90%;\n    margin: 0 auto 1em auto; } }\n\n.method-of-trans-container-hide {\n  display: none; }\n\n.method-of-trans-container {\n  text-align: center;\n  padding: 0.75em 0.75em 1em 0.75em;\n  border: 1px solid #E4E4E4;\n  border-radius: 3px;\n  background: #fff;\n  box-shadow: #999999 0px 1px; }\n  .method-of-trans-container h2 {\n    font-size: 1.2em;\n    text-align: left;\n    color: #333; }\n  .method-of-trans-container p {\n    padding-top: 3.5em; }\n\n.method-of-trans-label {\n  display: inline-block;\n  width: 5em;\n  height: 3em;\n  background: #fff;\n  margin: 1em;\n  padding: 1em 1em 3em 1em;\n  color: #cbcbcb;\n  border: 2px solid #cbcbcb;\n  text-align: center;\n  border-radius: 50%;\n  cursor: pointer; }\n  .method-of-trans-label .fa-male {\n    display: block; }\n\ninput.method-of-trans-input {\n  display: none;\n  margin: 10px; }\n  input.method-of-trans-input:checked + label {\n    background: #3FB083;\n    border: 2px solid #3FB083;\n    color: #fff; }\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 407 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(5);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _selectPickUpTime = __webpack_require__(408);
+
+	var _selectPickUpTime2 = _interopRequireDefault(_selectPickUpTime);
+
+	var _moment = __webpack_require__(250);
+
+	var _moment2 = _interopRequireDefault(_moment);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var SelectPickUpTime = _react2.default.createClass({
+	    displayName: 'SelectPickUpTime',
+
+
+	    propTypes: {
+	        handlePickupTime: _react2.default.PropTypes.func,
+	        value: _react2.default.PropTypes.oneOfType([_react2.default.PropTypes.string, _react2.default.PropTypes.bool])
+	    },
+
+	    render: function render() {
+	        var _this = this;
+
+	        return _react2.default.createElement(
+	            'div',
+	            { className: 'select-pick-up-container' },
+	            _react2.default.createElement(
+	                'h2',
+	                null,
+	                'Pick up now or schedule pick up?'
+	            ),
+	            _react2.default.createElement(
+	                'div',
+	                { className: 'select-pick-up-now' },
+	                _react2.default.createElement(
+	                    'label',
+	                    null,
+	                    'Now: ',
+	                    _react2.default.createElement('input', {
+	                        onChange: function onChange() {
+	                            return _this.props.handlePickupTime(true);
+	                        },
+	                        type: 'radio',
+	                        checked: this.props.value === true })
+	                )
+	            ),
+	            _react2.default.createElement(
+	                'div',
+	                { className: 'select-pick-up-time' },
+	                _react2.default.createElement(
+	                    'label',
+	                    null,
+	                    'Pick up at:',
+	                    _react2.default.createElement(
+	                        'span',
+	                        null,
+	                        '  '
+	                    ),
+	                    _react2.default.createElement(
+	                        'select',
+	                        {
+	                            onChange: function onChange(event) {
+	                                return _this.props.handlePickupTime(event.target.value);
+	                            },
+	                            name: 'pickup-time',
+	                            value: this.props.value },
+	                        _react2.default.createElement(
+	                            'option',
+	                            { value: 'true', disabled: true },
+	                            'Time'
+	                        ),
+	                        _react2.default.createElement(
+	                            'option',
+	                            { value: '5:00am' },
+	                            '5:00am'
+	                        ),
+	                        _react2.default.createElement(
+	                            'option',
+	                            { value: '5:30am' },
+	                            '5:30am'
+	                        ),
+	                        _react2.default.createElement(
+	                            'option',
+	                            { value: '6:00am' },
+	                            '6:00am'
+	                        ),
+	                        _react2.default.createElement(
+	                            'option',
+	                            { value: '6:30am' },
+	                            '6:30am'
+	                        ),
+	                        _react2.default.createElement(
+	                            'option',
+	                            { value: '7:00am' },
+	                            '7:00am'
+	                        ),
+	                        _react2.default.createElement(
+	                            'option',
+	                            { value: '7:30am' },
+	                            '7:30am'
+	                        ),
+	                        _react2.default.createElement(
+	                            'option',
+	                            { value: '8:00am' },
+	                            '8:00am'
+	                        ),
+	                        _react2.default.createElement(
+	                            'option',
+	                            { value: '8:30am' },
+	                            '8:30am'
+	                        ),
+	                        _react2.default.createElement(
+	                            'option',
+	                            { value: '9:00am' },
+	                            '9:00am'
+	                        ),
+	                        _react2.default.createElement(
+	                            'option',
+	                            { value: '9:30am' },
+	                            '9:30am'
+	                        ),
+	                        _react2.default.createElement(
+	                            'option',
+	                            { value: '10:00am' },
+	                            '10:00am'
+	                        ),
+	                        _react2.default.createElement(
+	                            'option',
+	                            { value: '10:30am' },
+	                            '10:30am'
+	                        ),
+	                        _react2.default.createElement(
+	                            'option',
+	                            { value: '11:00am' },
+	                            '11:00am'
+	                        ),
+	                        _react2.default.createElement(
+	                            'option',
+	                            { value: '11:30am' },
+	                            '11:30am'
+	                        ),
+	                        _react2.default.createElement(
+	                            'option',
+	                            { value: '12:00pm' },
+	                            '12:00pm'
+	                        ),
+	                        _react2.default.createElement(
+	                            'option',
+	                            { value: '12:30pm' },
+	                            '12:30pm'
+	                        ),
+	                        _react2.default.createElement(
+	                            'option',
+	                            { value: '1:00pm' },
+	                            '1:00pm'
+	                        ),
+	                        _react2.default.createElement(
+	                            'option',
+	                            { value: '1:30pm' },
+	                            '1:30pm'
+	                        ),
+	                        _react2.default.createElement(
+	                            'option',
+	                            { value: '2:00pm' },
+	                            '2:00pm'
+	                        ),
+	                        _react2.default.createElement(
+	                            'option',
+	                            { value: '2:30pm' },
+	                            '2:30pm'
+	                        ),
+	                        _react2.default.createElement(
+	                            'option',
+	                            { value: '3:00pm' },
+	                            '3:00pm'
+	                        ),
+	                        _react2.default.createElement(
+	                            'option',
+	                            { value: '3:30pm' },
+	                            '3:30pm'
+	                        ),
+	                        _react2.default.createElement(
+	                            'option',
+	                            { value: '4:00pm' },
+	                            '4:00pm'
+	                        ),
+	                        _react2.default.createElement(
+	                            'option',
+	                            { value: '4:30pm' },
+	                            '4:30pm'
+	                        ),
+	                        _react2.default.createElement(
+	                            'option',
+	                            { value: '5:00pm' },
+	                            '5:00pm'
+	                        ),
+	                        _react2.default.createElement(
+	                            'option',
+	                            { value: '5:30pm' },
+	                            '5:30pm'
+	                        ),
+	                        _react2.default.createElement(
+	                            'option',
+	                            { value: '6:00pm' },
+	                            '6:00pm'
+	                        ),
+	                        _react2.default.createElement(
+	                            'option',
+	                            { value: '6:30pm' },
+	                            '6:30pm'
+	                        ),
+	                        _react2.default.createElement(
+	                            'option',
+	                            { value: '7:00pm' },
+	                            '7:00pm'
+	                        )
+	                    )
+	                )
+	            )
+	        );
+	    }
+	});
+
+	module.exports = SelectPickUpTime;
+
+/***/ },
+/* 408 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(409);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(4)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./select-pick-up-time.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./select-pick-up-time.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 409 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(3)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "@media only screen and (min-width: 600px) {\n  .select-pick-up-container {\n    width: 28em;\n    margin: 0 auto 1em auto; } }\n\n@media only screen and (max-width: 599px) {\n  .select-pick-up-container {\n    width: 90%;\n    margin: 0 auto 1em auto; } }\n\n.select-pick-up-container {\n  padding: 0.75em;\n  border: 1px solid #E4E4E4;\n  border-radius: 3px;\n  background: #fff;\n  box-shadow: #999999 0px 1px; }\n  .select-pick-up-container h2 {\n    margin: 0 0.25em 0.25em 0em;\n    padding-bottom: 0.75em;\n    font-size: 1.2em;\n    color: #333; }\n\n.select-pick-up-now {\n  margin-right: 4em;\n  display: inline-block; }\n  .select-pick-up-now label {\n    color: #333; }\n\n.select-pick-up-time {\n  display: inline-block; }\n  .select-pick-up-time label {\n    color: #333; }\n  .select-pick-up-time select {\n    display: inline-block;\n    -webkit-appearance: none;\n    -moz-appearance: none;\n    appearance: none;\n    padding: 0.3em 0.5em;\n    border-radius: 3px;\n    background: url(\"/img/down-arrow.png\") no-repeat #F8F8F8;\n    background-position: 85% 55%;\n    width: 6.5em;\n    margin-left: 0.5em; }\n    .select-pick-up-time select:hover {\n      cursor: pointer; }\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 410 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(5);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(411);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var SelectIfFavorite = _react2.default.createClass({
+	    displayName: 'SelectIfFavorite',
+
+
+	    propTypes: {
+	        handleFavorite: _react2.default.PropTypes.func,
+	        value: _react2.default.PropTypes.bool
+	    },
+
+	    render: function render() {
+	        return _react2.default.createElement(
+	            'div',
+	            { className: 'select-if-favorite-container' },
+	            _react2.default.createElement(
+	                'h2',
+	                null,
+	                'Favorite this order?'
+	            ),
+	            _react2.default.createElement(
+	                'p',
+	                null,
+	                'Yes!'
+	            ),
+	            _react2.default.createElement(
+	                'div',
+	                { className: 'select-if-favorite' },
+	                _react2.default.createElement('input', {
+	                    onChange: this.props.handleFavorite,
+	                    type: 'checkbox',
+	                    value: this.props.value,
+	                    id: 'select-if-favorite',
+	                    name: 'favorite' }),
+	                _react2.default.createElement('label', { htmlFor: 'select-if-favorite' })
+	            )
+	        );
+	    }
+	});
+
+	module.exports = SelectIfFavorite;
+
+/***/ },
+/* 411 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(412);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(4)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./select-if-favorite.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./select-if-favorite.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 412 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(3)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "@media only screen and (min-width: 600px) {\n  .select-if-favorite-container {\n    width: 28em;\n    margin: 0 auto 1em auto; } }\n\n@media only screen and (max-width: 599px) {\n  .select-if-favorite-container {\n    width: 90%;\n    margin: 0 auto 1em auto; } }\n\n.select-if-favorite-container {\n  padding: 0.75em 0.75em 0em 0.75em;\n  border: 1px solid #E4E4E4;\n  border-radius: 3px;\n  background: #fff;\n  box-shadow: #999999 0px 1px; }\n  .select-if-favorite-container h2 {\n    font-size: 1.2em;\n    color: #333; }\n  .select-if-favorite-container p {\n    margin: 0;\n    color: #333; }\n\n.select-if-favorite {\n  width: 20px;\n  position: relative;\n  left: 2.3em;\n  top: -1.3em;\n  margin: 0; }\n  .select-if-favorite label {\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    position: absolute;\n    top: 0;\n    left: 0;\n    background: #F8F8F8;\n    border-radius: 3px;\n    border: 1px solid #A6A6A6; }\n    .select-if-favorite label:after {\n      content: '';\n      width: 9px;\n      height: 5px;\n      position: absolute;\n      top: 4px;\n      left: 4px;\n      border: 3px solid #40B284;\n      border-top: none;\n      border-right: none;\n      background: transparent;\n      opacity: 0;\n      transform: rotate(-45deg); }\n    .select-if-favorite label:hover::after {\n      opacity: 0.5; }\n  .select-if-favorite input[type=checkbox] {\n    visibility: hidden; }\n    .select-if-favorite input[type=checkbox]:checked + label:after {\n      opacity: 1; }\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 413 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(5);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _enterPaymentInfo = __webpack_require__(414);
+
+	var _enterPaymentInfo2 = _interopRequireDefault(_enterPaymentInfo);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var EnterPaymentInfo = _react2.default.createClass({
+	    displayName: 'EnterPaymentInfo',
+
+
+	    propTypes: {
+	        handleCCName: _react2.default.PropTypes.func,
+	        handleCCNumber: _react2.default.PropTypes.func,
+	        handleCCExpMonth: _react2.default.PropTypes.func,
+	        expMonthValue: _react2.default.PropTypes.string,
+	        handleCCExpYear: _react2.default.PropTypes.func,
+	        expYearValue: _react2.default.PropTypes.string,
+	        handleCCCVV: _react2.default.PropTypes.func
+	    },
+
+	    render: function render() {
+	        return _react2.default.createElement(
+	            'div',
+	            { className: 'enter-payment-info-container' },
+	            _react2.default.createElement(
+	                'h2',
+	                null,
+	                'Enter Payment Info'
+	            ),
+	            _react2.default.createElement(
+	                'div',
+	                { className: 'payment-info-section payment-name' },
+	                _react2.default.createElement(
+	                    'p',
+	                    null,
+	                    'Name on card'
+	                ),
+	                _react2.default.createElement('input', {
+	                    onChange: this.props.handleCCName,
+	                    type: 'text',
+	                    placeholder: 'Name',
+	                    required: true })
+	            ),
+	            _react2.default.createElement(
+	                'div',
+	                { className: 'payment-info-section payment-card-number' },
+	                _react2.default.createElement(
+	                    'p',
+	                    null,
+	                    'Credit Card Number'
+	                ),
+	                _react2.default.createElement('input', {
+	                    onChange: this.props.handleCCNumber,
+	                    type: 'text',
+	                    placeholder: 'Card number',
+	                    maxLength: '16',
+	                    required: true })
+	            ),
+	            _react2.default.createElement(
+	                'div',
+	                { className: 'payment-info-section payment-month-year' },
+	                _react2.default.createElement(
+	                    'p',
+	                    null,
+	                    'Expiration Date'
+	                ),
+	                _react2.default.createElement(
+	                    'select',
+	                    {
+	                        className: 'payment-month',
+	                        onChange: this.props.handleCCExpMonth,
+	                        value: this.props.expMonthValue,
+	                        name: 'exp-month'
+	                    },
+	                    _react2.default.createElement(
+	                        'option',
+	                        { value: 'default' },
+	                        'Month'
+	                    ),
+	                    _react2.default.createElement(
+	                        'option',
+	                        { value: '01' },
+	                        'Jan (01)'
+	                    ),
+	                    _react2.default.createElement(
+	                        'option',
+	                        { value: '02' },
+	                        'Feb (02)'
+	                    ),
+	                    _react2.default.createElement(
+	                        'option',
+	                        { value: '03' },
+	                        'Mar (03)'
+	                    ),
+	                    _react2.default.createElement(
+	                        'option',
+	                        { value: '04' },
+	                        'Apr (04)'
+	                    ),
+	                    _react2.default.createElement(
+	                        'option',
+	                        { value: '05' },
+	                        'May (05)'
+	                    ),
+	                    _react2.default.createElement(
+	                        'option',
+	                        { value: '06' },
+	                        'Jun (06)'
+	                    ),
+	                    _react2.default.createElement(
+	                        'option',
+	                        { value: '07' },
+	                        'Jul (07)'
+	                    ),
+	                    _react2.default.createElement(
+	                        'option',
+	                        { value: '08' },
+	                        'Aug (08)'
+	                    ),
+	                    _react2.default.createElement(
+	                        'option',
+	                        { value: '09' },
+	                        'Sep (09)'
+	                    ),
+	                    _react2.default.createElement(
+	                        'option',
+	                        { value: '10' },
+	                        'Oct (10)'
+	                    ),
+	                    _react2.default.createElement(
+	                        'option',
+	                        { value: '11' },
+	                        'Nov (11)'
+	                    ),
+	                    _react2.default.createElement(
+	                        'option',
+	                        { value: '12' },
+	                        'Dec (12)'
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'select',
+	                    {
+	                        className: 'payment-year',
+	                        onChange: this.props.handleCCExpYear,
+	                        value: this.props.expYearValue,
+	                        name: 'exp-year' },
+	                    _react2.default.createElement(
+	                        'option',
+	                        { value: 'default' },
+	                        'Year'
+	                    ),
+	                    _react2.default.createElement(
+	                        'option',
+	                        { value: '2016' },
+	                        '2016'
+	                    ),
+	                    _react2.default.createElement(
+	                        'option',
+	                        { value: '2017' },
+	                        '2017'
+	                    ),
+	                    _react2.default.createElement(
+	                        'option',
+	                        { value: '2018' },
+	                        '2018'
+	                    ),
+	                    _react2.default.createElement(
+	                        'option',
+	                        { value: '2019' },
+	                        '2019'
+	                    ),
+	                    _react2.default.createElement(
+	                        'option',
+	                        { value: '2020' },
+	                        '2020'
+	                    ),
+	                    _react2.default.createElement(
+	                        'option',
+	                        { value: '2021' },
+	                        '2021'
+	                    ),
+	                    _react2.default.createElement(
+	                        'option',
+	                        { value: '2022' },
+	                        '2022'
+	                    )
+	                )
+	            ),
+	            _react2.default.createElement(
+	                'div',
+	                { className: 'payment-info-section payment-csv' },
+	                _react2.default.createElement(
+	                    'p',
+	                    null,
+	                    'CSV'
+	                ),
+	                _react2.default.createElement('input', {
+	                    onChange: this.props.handleCCCVV,
+	                    type: 'text',
+	                    placeholder: 'CSV',
+	                    maxLength: '3',
+	                    required: true })
+	            )
+	        );
+	    }
+	});
+
+	module.exports = EnterPaymentInfo;
+
+/***/ },
+/* 414 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(415);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(4)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./enter-payment-info.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./enter-payment-info.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 415 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(3)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".enter-payment-info-container h2 {\n  color: #333; }\n\n.payment-info-section {\n  padding: 0 0 1em 0; }\n  .payment-info-section p {\n    margin: 0.5em 0 0.5em 0;\n    color: #333; }\n\n.payment-name input, .payment-card-number input {\n  width: 18em;\n  padding: 0.5em;\n  display: block;\n  border-radius: 3px;\n  border: 1px solid #A6A6A6; }\n  .payment-name input:focus, .payment-card-number input:focus {\n    border: 2px solid #3FB083; }\n\n.payment-month-year select {\n  display: inline-block;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n  padding: 0.5em;\n  border-radius: 3px; }\n  .payment-month-year select:hover {\n    cursor: pointer; }\n\n.payment-month-year .payment-month {\n  background: url(\"/img/down-arrow.png\") no-repeat #F8F8F8;\n  background-position: 85% 55%;\n  width: 6em;\n  margin-right: 0.5em; }\n\n.payment-month-year .payment-year {\n  background: url(\"/img/down-arrow.png\") no-repeat #F8F8F8;\n  background-position: 85% 55%;\n  width: 4.5em; }\n\n.payment-csv input {\n  width: 2em;\n  padding: 0.5em;\n  border: 1px solid #A6A6A6;\n  border-radius: 3px; }\n  .payment-csv input:focus {\n    border: 2px solid #3FB083; }\n\n@media only screen and (min-width: 600px) {\n  .enter-payment-info-container {\n    width: 28em;\n    margin: 0 auto 1em auto; } }\n\n@media only screen and (max-width: 599px) {\n  .enter-payment-info-container {\n    width: 90%;\n    margin: 0 auto 1em auto; } }\n\n.enter-payment-info-container {\n  padding: 0.75em;\n  border: 1px solid #E4E4E4;\n  border-radius: 3px;\n  background: #fff;\n  box-shadow: #999999 0px 1px; }\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 416 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(5);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(417);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var AdditionalInfoNotification = _react2.default.createClass({
+	    displayName: 'AdditionalInfoNotification',
+
+
+	    propTypes: {
+	        notification: _react2.default.PropTypes.shape({
+	            add: _react2.default.PropTypes.bool,
+	            delete: _react2.default.PropTypes.bool,
+	            error: _react2.default.PropTypes.bool,
+	            form: _react2.default.PropTypes.bool,
+	            additionalInfo: _react2.default.PropTypes.bool
+	        })
+	    },
+
+	    render: function render() {
+
+	        var notificationType = '';
+	        var notificationText = '';
+
+	        if (this.props.notification.additionalInfo) {
+	            notificationType = 'item-notification error-item-notification item-notification-show';
+	            notificationText = 'Select your method of transportation to continue';
+	        } else {
+	            notificationType = 'item-notification item-notification-hide';
+	        }
+
+	        return _react2.default.createElement(
+	            'div',
+	            { className: notificationType },
+	            _react2.default.createElement(
+	                'a',
+	                { className: 'item-notification-text' },
+	                notificationText
+	            )
+	        );
+	    }
+	});
+
+	module.exports = AdditionalInfoNotification;
+
+/***/ },
+/* 417 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(418);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(4)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./additional-info-notification.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./additional-info-notification.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 418 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(3)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".item-notification-text {\n  color: #f6f6f6;\n  text-align: center;\n  text-decoration: none; }\n\n.item-notification {\n  color: #f6f6f6;\n  font-size: 1.1em;\n  padding-top: 0.7em;\n  height: 38px;\n  position: fixed;\n  left: 0;\n  text-align: center;\n  text-decoration: none;\n  top: -45px;\n  width: 100%;\n  animation: item-notification 1s ease forwards;\n  z-index: 999999; }\n\n.add-item-notification {\n  background-color: #3FB083; }\n\n.delete-item-notification {\n  background-color: #E2514E; }\n\n.error-item-notification {\n  background-color: #FAD675; }\n\n.item-notification-show {\n  display: block; }\n\n.item-notification-hide {\n  display: none; }\n\n@keyframes item-notification {\n  0% {\n    opacity: 0; }\n  50% {\n    opacity: 1; }\n  100% {\n    top: 0; } }\n\n@keyframes item-notification-hide {\n  0% {\n    top: 0; }\n  50% {\n    top: -25; }\n  100% {\n    top: -45; } }\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 419 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(420);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(4)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./additional-info-view.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./additional-info-view.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 420 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(3)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".additional-info-container {\n  margin-left: 0em;\n  margin-top: 4em; }\n\n.title-cover h1 {\n  color: #333; }\n\n.next-button-container {\n  text-align: center;\n  margin-bottom: 3em; }\n\n.userProgress {\n  position: relative;\n  width: 100%;\n  height: 30px;\n  background-color: #fff;\n  border-radius: 5px;\n  margin: 0 auto; }\n\n#threeOfFive {\n  position: absolute;\n  width: 60%;\n  height: 100%;\n  background: #3FB083;\n  border-radius: 5px 0px 0px 5px; }\n\n.additional-info-container {\n  margin-right: 1em;\n  overflow-x: hidden; }\n\n@media only screen and (min-width: 600px) {\n  .additional-info-container .userProgress {\n    width: 25em; } }\n\n@media only screen and (min-width: 700px) {\n  .additional-info-container {\n    margin-left: 0em;\n    margin-top: 4em; } }\n\n@media only screen and (min-width: 960px) {\n  .additional-info-container {\n    margin-top: 0em;\n    margin-left: 5em; } }\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 421 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(5);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _OrderTotal = __webpack_require__(377);
+
+	var _OrderTotal2 = _interopRequireDefault(_OrderTotal);
+
+	var _SpecialInstructionsOS = __webpack_require__(422);
+
+	var _SpecialInstructionsOS2 = _interopRequireDefault(_SpecialInstructionsOS);
+
+	var _Footer = __webpack_require__(235);
+
+	var _Footer2 = _interopRequireDefault(_Footer);
+
+	var _reactRouter = __webpack_require__(164);
+
+	__webpack_require__(229);
+
+	__webpack_require__(425);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var OrderSummaryView = _react2.default.createClass({
+	    displayName: 'OrderSummaryView',
+
+
+	    propTypes: {
+	        items: _react2.default.PropTypes.array,
+	        handleDeleteItemFromOrder: _react2.default.PropTypes.func,
+	        specialInstructions: _react2.default.PropTypes.string,
+	        handleOrderSubmit: _react2.default.PropTypes.func
+	    },
+
+	    render: function render() {
+	        return _react2.default.createElement(
+	            'div',
+	            null,
+	            _react2.default.createElement(
+	                'div',
+	                { className: 'main-wrap' },
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'order-summary-container' },
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'title-cover' },
+	                        _react2.default.createElement(
+	                            'h1',
+	                            null,
+	                            'Order Summary'
+	                        ),
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'userProgress' },
+	                            _react2.default.createElement('div', { id: 'fourOfFive' })
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'os-order-total-container' },
+	                        _react2.default.createElement(_OrderTotal2.default, {
+	                            orderItems: this.props.items,
+	                            handleDeleteItemFromOrder: this.props.handleDeleteItemFromOrder })
+	                    ),
+	                    _react2.default.createElement(_SpecialInstructionsOS2.default, {
+	                        specialInstructions: this.props.specialInstructions }),
+	                    _react2.default.createElement(
+	                        _reactRouter.Link,
+	                        { to: '/confirmation', className: 'order-summary-link' },
+	                        _react2.default.createElement(
+	                            'button',
+	                            {
+	                                onClick: this.props.handleOrderSubmit,
+	                                className: 'next-button order-summary-button' },
+	                            'Submit Order',
+	                            _react2.default.createElement('i', { className: 'fa fa-check fa-lg', 'aria-hidden': 'true' })
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        _reactRouter.Link,
+	                        { to: '/custom-order' },
+	                        _react2.default.createElement(
+	                            'button',
+	                            { className: 'next-button order-summary-edit-button' },
+	                            'Edit my order',
+	                            _react2.default.createElement('i', { className: 'fa fa-pencil fa-lg', 'aria-hidden': 'true' })
+	                        )
+	                    )
+	                )
+	            ),
+	            _react2.default.createElement(_Footer2.default, null)
+	        );
+	    }
+	});
+
+	module.exports = OrderSummaryView;
+
+/***/ },
+/* 422 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(5);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(423);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var SpecialInstructionsOS = _react2.default.createClass({
+	    displayName: 'SpecialInstructionsOS',
+
+
+	    propTypes: {
+	        specialInstructions: _react2.default.PropTypes.string
+	    },
+
+	    render: function render() {
+	        return _react2.default.createElement(
+	            'div',
+	            null,
+	            _react2.default.createElement(
+	                'h4',
+	                null,
+	                'Special Instructions:'
+	            ),
+	            _react2.default.createElement(
+	                'p',
+	                null,
+	                this.props.specialInstructions
+	            )
+	        );
+	    }
+	});
+
+	module.exports = SpecialInstructionsOS;
+
+/***/ },
+/* 423 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(424);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(4)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./special-instructions.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./special-instructions.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 424 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(3)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "h4, p {\n  color: #333; }\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 425 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(426);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(4)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./order-summary.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./order-summary.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 426 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(3)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".order-summary-container {\n  text-align: center;\n  margin-left: 0em;\n  margin-top: 4em; }\n  .order-summary-container h1 {\n    color: #333; }\n\n.os-order-total-container {\n  width: 50%;\n  margin: 0 auto; }\n\n.order-summary-button {\n  display: block;\n  background: #3FB083;\n  margin: 0 auto; }\n  .order-summary-button:hover {\n    background: #43BB8B; }\n\n.order-summary-edit-button {\n  border: 2px solid #f9d266;\n  background: #fff;\n  color: #f9d266; }\n  .order-summary-edit-button:hover {\n    background: #fad675;\n    color: #fff; }\n\n.order-summary-link {\n  text-decoration: none; }\n\n.userProgress {\n  position: relative;\n  width: 100%;\n  height: 30px;\n  background-color: #fff;\n  border-radius: 5px;\n  margin: 0 auto;\n  border: 1px solid #E4E4E4; }\n\n#fourOfFive {\n  position: absolute;\n  width: 80%;\n  height: 100%;\n  background: #3FB083;\n  border-radius: 5px 0px 0px 5px; }\n\n@media only screen and (min-width: 600px) {\n  .order-summary-container .userProgress {\n    width: 25em; } }\n\n@media only screen and (min-width: 960px) {\n  .order-summary-container {\n    margin-top: 0em;\n    margin-left: 1em;\n    padding-bottom: 3em; } }\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 427 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(5);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _OrderReadyTime = __webpack_require__(428);
 
 	var _OrderReadyTime2 = _interopRequireDefault(_OrderReadyTime);
 
-	var _ShopDetails = __webpack_require__(427);
+	var _ShopDetails = __webpack_require__(431);
 
 	var _ShopDetails2 = _interopRequireDefault(_ShopDetails);
 
-	var _DirectionsAndCall = __webpack_require__(430);
+	var _DirectionsAndCall = __webpack_require__(434);
 
 	var _DirectionsAndCall2 = _interopRequireDefault(_DirectionsAndCall);
 
@@ -61390,13 +62622,9 @@
 
 	var _reactRouter = __webpack_require__(164);
 
-	var _confirmationView = __webpack_require__(433);
+	__webpack_require__(437);
 
-	var _confirmationView2 = _interopRequireDefault(_confirmationView);
-
-	var _app = __webpack_require__(229);
-
-	var _app2 = _interopRequireDefault(_app);
+	__webpack_require__(229);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -61472,7 +62700,7 @@
 	module.exports = ConfirmationView;
 
 /***/ },
-/* 424 */
+/* 428 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -61481,9 +62709,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _orderReadyTime = __webpack_require__(425);
-
-	var _orderReadyTime2 = _interopRequireDefault(_orderReadyTime);
+	__webpack_require__(429);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -61507,7 +62733,7 @@
 	                { className: 'order-ready-time-container' },
 	                _react2.default.createElement(
 	                    'h2',
-	                    null,
+	                    { className: 'order-ready-time-pickup' },
 	                    'Head to the shop, and your order will be ready in...'
 	                ),
 	                _react2.default.createElement(
@@ -61541,13 +62767,13 @@
 	module.exports = OrderReadyTime;
 
 /***/ },
-/* 425 */
+/* 429 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(426);
+	var content = __webpack_require__(430);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(4)(content, {});
@@ -61567,7 +62793,7 @@
 	}
 
 /***/ },
-/* 426 */
+/* 430 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(3)();
@@ -61575,13 +62801,13 @@
 
 
 	// module
-	exports.push([module.id, ".order-ready-time {\n  font-size: 36px;\n  text-align: center; }\n\n.order-ready-time-container {\n  padding-top: 2em;\n  padding-bottom: 2em;\n  border-bottom: 1px solid #E4E4E4; }\n\n.order-ready-time-container h2 {\n  margin-top: 0;\n  text-align: center;\n  font-size: 1.2em;\n  width: 70%;\n  margin: 0 auto; }\n\n.order-ready-time-container p {\n  text-align: center;\n  font-size: 1em;\n  margin: 0em 0em 0.8em 0em; }\n\n.method-of-trans-icon {\n  text-align: center;\n  margin-bottom: 1.75em; }\n\n.order-ready-time-divider {\n  width: 100%;\n  margin: 0 auto;\n  padding-top: 1em; }\n", ""]);
+	exports.push([module.id, ".order-ready-time {\n  font-size: 36px;\n  text-align: center;\n  color: #333; }\n\n.order-ready-time-container {\n  padding-top: 2em;\n  padding-bottom: 2em;\n  border-bottom: 1px solid #E4E4E4; }\n\n.order-ready-time-pickup {\n  color: #888; }\n\n.order-ready-time-container h2 {\n  margin-top: 0;\n  text-align: center;\n  font-size: 1.2em;\n  width: 70%;\n  margin: 0 auto;\n  color: #333; }\n\n.order-ready-time-container p {\n  text-align: center;\n  font-size: 1em;\n  margin: 0em 0em 0.8em 0em; }\n\n.method-of-trans-icon {\n  text-align: center;\n  margin-bottom: 1.75em; }\n\n.order-ready-time-divider {\n  width: 100%;\n  margin: 0 auto;\n  padding-top: 1em; }\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 427 */
+/* 431 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -61590,9 +62816,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _shopDetails = __webpack_require__(428);
-
-	var _shopDetails2 = _interopRequireDefault(_shopDetails);
+	__webpack_require__(432);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -61645,13 +62869,13 @@
 	module.exports = ShopDetails;
 
 /***/ },
-/* 428 */
+/* 432 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(429);
+	var content = __webpack_require__(433);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(4)(content, {});
@@ -61671,7 +62895,7 @@
 	}
 
 /***/ },
-/* 429 */
+/* 433 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(3)();
@@ -61679,13 +62903,13 @@
 
 
 	// module
-	exports.push([module.id, ".shop-details-container {\n  padding: 1.75em 0em 1.75em 0em;\n  text-align: center;\n  border-bottom: 1px solid #E4E4E4; }\n  .shop-details-container h2 {\n    padding: 0 0.25em 0.5em 0.25em; }\n  .shop-details-container p {\n    margin: 0.5em 0.25em 0.5em 0.25em; }\n", ""]);
+	exports.push([module.id, ".shop-details-container {\n  padding: 1.75em 0em 1.75em 0em;\n  text-align: center;\n  border-bottom: 1px solid #E4E4E4; }\n  .shop-details-container h2 {\n    padding: 0 0.25em 0.5em 0.25em;\n    color: #333; }\n  .shop-details-container p {\n    margin: 0.5em 0.25em 0.5em 0.25em;\n    color: #888; }\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 430 */
+/* 434 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -61694,9 +62918,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _directionsAndCall = __webpack_require__(431);
-
-	var _directionsAndCall2 = _interopRequireDefault(_directionsAndCall);
+	__webpack_require__(435);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -61758,13 +62980,13 @@
 	module.exports = DirectionsAndCall;
 
 /***/ },
-/* 431 */
+/* 435 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(432);
+	var content = __webpack_require__(436);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(4)(content, {});
@@ -61784,7 +63006,7 @@
 	}
 
 /***/ },
-/* 432 */
+/* 436 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(3)();
@@ -61798,13 +63020,13 @@
 
 
 /***/ },
-/* 433 */
+/* 437 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(434);
+	var content = __webpack_require__(438);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(4)(content, {});
@@ -61824,7 +63046,7 @@
 	}
 
 /***/ },
-/* 434 */
+/* 438 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(3)();
@@ -61832,13 +63054,13 @@
 
 
 	// module
-	exports.push([module.id, ".confirmation-view-container {\n  width: 90%;\n  border: 1px solid #E4E4E4;\n  border-radius: 3px;\n  background: #fff;\n  margin-top: 4em;\n  margin: 6em auto 4em auto;\n  box-shadow: #999999 0px 1px; }\n  .confirmation-view-container .title-cover {\n    text-align: center;\n    margin-bottom: 0em;\n    padding: 2em 2em 1em 2em; }\n    .confirmation-view-container .title-cover .confirmation-success {\n      border: none;\n      vertical-align: middle; }\n      .confirmation-view-container .title-cover .confirmation-success .fa-check-circle {\n        color: #3FB083; }\n\n.back-to-dashboard {\n  width: 13em;\n  margin: 2em auto 3em auto;\n  display: block; }\n  .back-to-dashboard .fa-home {\n    padding-left: .4em; }\n\n@media only screen and (min-width: 500px) {\n  .confirmation-view-container .title-cover h1 {\n    display: inline-block; }\n  .confirmation-view-container .title-cover .confirmation-success {\n    display: inline-block;\n    margin-left: 1em; }\n    .confirmation-view-container .title-cover .confirmation-success .fa-check-circle {\n      color: #3FB083;\n      font-size: 6em; } }\n\n@media only screen and (min-width: 600px) {\n  .confirmation-view-container {\n    width: 28em;\n    margin: 6em auto 2.5em auto; } }\n\n@media only screen and (min-width: 960px) {\n  .confirmation-view-container {\n    margin-top: 0em;\n    margin: 4em auto 2.5em auto; } }\n", ""]);
+	exports.push([module.id, ".confirmation-view-container {\n  width: 90%;\n  border: 1px solid #E4E4E4;\n  border-radius: 3px;\n  background: #fff;\n  margin-top: 4em;\n  margin: 6em auto 4em auto;\n  box-shadow: #999999 0px 1px; }\n  .confirmation-view-container .title-cover {\n    text-align: center;\n    margin-bottom: 0em;\n    padding: 2em 2em 1em 2em; }\n    .confirmation-view-container .title-cover h1 {\n      color: #333; }\n    .confirmation-view-container .title-cover .confirmation-success {\n      border: none;\n      vertical-align: middle; }\n      .confirmation-view-container .title-cover .confirmation-success .fa-check-circle {\n        color: #3FB083; }\n\n.back-to-dashboard {\n  width: 13em;\n  margin: 2em auto 3em auto;\n  display: block; }\n  .back-to-dashboard .fa-home {\n    padding-left: .4em; }\n\n@media only screen and (min-width: 500px) {\n  .confirmation-view-container .title-cover h1 {\n    display: inline-block; }\n  .confirmation-view-container .title-cover .confirmation-success {\n    display: inline-block;\n    margin-left: 1em; }\n    .confirmation-view-container .title-cover .confirmation-success .fa-check-circle {\n      color: #3FB083;\n      font-size: 6em; } }\n\n@media only screen and (min-width: 600px) {\n  .confirmation-view-container {\n    width: 28em;\n    margin: 6em auto 2.5em auto; } }\n\n@media only screen and (min-width: 960px) {\n  .confirmation-view-container {\n    margin-top: 0em;\n    margin: 4em auto 2.5em auto; } }\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 435 */
+/* 439 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -61849,15 +63071,11 @@
 
 	var _reactRouter = __webpack_require__(164);
 
-	var _previousOrdersView = __webpack_require__(436);
+	__webpack_require__(440);
 
-	var _previousOrdersView2 = _interopRequireDefault(_previousOrdersView);
+	__webpack_require__(229);
 
-	var _app = __webpack_require__(229);
-
-	var _app2 = _interopRequireDefault(_app);
-
-	var _PreviousOrder = __webpack_require__(438);
+	var _PreviousOrder = __webpack_require__(442);
 
 	var _PreviousOrder2 = _interopRequireDefault(_PreviousOrder);
 
@@ -61903,13 +63121,13 @@
 	module.exports = PreviousOrdersView;
 
 /***/ },
-/* 436 */
+/* 440 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(437);
+	var content = __webpack_require__(441);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(4)(content, {});
@@ -61929,7 +63147,7 @@
 	}
 
 /***/ },
-/* 437 */
+/* 441 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(3)();
@@ -61943,7 +63161,7 @@
 
 
 /***/ },
-/* 438 */
+/* 442 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -61952,11 +63170,9 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _previousOrder = __webpack_require__(439);
+	__webpack_require__(443);
 
-	var _previousOrder2 = _interopRequireDefault(_previousOrder);
-
-	var _PreviousOrderItem = __webpack_require__(441);
+	var _PreviousOrderItem = __webpack_require__(445);
 
 	var _PreviousOrderItem2 = _interopRequireDefault(_PreviousOrderItem);
 
@@ -62000,13 +63216,13 @@
 	module.exports = PreviousOrder;
 
 /***/ },
-/* 439 */
+/* 443 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(440);
+	var content = __webpack_require__(444);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(4)(content, {});
@@ -62026,7 +63242,7 @@
 	}
 
 /***/ },
-/* 440 */
+/* 444 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(3)();
@@ -62040,7 +63256,7 @@
 
 
 /***/ },
-/* 441 */
+/* 445 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -62049,9 +63265,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _previousOrderItem = __webpack_require__(442);
-
-	var _previousOrderItem2 = _interopRequireDefault(_previousOrderItem);
+	__webpack_require__(446);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -62112,13 +63326,13 @@
 	module.exports = PreviousOrderItem;
 
 /***/ },
-/* 442 */
+/* 446 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(443);
+	var content = __webpack_require__(447);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(4)(content, {});
@@ -62138,7 +63352,7 @@
 	}
 
 /***/ },
-/* 443 */
+/* 447 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(3)();
@@ -62152,7 +63366,7 @@
 
 
 /***/ },
-/* 444 */
+/* 448 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -62163,15 +63377,11 @@
 
 	var _reactRouter = __webpack_require__(164);
 
-	var _favoriteOrdersView = __webpack_require__(445);
+	__webpack_require__(449);
 
-	var _favoriteOrdersView2 = _interopRequireDefault(_favoriteOrdersView);
+	__webpack_require__(229);
 
-	var _app = __webpack_require__(229);
-
-	var _app2 = _interopRequireDefault(_app);
-
-	var _PreviousOrder = __webpack_require__(438);
+	var _PreviousOrder = __webpack_require__(442);
 
 	var _PreviousOrder2 = _interopRequireDefault(_PreviousOrder);
 
@@ -62221,13 +63431,13 @@
 	module.exports = FavoriteOrdersView;
 
 /***/ },
-/* 445 */
+/* 449 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(446);
+	var content = __webpack_require__(450);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(4)(content, {});
@@ -62247,7 +63457,7 @@
 	}
 
 /***/ },
-/* 446 */
+/* 450 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(3)();
@@ -62256,46 +63466,6 @@
 
 	// module
 	exports.push([module.id, ".favorite-orders-container {\n  width: 90%;\n  margin: 4em auto 0em auto;\n  border-radius: 3px; }\n\n@media only screen and (min-width: 600px) {\n  .favorite-orders-wrap {\n    width: 28em;\n    margin: 4em auto 2.5em auto; } }\n\n@media only screen and (min-width: 960px) {\n  .favorite-orders-container {\n    margin-top: 0em;\n    margin-left: 5em; } }\n", ""]);
-
-	// exports
-
-
-/***/ },
-/* 447 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(448);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(4)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./order-tax.scss", function() {
-				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./order-tax.scss");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 448 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(3)();
-	// imports
-
-
-	// module
-	exports.push([module.id, ".order-total-tax {\n  font-weight: 400; }\n  .order-total-tax .title {\n    color: #888888; }\n", ""]);
 
 	// exports
 

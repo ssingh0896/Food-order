@@ -1,6 +1,6 @@
-import React from 'react'
-import _ from 'lodash'
-import sass from './options.scss'
+import React from 'react';
+import _ from 'lodash';
+import './options.scss';
 
 var AddToOrderButton = React.createClass({
 

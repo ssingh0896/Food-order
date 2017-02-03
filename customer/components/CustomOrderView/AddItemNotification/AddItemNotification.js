@@ -1,5 +1,5 @@
-import React from 'react'
-import sass from './add-item-notification.scss'
+import React from 'react';
+import './add-item-notification.scss';
 
 var AddItemNotification = React.createClass({
 

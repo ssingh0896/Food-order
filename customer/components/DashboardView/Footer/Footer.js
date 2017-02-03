@@ -1,6 +1,6 @@
-import React from 'react'
-import sass from './footer.scss'
-import { Link } from 'react-router'
+import React from 'react';
+import { Link } from 'react-router';
+import './footer.scss';
 
 var Footer = React.createClass({
 

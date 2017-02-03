@@ -1,6 +1,6 @@
-import React from 'react'
-import AddItemNotification from '../AddItemNotification/AddItemNotification'
-import sass from './order-total-row.scss'
+import React from 'react';
+import AddItemNotification from '../AddItemNotification/AddItemNotification';
+import './order-total-row.scss';
 
 var OrderTotalRow = React.createClass({
 

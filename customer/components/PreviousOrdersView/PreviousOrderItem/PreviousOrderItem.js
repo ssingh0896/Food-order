@@ -1,7 +1,8 @@
-import React from 'react'
-import sass from './previous-order-item.scss'
+import React from 'react';
+import './previous-order-item.scss';
 
 var PreviousOrderItem = React.createClass({
+
     render: function() {
 
         var item = this.props.previousOrderItem;

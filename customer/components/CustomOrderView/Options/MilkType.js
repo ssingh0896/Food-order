@@ -1,5 +1,5 @@
-import React from 'react'
-import sass from './options.scss'
+import React from 'react';
+import './options.scss';
 
 var MilkType = React.createClass({
 

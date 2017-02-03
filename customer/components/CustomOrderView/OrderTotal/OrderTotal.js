@@ -1,8 +1,8 @@
-import React from 'react'
-import OrderTotalRow from '../OrderTotalRow/OrderTotalRow'
-import OrderTax from '../OrderTax/OrderTax'
-import OrderTotalTotal from '../OrderTotalTotal/OrderTotalTotal'
-import sass from './order-total.scss'
+import React from 'react';
+import OrderTotalRow from '../OrderTotalRow/OrderTotalRow';
+import OrderTax from '../OrderTax/OrderTax';
+import OrderTotalTotal from '../OrderTotalTotal/OrderTotalTotal';
+import './order-total.scss';
 
 var OrderTotal = React.createClass({
 

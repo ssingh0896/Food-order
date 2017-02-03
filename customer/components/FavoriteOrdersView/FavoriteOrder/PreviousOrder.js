@@ -1,9 +1,8 @@
-import React from 'react'
-import sass from './previous-order.scss'
-import PreviousOrderItem from '../PreviousOrderItem/PreviousOrderItem'
+import React from 'react';
+import './previous-order.scss';
+import PreviousOrderItem from '../PreviousOrderItem/PreviousOrderItem';
 
 var PreviousOrder = React.createClass({
-
     render: function() {
 
         var previousOrderItems = this.props.previousOrder.items.map(function(item, index) {
