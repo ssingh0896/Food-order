@@ -1,5 +1,5 @@
-import React from 'react'
-import sass from './order-ready-time.scss'
+import React from 'react';
+import './order-ready-time.scss';
 
 var OrderReadyTime = React.createClass({
 
@@ -18,7 +18,7 @@ var OrderReadyTime = React.createClass({
         var pickupTime;
         if (this.props.pickupTime === true) {
             pickupTime = <div className="order-ready-time-container">
-                <h2>Head to the shop,
+                <h2 className="order-ready-time-pickup">Head to the shop,
                 and your order will be ready in...</h2>
                 <div className="order-ready-time">{this.props.duration}</div>
                 {/*

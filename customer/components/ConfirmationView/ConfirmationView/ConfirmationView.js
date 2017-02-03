@@ -1,11 +1,11 @@
-import React from 'react'
-import OrderReadyTime from '../OrderReadyTime/OrderReadyTime'
-import ShopDetails from '../ShopDetails/ShopDetails'
-import DirectionsAndCall from '../DirectionsAndCall/DirectionsAndCall'
-import Footer from '../../DashboardView/Footer/Footer'
-import { Link } from 'react-router'
-import sass from './confirmation-view.scss'
-import sass2 from '../../App/app.scss'
+import React from 'react';
+import OrderReadyTime from '../OrderReadyTime/OrderReadyTime';
+import ShopDetails from '../ShopDetails/ShopDetails';
+import DirectionsAndCall from '../DirectionsAndCall/DirectionsAndCall';
+import Footer from '../../DashboardView/Footer/Footer';
+import { Link } from 'react-router';
+import './confirmation-view.scss';
+import '../../App/app.scss';
 
 var ConfirmationView = React.createClass({
 

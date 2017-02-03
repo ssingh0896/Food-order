@@ -1,5 +1,5 @@
-import React from 'react'
-import sass from './shop-details.scss'
+import React from 'react';
+import './shop-details.scss';
 
 var ShopDetails = React.createClass({
 

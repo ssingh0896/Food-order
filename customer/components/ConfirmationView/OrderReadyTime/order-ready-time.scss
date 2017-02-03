@@ -1,6 +1,7 @@
 .order-ready-time {
     font-size: 36px;
     text-align: center;
+    color: #333;
 }
 
 .order-ready-time-container {
@@ -9,12 +10,17 @@
     border-bottom: 1px solid #E4E4E4;
 }
 
+.order-ready-time-pickup {
+    color: #888;
+}
+
 .order-ready-time-container h2 {
     margin-top: 0;
     text-align: center;
     font-size: 1.2em;
     width: 70%;
     margin: 0 auto;
+    color: #333;
 }
 
 .order-ready-time-container p {
