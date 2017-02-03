@@ -1,5 +1,5 @@
-import React from 'react'
-import sass from './select-method-of-trans.scss'
+import React from 'react';
+import './select-method-of-trans.scss';
 
 var SelectMethodOfTrans = React.createClass({
 

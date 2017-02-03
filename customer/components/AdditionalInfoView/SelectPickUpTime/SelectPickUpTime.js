@@ -1,6 +1,6 @@
-import React from 'react'
-import sass from './select-pick-up-time.scss'
-import moment from 'moment'
+import React from 'react';
+import sass from './select-pick-up-time.scss';
+import moment from 'moment';
 
 var SelectPickUpTime = React.createClass({
 

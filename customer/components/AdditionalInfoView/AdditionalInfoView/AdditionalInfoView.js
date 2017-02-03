@@ -1,13 +1,13 @@
-import React from 'react'
-import SelectMethodOfTrans from '../SelectMethodOfTrans/SelectMethodOfTrans'
-import SelectPickUpTime from '../SelectPickUpTime/SelectPickUpTime'
-import SelectIfFavorite from '../SelectIfFavorite/SelectIfFavorite'
-import EnterPaymentInfo from '../EnterPaymentInfo/EnterPaymentInfo'
-import AdditionalInfoNotification from '../AdditionalInfoNotification/AdditionalInfoNotification'
-import Footer from '../../DashboardView/Footer/Footer'
-import { Link } from 'react-router'
-import sass from '../../App/app.scss'
-import sass2 from './additional-info-view.scss'
+import React from 'react';
+import { Link } from 'react-router';
+import SelectMethodOfTrans from ;'../SelectMethodOfTrans/SelectMethodOfTrans';
+import SelectPickUpTime from '../SelectPickUpTime/SelectPickUpTime';
+import SelectIfFavorite from '../SelectIfFavorite/SelectIfFavorite';
+import EnterPaymentInfo from '../EnterPaymentInfo/EnterPaymentInfo';
+import AdditionalInfoNotification from '../AdditionalInfoNotification/AdditionalInfoNotification';
+import Footer from '../../DashboardView/Footer/Footer';
+import '../../App/app.scss';
+import './additional-info-view.scss';
 
 var AdditionalInfoView = React.createClass({
 

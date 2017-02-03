@@ -1,5 +1,5 @@
-import React from 'react'
-import sass from './order-total-total.scss'
+import React from 'react';
+import './order-total-total.scss';
 
 var OrderTotalTotal = React.createClass({
 

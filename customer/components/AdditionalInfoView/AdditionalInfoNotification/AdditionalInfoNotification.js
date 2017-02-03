@@ -1,5 +1,5 @@
-import React from 'react'
-import sass from './additional-info-notification.scss'
+import React from 'react';
+import './additional-info-notification.scss';
 
 var AdditionalInfoNotification = React.createClass({
 

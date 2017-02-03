@@ -1,5 +1,5 @@
-import React from 'react'
-import sass from './select-if-favorite.scss'
+import React from 'react';
+import './select-if-favorite.scss';
 
 var SelectIfFavorite = React.createClass({
 
