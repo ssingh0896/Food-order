@@ -1,20 +1,26 @@
-@import url('https://fonts.googleapis.com/css?family=Lato');
+// @import url('https://fonts.googleapis.com/css?family=Lato');
+// @import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 body {
-    font-weight: 300;
+    font-weight: 400;
     background: #EDEFF0;
 }
 
 
 h1 {
     text-align: center;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 h2 {
-    font-weight: 300;
+    font-weight: 400;
     margin: 0;
     padding-bottom: 0.75em;
+}
+
+p {
+  font-weight: 400;
 }
 
 
