@@ -2,8 +2,12 @@ module.exports = {
 
     getLocation: function(callback, callback2) {
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(callback);
-            navigator.geolocation.getCurrentPosition(callback2);
+            navigator.geolocation.getCurrentPosition(callback, function(error) {
+                console.log(error);   
+            }, {maximumAge: Infinity, enableHighAccuracy:true, timeout: 10000});
+            navigator.geolocation.getCurrentPosition(callback2, function(error) {
+                console.log(error);   
+            }, {maximumAge: Infinity, enableHighAccuracy:true, timeout: 10000});
         } else {
             alert("Geolocation is not supported by this browser.");
         }
@@ -24,6 +28,7 @@ module.exports = {
 
         service.nearbySearch(request, function(results, status) {
             if (status == google.maps.places.PlacesServiceStatus.OK) {
+                console.log('results', results);
                 callback(results);
             }
         });

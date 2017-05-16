@@ -61,22 +61,19 @@ var App = React.createClass({
     componentWillMount: function() {
         api.getLocation(this._handleUserLocation, this._handleGetLocation);
         this._handleUsernameCheck();
-
         setTimeout(() => {
             this._handleUserLocationCheck();
-        }, 8000);
+        }, 80000);
     },
 
     _handleUserLocationCheck: function() {
         if (this.state.userLocation.lat === '') {
-            console.log('nope');
             this.setState({
                 notification: {
                     userLocation: true
                 }
             });
         }
-        
     },
 
     // -------------- USERNAME VALIDATION --------------
@@ -107,6 +104,7 @@ var App = React.createClass({
     // --------------USER LOCATION AND GOOGLE MAPS API CALL--------------
 
     _handleUserLocation: function(position) {
+        console.log('position', position);
         this.setState({
             userLocation: {
                 lat: position.coords.latitude,

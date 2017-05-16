@@ -25850,15 +25850,13 @@
 
 	        _api2.default.getLocation(this._handleUserLocation, this._handleGetLocation);
 	        this._handleUsernameCheck();
-
 	        setTimeout(function () {
 	            _this._handleUserLocationCheck();
-	        }, 8000);
+	        }, 80000);
 	    },
 
 	    _handleUserLocationCheck: function _handleUserLocationCheck() {
 	        if (this.state.userLocation.lat === '') {
-	            console.log('nope');
 	            this.setState({
 	                notification: {
 	                    userLocation: true
@@ -25893,6 +25891,7 @@
 	    // --------------USER LOCATION AND GOOGLE MAPS API CALL--------------
 
 	    _handleUserLocation: function _handleUserLocation(position) {
+	        console.log('position', position);
 	        this.setState({
 	            userLocation: {
 	                lat: position.coords.latitude,
@@ -43160,8 +43159,12 @@
 
 	    getLocation: function getLocation(callback, callback2) {
 	        if (navigator.geolocation) {
-	            navigator.geolocation.getCurrentPosition(callback);
-	            navigator.geolocation.getCurrentPosition(callback2);
+	            navigator.geolocation.getCurrentPosition(callback, function (error) {
+	                console.log(error);
+	            }, { maximumAge: Infinity, enableHighAccuracy: true, timeout: 10000 });
+	            navigator.geolocation.getCurrentPosition(callback2, function (error) {
+	                console.log(error);
+	            }, { maximumAge: Infinity, enableHighAccuracy: true, timeout: 10000 });
 	        } else {
 	            alert("Geolocation is not supported by this browser.");
 	        }
@@ -43182,6 +43185,7 @@
 
 	        service.nearbySearch(request, function (results, status) {
 	            if (status == google.maps.places.PlacesServiceStatus.OK) {
+	                console.log('results', results);
 	                callback(results);
 	            }
 	        });
