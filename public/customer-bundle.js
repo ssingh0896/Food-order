@@ -25852,7 +25852,7 @@
 	        this._handleUsernameCheck();
 	        setTimeout(function () {
 	            _this._handleUserLocationCheck();
-	        }, 80000);
+	        }, 8000);
 	    },
 
 	    _handleUserLocationCheck: function _handleUserLocationCheck() {

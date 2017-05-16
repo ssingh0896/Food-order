@@ -63,7 +63,7 @@ var App = React.createClass({
         this._handleUsernameCheck();
         setTimeout(() => {
             this._handleUserLocationCheck();
-        }, 80000);
+        }, 8000);
     },
 
     _handleUserLocationCheck: function() {
