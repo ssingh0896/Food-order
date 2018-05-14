@@ -61245,21 +61245,16 @@
 	                    _react2.default.createElement(
 	                        'div',
 	                        { className: 'shop-list-bottom-row' },
-	                        this.props.shop.hasOwnProperty('opening_hours') ? this.props.shop.opening_hours.open_now ? _react2.default.createElement(
+	                        _react2.default.createElement(
 	                            'div',
 	                            { className: 'open-now' },
 	                            _react2.default.createElement('i', { className: 'fa fa-clock-o', 'aria-hidden': 'true' }),
 	                            ' Open now!'
-	                        ) : _react2.default.createElement(
-	                            'div',
-	                            { className: 'closed-now' },
-	                            _react2.default.createElement('i', { className: 'fa fa-clock-o', 'aria-hidden': 'true' }),
-	                            ' Currently closed'
-	                        ) : '',
+	                        ),
 	                        _react2.default.createElement(
 	                            'p',
 	                            { className: 'shop-list-distance' },
-	                            this.props.shop.shopDistance
+	                            this.props.shop.distance
 	                        )
 	                    )
 	                )
@@ -62752,12 +62747,7 @@
 	                _react2.default.createElement(
 	                    'h2',
 	                    { className: 'order-ready-time-pickup' },
-	                    'Head to the shop, and your order will be ready in...'
-	                ),
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'order-ready-time' },
-	                    this.props.duration
+	                    'Head to the shop, and your order will be ready when you get there!'
 	                )
 	            );
 	        } else {
@@ -62877,8 +62867,7 @@
 	            _react2.default.createElement(
 	                'p',
 	                null,
-	                'Distance: ',
-	                this.props.distance
+	                'Distance: 0.5 mi'
 	            )
 	        );
 	    }
@@ -63508,7 +63497,8 @@
 			},
 			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
 			"id": "9a7febec4d42a6dd9f97a576f9b00499bb02cfe6",
-			"name": "La Boulangerie de San Francisco, Hayes",
+			"name": "La Boulangerie de San Francisco",
+			"distance": "0.1 mi",
 			"opening_hours": {
 				"open_now": false,
 				"weekday_text": []
@@ -63554,6 +63544,7 @@
 			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
 			"id": "8a6bc5994097971fa94c7ef99c4a1b836fb4c381",
 			"name": "Cafe Claude",
+			"distance": "0.1 mi",
 			"opening_hours": {
 				"open_now": true,
 				"weekday_text": []
@@ -63599,6 +63590,7 @@
 			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
 			"id": "892e2f452faa6d8d8a3c495347199577a339f98c",
 			"name": "Dottie's True Blue Cafe",
+			"distance": "0.2 mi",
 			"opening_hours": {
 				"open_now": false,
 				"weekday_text": []
@@ -63642,6 +63634,7 @@
 			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
 			"id": "ea6ff166f8491ff9efed520ae1c49ed97e93675a",
 			"name": "DNA Lounge",
+			"distance": "0.2 mi",
 			"opening_hours": {
 				"open_now": true,
 				"weekday_text": []
@@ -63689,6 +63682,7 @@
 			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
 			"id": "2d0b4ef360b34aceb9ed2b3ae3651a58bde7bfbe",
 			"name": "Sightglass Coffee",
+			"distance": "0.3 mi",
 			"opening_hours": {
 				"open_now": false,
 				"weekday_text": []
@@ -63733,6 +63727,7 @@
 			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/movies-71.png",
 			"id": "6c34db954947fe709b120321bde1f7061641c3fc",
 			"name": "New People",
+			"distance": "0.4 mi",
 			"opening_hours": {
 				"open_now": false,
 				"weekday_text": []
@@ -63779,6 +63774,7 @@
 			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
 			"id": "51c2fff6e4b4163faee969e844a80d2ab81e6a2e",
 			"name": "Blue Bottle Coffee",
+			"distance": "0.44 mi",
 			"opening_hours": {
 				"open_now": false,
 				"weekday_text": []
@@ -63823,6 +63819,7 @@
 			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
 			"id": "977b70880f1d7e60c5f2f085042f2ac1ebd5326b",
 			"name": "The Creamery",
+			"distance": "0.5 mi",
 			"opening_hours": {
 				"open_now": false,
 				"weekday_text": []
@@ -63870,6 +63867,7 @@
 			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png",
 			"id": "024de0b0c08fd83ae08aee6efef472b42859e9ba",
 			"name": "Auntie Anne's Pretzels",
+			"distance": "0.5 mi",
 			"opening_hours": {
 				"open_now": false,
 				"weekday_text": []
@@ -63916,6 +63914,7 @@
 			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
 			"id": "e36ed3acbf815e3cc49501912b2c456edaaf8abc",
 			"name": "Four Barrel Coffee",
+			"distance": "0.7 mi",
 			"opening_hours": {
 				"open_now": false,
 				"weekday_text": []
@@ -63959,7 +63958,8 @@
 			},
 			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
 			"id": "6be13075fac2d506c5325c49eaf1b9fd46274fad",
-			"name": "Samovar Tea Lounge, Yerba Buena Gardens",
+			"name": "Samovar Tea Lounge",
+			"distance": "0.7 mi",
 			"opening_hours": {
 				"open_now": false,
 				"weekday_text": []
@@ -64003,6 +64003,7 @@
 			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
 			"id": "39259f1890c200b2438a145f6c28bcf2ef034fc0",
 			"name": "Honey Honey Cafe & Crepery",
+			"distance": "0.7 mi",
 			"opening_hours": {
 				"open_now": true,
 				"weekday_text": []
@@ -64048,6 +64049,7 @@
 			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
 			"id": "913b3f1febc842fd5afaf3664d0610946d19b9e1",
 			"name": "Starbucks",
+			"distance": "0.8 mi",
 			"opening_hours": {
 				"open_now": true,
 				"weekday_text": []
@@ -64092,6 +64094,7 @@
 			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
 			"id": "cd5bce3cda7d6f6f360d7179b25dc9e33130eb27",
 			"name": "Il Fornaio San Francisco",
+			"distance": "0.9 mi",
 			"opening_hours": {
 				"open_now": true,
 				"weekday_text": []
@@ -64135,6 +64138,7 @@
 			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
 			"id": "dd1229d0b63e07a48eab115ba6e5998f49baa23e",
 			"name": "Boudin Bakery Cafe",
+			"distance": "1.1 mi",
 			"opening_hours": {
 				"open_now": true,
 				"weekday_text": []
@@ -64161,7 +64165,7 @@
 				"point_of_interest",
 				"establishment"
 			],
-			"vicinity": "Baker's Hall, 160 Jefferson Street, San Francisco",
+			"vicinity": "Baker's Hall, 160 Jefferson Street, SF",
 			"html_attributions": []
 		},
 		{
@@ -64180,6 +64184,7 @@
 			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
 			"id": "8de88a2df523cb2eda7ae3876fae921faf6864c1",
 			"name": "Hard Rock Cafe",
+			"distance": "1.1 mi",
 			"opening_hours": {
 				"open_now": true,
 				"weekday_text": []
@@ -64225,6 +64230,7 @@
 			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
 			"id": "3945b6376c3ad30e861eb5363f3b5514f223a440",
 			"name": "Starbucks",
+			"distance": "1.3 mi",
 			"opening_hours": {
 				"open_now": false,
 				"weekday_text": []
@@ -64269,6 +64275,7 @@
 			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
 			"id": "300efc067dc0e0e3d9218b5cff0cbea394886c0b",
 			"name": "Hollywood Cafe",
+			"distance": "1.4 mi",
 			"opening_hours": {
 				"open_now": false,
 				"weekday_text": []
@@ -64313,6 +64320,7 @@
 			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
 			"id": "e3e6124732a8e03aa4276691362981ffa59526ee",
 			"name": "Specialty's Cafe & Bakery",
+			"distance": "1.5 mi",
 			"opening_hours": {
 				"open_now": false,
 				"weekday_text": []
@@ -64358,6 +64366,7 @@
 			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
 			"id": "1883b98f6769be3c79329112195e4623b75ec7fb",
 			"name": "Craftsman and Wolves",
+			"distance": "1.7 mi",
 			"opening_hours": {
 				"open_now": false,
 				"weekday_text": []
