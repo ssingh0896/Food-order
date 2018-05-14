@@ -1,15 +1,20 @@
 module.exports = {
 
-    getLocation: function(callback, callback2) {
+    getLocation: function (callback, callback2) {
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(callback);
-            navigator.geolocation.getCurrentPosition(callback2);
+            debugger;
+            navigator.geolocation.getCurrentPosition(callback, function (error) {
+                console.log(error);
+            }, { maximumAge: Infinity, enableHighAccuracy: true, timeout: 10000 });
+            navigator.geolocation.getCurrentPosition(callback2, function (error) {
+                console.log(error);
+            }, { maximumAge: Infinity, enableHighAccuracy: true, timeout: 10000 });
         } else {
             alert("Geolocation is not supported by this browser.");
         }
     },
 
-    getShops: function(position, callback) {
+    getShops: function (position, callback) {
         var currentLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
         // Specify location, radius and place types for your Places API search.
@@ -22,33 +27,33 @@ module.exports = {
         // Handle the callback with an anonymous function.
         var service = new google.maps.places.PlacesService(map);
 
-        service.nearbySearch(request, function(results, status) {
+        service.nearbySearch(request, function (results, status) {
             if (status == google.maps.places.PlacesServiceStatus.OK) {
                 callback(results);
             }
         });
     },
 
-    getDetails: function(placeId, callback) {
+    getDetails: function (placeId, callback) {
         var service = new google.maps.places.PlacesService(map);
 
         service.getDetails({
             placeId: placeId
-        }, function(place, status) {
-              if (status === google.maps.places.PlacesServiceStatus.OK) {
-                  callback(place);
-              }
+        }, function (place, status) {
+            if (status === google.maps.places.PlacesServiceStatus.OK) {
+                callback(place);
+            }
         });
     },
 
-    calculateTravelTime: function(userLocation, selectedShopLocation, methodOfTrans, callback) {
+    calculateTravelTime: function (userLocation, selectedShopLocation, methodOfTrans, callback) {
         var bounds = new google.maps.LatLngBounds;
 
         var origin1 = userLocation;
         var destinationA = selectedShopLocation;
         var methodOfTrans;
 
-        switch(methodOfTrans) {
+        switch (methodOfTrans) {
             case 'walking':
                 methodOfTrans = google.maps.TravelMode.WALKING;
                 break;
@@ -71,14 +76,14 @@ module.exports = {
             unitSystem: google.maps.UnitSystem.IMPERIAL,
             avoidHighways: false,
             avoidTolls: false
-        }, function(response, status) {
+        }, function (response, status) {
             if (status !== google.maps.DistanceMatrixStatus.OK) {
                 alert('Error was: ' + status);
             } else {
                 var originList = response.originAddresses;
                 var destinationList = response.destinationAddresses;
-            callback(response);
-        }
-      });
+                callback(response);
+            }
+        });
     }
 }

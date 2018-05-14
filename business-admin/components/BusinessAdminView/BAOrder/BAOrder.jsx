@@ -32,19 +32,19 @@ var BAOrder = React.createClass({
     },
 
 
-    _handleCompleteOrder: function() {
+    _handleCompleteOrder: function () {
         console.log('completing order');
         this.props.completeOrder(this.props.order._id);
     },
 
-    render: function() {
+    render: function () {
 
         var orderDetails = this.props.order.items.map(
-            function(item, i) {
+            function (item, i) {
                 return <BAOrderDetails
-                            key={i}
-                            item={item} />
-        });
+                    key={i}
+                    item={item} />
+            });
 
         if (this.props.order.specialInstructions) {
             var specialInstructions = <div className="special-instructions">"{this.props.order.specialInstructions}"</div>
@@ -59,11 +59,12 @@ var BAOrder = React.createClass({
                         {specialInstructions}
                     </div>
                     <div className="ba-order-right">
-                        <Timer
+                        { /*<Timer
                             secondsUntilArrival={this.props.order.secondsUntilArrival}
                             timeSelectedForPickup={this.props.order.timeSelectedForPickup}
                             expectedPickupTime={this.props.order.expectedPickupTime} />
                          <p>ETA:</p>
+                        */ }
                         <button onClick={this._handleCompleteOrder}>
                             Complete
                             <i className="fa fa-check-circle fa-2x" aria-hidden="true"></i>

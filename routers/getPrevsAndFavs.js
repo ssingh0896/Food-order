@@ -3,22 +3,20 @@ var app = express();
 var read = require('../app/methods/read');
 
 
-app.get('/users/:username/orders/previous', function(req, res) {
-    console.log(req.params);
-    read({username: req.params.username}, function(err, listOfOrders) {
+app.get('/users/:username/orders/previous', function (req, res) {
+    read({ username: req.params.username }, function (err, listOfOrders) {
         res.json(listOfOrders);
         res.status(200);
     })
 })
 
-app.get('/users/:username/orders/favorites', function(req, res) {
-    console.log(req.params);
+app.get('/users/:username/orders/favorites', function (req, res) {
     read({
         favorited: true,
         username: req.params.username
-        }, function(err, listOfOrders) {
-            res.json(listOfOrders);
-            res.status(200);
+    }, function (err, listOfOrders) {
+        res.json(listOfOrders);
+        res.status(200);
     })
 })
 

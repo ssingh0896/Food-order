@@ -27618,15 +27618,6 @@
 	                _react2.default.createElement(
 	                    'div',
 	                    { className: 'ba-order-right' },
-	                    _react2.default.createElement(_Timer2.default, {
-	                        secondsUntilArrival: this.props.order.secondsUntilArrival,
-	                        timeSelectedForPickup: this.props.order.timeSelectedForPickup,
-	                        expectedPickupTime: this.props.order.expectedPickupTime }),
-	                    _react2.default.createElement(
-	                        'p',
-	                        null,
-	                        'ETA:'
-	                    ),
 	                    _react2.default.createElement(
 	                        'button',
 	                        { onClick: this._handleCompleteOrder },
