@@ -25897,7 +25897,6 @@
 	    // --------------USER LOCATION AND GOOGLE MAPS API CALL--------------
 
 	    _handleUserLocation: function _handleUserLocation(position) {
-	        console.log('position', position);
 	        this.setState({
 	            userLocation: {
 	                lat: position.coords.latitude,
@@ -43200,8 +43199,6 @@
 
 	        service.nearbySearch(request, function (results, status) {
 	            if (status == google.maps.places.PlacesServiceStatus.OK) {
-	                console.log('results', results);
-	                console.log('shops', results);
 	                callback(results);
 	            }
 	        });

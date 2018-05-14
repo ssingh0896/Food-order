@@ -107,7 +107,6 @@ var App = React.createClass({
     // --------------USER LOCATION AND GOOGLE MAPS API CALL--------------
 
     _handleUserLocation: function (position) {
-        console.log('position', position);
         this.setState({
             userLocation: {
                 lat: position.coords.latitude,

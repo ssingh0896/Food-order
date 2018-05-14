@@ -6,8 +6,8 @@ var jsonParser = bodyParser.json();
 var create = require('../app/methods/create');
 var read = require('../app/methods/read');
 
-app.get('/orders', jsonParser, function(req,res) {
-    read({}, function(err, listOfOrders) {
+app.get('/orders', jsonParser, function (req, res) {
+    read({}, function (err, listOfOrders) {
         if (err) {
             res.json(err)
         }
@@ -16,16 +16,15 @@ app.get('/orders', jsonParser, function(req,res) {
     })
 })
 
-app.post('/orders', jsonParser, function(req, res) {
-    create(req.body, function(err, order) {
+app.post('/orders', jsonParser, function (req, res) {
+    create(req.body, function (err, order) {
         res.json(order);
         res.status(201);
     });
 })
 
-app.delete('/orders', jsonParser, function(req, res) {
-    Orders.remove({}, function(err) {
-        console.log('collection removed');
+app.delete('/orders', jsonParser, function (req, res) {
+    Orders.remove({}, function (err) {
         res.json('collection removed')
         res.status(200);
     });
