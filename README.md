@@ -10,7 +10,7 @@ To see GoMocha live in action, open a browser tab for <a href="http://gomocha.he
 Front end source code for GoMocha Consumer can be found in the `/customer` directory, and `/business-admin` for GoMocha-BA. Back end source code can be found in `/routers`.
 <br /><br />
 GoMocha Consumer
-<img src="public/img/select-shop-custom-order.png" style="width: 400px" />
+<img src="public/img/.png" style="width: 400px" />
 <br /><br />
 GoMocha Business Admin
 <img src="public/img/gomocha-ba.png" style="width: 400px" />

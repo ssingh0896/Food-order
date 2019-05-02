@@ -20,7 +20,7 @@ var UsernameView = React.createClass({
         return (
             <div className="username-container">
                 <nav>
-                    <a href="/"><img src="img/gomocha-logo-lg.png" /></a>
+                    <a href="/"><img src="img/upes.png" /></a>
                     <ul>
                         <a href="#how-it-works"><li>How it works</li></a>
                         <li>About</li>

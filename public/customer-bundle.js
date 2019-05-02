@@ -27790,7 +27790,7 @@
 	                _react2.default.createElement(
 	                    'a',
 	                    { href: '/' },
-	                    _react2.default.createElement('img', { src: 'img/gomocha-logo-lg.png' })
+	                    _react2.default.createElement('img', { src: 'img/upes.png' })
 	                ),
 	                _react2.default.createElement(
 	                    'ul',
@@ -27957,12 +27957,12 @@
 	                _react2.default.createElement(
 	                    'p',
 	                    { className: 'footer-text footer-text-1' },
-	                    'About GoMocha'
+	                    'About UPES'
 	                ),
 	                _react2.default.createElement(
 	                    'p',
 	                    { className: 'footer-text' },
-	                    'GoMocha Blog'
+	                    'UPES Blog'
 	                ),
 	                _react2.default.createElement(
 	                    'p',
@@ -27977,7 +27977,7 @@
 	                _react2.default.createElement(
 	                    'p',
 	                    { className: 'footer-copyright' },
-	                    '\xA92016 GoMocha, Inc.'
+	                    '\xA92016 UPES, Inc.'
 	                )
 	            )
 	        );
