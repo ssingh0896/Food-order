@@ -43130,7 +43130,7 @@
 	    }.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 	  }
 	  // Check for `exports` after `define` in case a build optimizer adds an `exports` object.
-	  else if (freeExports && freeModule) {
+		else if (freeExports && freeModule) {
 	    // Export for Node.js.
 	    if (moduleExports) {
 	      (freeModule.exports = _)._ = _;
@@ -62191,12 +62191,12 @@
 	                _react2.default.createElement(
 	                    'p',
 	                    null,
-	                    'CSV'
+	                    'CVV'
 	                ),
 	                _react2.default.createElement('input', {
 	                    onChange: this.props.handleCCCVV,
 	                    type: 'text',
-	                    placeholder: 'CSV',
+	                    placeholder: 'CVV',
 	                    maxLength: '3',
 	                    required: true })
 	            )

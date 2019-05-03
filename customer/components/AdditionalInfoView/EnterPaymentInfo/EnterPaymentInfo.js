@@ -72,11 +72,11 @@ var EnterPaymentInfo = React.createClass({
             </select>
                 </div>
                 <div className="payment-info-section payment-csv">
-                    <p>CSV</p>
+                    <p>CVV</p>
                         <input
                             onChange={this.props.handleCCCVV}
                             type="text"
-                            placeholder="CSV"
+                            placeholder="CVV"
                             maxLength="3"
                             required />
                 </div>

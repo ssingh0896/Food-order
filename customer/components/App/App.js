@@ -124,17 +124,17 @@ var App = React.createClass({
         api.getShops(position, this._handleCoffeeShopState)
     },
 
-    // _handleCoffeeShopState: function (results) {
-    //     this.setState({
-    //         shops: results
-    //     }, this._getShopsCoordinates)
-    // },
-
-    _handleCoffeeShopDummyState: function (shops) {
+    _handleCoffeeShopState: function (results) {
         this.setState({
-            shops: shops
+            shops: results
         }, this._getShopsCoordinates)
     },
+
+    // _handleCoffeeShopDummyState: function (shops) {
+    //     this.setState({
+    //         shops: shops
+    //     }, this._getShopsCoordinates)
+    // },
 
 
     // get lat and lng from this.state.shops by running function that returns values

@@ -11,19 +11,20 @@ var ShopList = React.createClass({
 
     render: function() {
 
-        var sortedShops = _.sortBy(this.props.shops, 'shopDistance');
+        //var sortedShops = _.sortBy(this.props.shops, 'shopDistance');
 
         var shops = sortedShops.map(
             (shop) => {
                 return <ShopListItem
                             shop={shop}
                             handleSelectedShop={this.props.handleSelectedShop}
-                            key={shop.place_id} />
+                            key={shop.place_id} 
+                            />
         });
 
         return (
             <div className="shop-list-item-container-wrap">
-                {shops}
+            {shops}
             </div>
         )
     }

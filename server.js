@@ -14,7 +14,7 @@ var ordersOrdersId = require('./routers/ordersOrdersId');
 var MongoURI = process.env.NODE_ENV === 'production' ? process.env.MONGODB_URI : 'mongodb://localhost:27017/project'
 
 mongoose.Promise = global.Promise;
-mongoose.connect(MongoURI);
+mongoose.connect(MongoURI,{ useMongoClient: true });
 
 mongoose.connection.once('open', function() {
     console.log('connection established!');
