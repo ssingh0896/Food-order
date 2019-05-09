@@ -26454,7 +26454,7 @@
 						"items": [
 							{
 								"name": "Latte",
-								"price": 2.95,
+								"price": 9.0,
 								"options": [
 									"milkType",
 									"size",
@@ -63485,22 +63485,30 @@
 		{
 			"geometry": {
 				"location": {
-					"lat": 37.77677609999999,
-					"lng": -122.42479689999999
+					// "lat": 37.77677609999999,
+					// "lng": -122.42479689999999,
+					"lat":30.741482,
+					"lng":76.768066
 				},
+				// "viewport": {
+				// 	"south": 37.7753711197085,
+				// 	"west": -122.42613463029147,
+				// 	"north": 37.77806908029149,
+				// 	"east": -122.42343666970851
+				// }
 				"viewport": {
-					"south": 37.7753711197085,
-					"west": -122.42613463029147,
-					"north": 37.77806908029149,
-					"east": -122.42343666970851
+					"south": 30.741482,
+					"west": 76.768066,
+					"north": 30.741482,
+					"east": 76.768066,
 				}
 			},
 			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
 			"id": "9a7febec4d42a6dd9f97a576f9b00499bb02cfe6",
-			"name": "La Boulangerie de San Francisco",
-			"distance": "0.1 mi",
+			"name": " Aman Agg Shop",
+			"distance": "0.8 mi",
 			"opening_hours": {
-				"open_now": false,
+				"open_now": true,
 				"weekday_text": []
 			},
 			"photos": [
@@ -63525,20 +63533,21 @@
 				"point_of_interest",
 				"establishment"
 			],
-			"vicinity": "500 Hayes Street, San Francisco",
+			//"vicinity": "500 Hayes Street, San Francisco",
+			"vicinity": "cdcl,chandigarh",
 			"html_attributions": []
 		},
 		{
 			"geometry": {
 				"location": {
-					"lat": 37.79033219999999,
-					"lng": -122.4045198
+					"lat":30.741482,
+					"lng":76.768066
 				},
 				"viewport": {
-					"south": 37.7889925197085,
-					"west": -122.40578648029151,
-					"north": 37.7916904802915,
-					"east": -122.40308851970849
+					"south": 30.741482,
+					"west": 76.768066,
+					"north": 30.741482,
+					"east": 76.768066,
 				}
 			},
 			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
@@ -64354,7 +64363,7 @@
 			"geometry": {
 				"location": {
 					"lat": 37.76091839999999,
-					"lng": -122.42171329999996
+					"lng": -122.42171329999996,
 				},
 				"viewport": {
 					"south": 37.75957476970849,

@@ -19,7 +19,7 @@ var ShopDetails = React.createClass({
 
                 <p>{selectedShop.address_components[2].short_name + ', ' + selectedShop.address_components[3].short_name + ' ' + selectedShop.address_components[5].short_name}</p>
                 <p>{selectedShop.formatted_phone_number}</p>
-                <p>Distance: 0.5 mi</p>
+                <p>Distance: 0.8 mi</p>
             </div>
         )
     }
